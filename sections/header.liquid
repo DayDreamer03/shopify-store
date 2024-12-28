@@ -19,17 +19,24 @@
     z-index: 10;
   }
 
-  .header {
-    background-color: transparent !important; /* Makes the header transparent */
-    position: absolute; /* Positions the header on top of content */
-    top: 0;
-    width: 100%; /* Ensures it spans the full width */
-    z-index: 1; /* Keeps it above other elements */
-  }
+  /* Transparent header for homepage */
+.header.homepage {
+  background-color: transparent !important;
+  position: absolute;
+  top: 0;
+  z-index: 10;
+}
 
-  .header-wrapper {
-    background-color: transparent !important; /* Ensures the wrapper is also transparent */
-  }
+/* Default header for other pages */
+.header {
+  background-color: white !important;
+  position: relative;
+  color: black;
+}
+
+.header a {
+  color: black !important; /* Ensures links are black */
+}
 
   {%- if section.settings.sticky_header_type == 'reduce-logo-size' -%}
     .scrolled-past-header .header__heading-logo-wrapper {
