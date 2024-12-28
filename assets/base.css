@@ -3615,7 +3615,9 @@ details-disclosure > details {
   color: white !important; /* Ensures cart icon is white */
 }
 
-.header.homepage .menu-drawer {
-  background-color: rgba(0, 0, 0, 0.8) !important; /* Ensures the drawer menu contrasts with transparent background */
-  color: white !important; /* Text inside the drawer remains white */
+/* Default header for other pages */
+.header {
+  background-color: white !important;
+  position: relative;
+  color: black;
 }
