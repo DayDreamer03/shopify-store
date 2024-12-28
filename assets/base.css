@@ -3619,23 +3619,3 @@ details-disclosure > details {
   background-color: rgba(0, 0, 0, 0.8) !important; /* Ensures the drawer menu contrasts with transparent background */
   color: white !important; /* Text inside the drawer remains white */
 }
-
-/* Default header for other pages */
-.header {
-  background-color: white !important;
-  position: relative;
-  color: black;
-}
-
-.header a {
-  color: black !important; /* Ensures links and icons are black */
-}
-
-.header .header__icon--cart {
-  color: black !important; /* Ensures cart icon is black */
-}
-
-.header .menu-drawer {
-  background-color: white !important; /* Drawer matches the white background */
-  color: black !important; /* Text inside the drawer remains black */
-}
