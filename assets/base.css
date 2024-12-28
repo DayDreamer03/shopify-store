@@ -3595,23 +3595,3 @@ details-disclosure > details {
     transform: translateX(100%) scaleX(0);
   }
 }
-
-/* Added */
-
-.header__icon--cart {
-  font-size: 16px; /* Adjust font size */
-  font-weight: bold; /* Make it bold */
-  text-transform: uppercase; /* Make it uppercase */
-  color: inherit; /* Inherit color from the header */
-}
-
-.cart-count-bubble {
-  background-color: red; /* Keep the cart count bubble visible */
-  color: white;
-  border-radius: 50%;
-  font-size: 12px;
-  padding: 2px 6px;
-  position: absolute;
-  top: 0;
-  right: -10px;
-}
