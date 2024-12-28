@@ -3621,3 +3621,7 @@ details-disclosure > details {
   position: relative;
   color: black;
 }
+
+.header__icon--search {
+  display: none !important;
+}

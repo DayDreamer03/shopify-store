@@ -19,27 +19,6 @@
     z-index: 10;
   }
 
-  .header.homepage {
-    background-color: transparent !important;
-    position: absolute;
-    top: 0;
-    z-index: 10;
-    color: white;
-  }
-  
-  .header.homepage a {
-    color: white !important; /* Ensures links and icons are white */
-  }
-  
-  .header.homepage .header__icon--cart {
-    color: white !important; /* Ensures cart icon is white */
-  }
-  
-  .header.homepage .menu-drawer {
-    background-color: rgba(0, 0, 0, 0.8) !important; /* Ensures the drawer menu contrasts with transparent background */
-    color: white !important; /* Text inside the drawer remains white */
-  }
-
   {%- if section.settings.sticky_header_type == 'reduce-logo-size' -%}
     .scrolled-past-header .header__heading-logo-wrapper {
       width: 75%;
