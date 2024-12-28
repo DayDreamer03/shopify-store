@@ -3605,6 +3605,7 @@ details-disclosure > details {
   top: 0;
   z-index: 10;
   width: 100%; /* Ensures the header spans the full width */
+  color: white;
 }
 
 .header.homepage a,
@@ -3623,12 +3624,12 @@ details-disclosure > details {
 
 /* Drawer menu styles for the homepage */
 .header.homepage .menu-drawer {
-  background-color: rgba(0, 0, 0, 0.8) !important; /* Adds a semi-transparent dark background */
-  color: white !important; /* Ensures text inside the drawer is white */
+  background-color: white !important; /* Keeps the drawer menu background white on other pages */
+  color: black !important; /* Ensures text inside the drawer is black */
 }
 
 .header.homepage .menu-drawer a {
-  color: white !important; /* Ensures drawer menu links are white */
+  color: rgb(0, 0, 0) !important; /* Ensures drawer menu links are white */
 }
 
 /* Drawer menu styles for other pages */
