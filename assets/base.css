@@ -3605,23 +3605,29 @@ details-disclosure > details {
   top: 0;
   z-index: 10;
   color: white;
+  width: 100%; /* Ensure the header spans the full width of the screen */
 }
 
-.header.homepage a {
-  color: white !important; /* Ensures links and icons are white */
+.header.homepage a,
+.header.homepage .menu-drawer-toggle {
+  color: white !important; /* Ensures links, icons, and drawer menu toggle are white */
 }
 
 .header.homepage .header__icon--cart {
   color: white !important; /* Ensures cart icon is white */
 }
 
-/* Default header for other pages */
-.header {
-  background-color: white !important;
-  position: relative;
-  color: black;
+.header.homepage .menu-drawer {
+  background-color: rgba(0, 0, 0, 0.8) !important; /* Ensures drawer menu has a dark background */
+  color: white !important; /* Text inside the drawer remains white */
 }
 
-.header__icon--search {
-  display: none !important;
+.header.homepage .menu-drawer a {
+  color: white !important; /* Links in drawer menu are also white */
+}
+
+.header {
+  width: 100%;
+  margin: 0;
+  padding: 0;
 }
