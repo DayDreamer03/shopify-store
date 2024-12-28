@@ -18,6 +18,10 @@
     margin-left: -1.2rem;
   }
 
+  .header {
+    background-color: transparent;
+  }
+
   {%- if section.settings.sticky_header_type == 'reduce-logo-size' -%}
     .scrolled-past-header .header__heading-logo-wrapper {
       width: 75%;
@@ -75,7 +79,6 @@
 {%- style -%}
   .header {
     padding: {{ section.settings.padding_top | times: 0.5 | round: 0 }}px 3rem {{ section.settings.padding_bottom | times: 0.5 | round: 0 }}px 3rem;
-    background-color: transparent;
   }
 
   .section-header {
