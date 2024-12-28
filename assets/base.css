@@ -3604,6 +3604,7 @@ details-disclosure > details {
   position: absolute;
   top: 0;
   z-index: 10;
+  color: white;
 }
 
 /* Default header for other pages */
