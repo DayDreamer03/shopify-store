@@ -3595,3 +3595,24 @@ details-disclosure > details {
     transform: translateX(100%) scaleX(0);
   }
 }
+
+/* ADDED */
+
+/* Transparent header for homepage */
+.header.homepage {
+  background-color: transparent !important;
+  position: absolute;
+  top: 0;
+  z-index: 10;
+}
+
+/* Default header for other pages */
+.header {
+  background-color: white !important;
+  position: relative;
+  color: black;
+}
+
+.header a {
+  color: black !important; /* Ensures links are black */
+}
