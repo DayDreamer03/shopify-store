@@ -3607,6 +3607,19 @@ details-disclosure > details {
   color: white;
 }
 
+.header.homepage a {
+  color: white !important; /* Ensures links and icons are white */
+}
+
+.header.homepage .header__icon--cart {
+  color: white !important; /* Ensures cart icon is white */
+}
+
+.header.homepage .menu-drawer {
+  background-color: rgba(0, 0, 0, 0.8) !important; /* Ensures the drawer menu contrasts with transparent background */
+  color: white !important; /* Text inside the drawer remains white */
+}
+
 /* Default header for other pages */
 .header {
   background-color: white !important;
@@ -3615,5 +3628,14 @@ details-disclosure > details {
 }
 
 .header a {
-  color: black !important; /* Ensures links are black */
+  color: black !important; /* Ensures links and icons are black */
+}
+
+.header .header__icon--cart {
+  color: black !important; /* Ensures cart icon is black */
+}
+
+.header .menu-drawer {
+  background-color: white !important; /* Drawer matches the white background */
+  color: black !important; /* Text inside the drawer remains black */
 }
