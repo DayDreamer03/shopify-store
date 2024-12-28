@@ -3608,6 +3608,10 @@ details-disclosure > details {
   width: 100%; /* Ensure the header spans the full width of the screen */
 }
 
+.header.homepage a {
+  color: white;
+}
+
 .header {
   width: 100%;
   margin: 0;
