@@ -19,7 +19,19 @@
   }
 
   .header {
-    background-color: transparent;
+    background-color: transparent !important; /* Makes the header transparent */
+    position: absolute; /* Positions the header on top of content */
+    top: 0;
+    width: 100%; /* Ensures it spans the full width */
+    z-index: 10; /* Keeps it above other elements */
+  }
+
+  .header-wrapper {
+    background-color: transparent !important; /* Ensures the wrapper is also transparent */
+  }
+
+  .header a {
+    color: white; /* Adjusts text color for contrast */
   }
 
   {%- if section.settings.sticky_header_type == 'reduce-logo-size' -%}
