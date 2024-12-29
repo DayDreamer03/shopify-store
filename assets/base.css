@@ -3598,4 +3598,29 @@ details-disclosure > details {
 
 /* ADDED */
 
-/* Transparent header for homepage */
+/* Define Aspekta-200 */
+@font-face {
+  font-family: 'Aspekta';
+  src: url('{{ "Aspekta-200.woff2" | asset_url }}') format('woff2'),
+    url('{{ "Aspekta-200.woff" | asset_url }}') format('woff');
+  font-weight: 200;
+  font-style: normal;
+}
+
+/* Define Aspekta-350 */
+@font-face {
+  font-family: 'Aspekta';
+  src: url('{{ "Aspekta-350.woff2" | asset_url }}') format('woff2'),
+    url('{{ "Aspekta-350.woff" | asset_url }}') format('woff');
+  font-weight: 350;
+  font-style: normal;
+}
+
+/* Define AgeoPersonalUse-Medium */
+@font-face {
+  font-family: 'Ageo';
+  src: url('{{ "AgeoPersonalUse-Medium.woff2" | asset_url }}') format('woff2'),
+    url('{{ "AgeoPersonalUse-Medium.woff" | asset_url }}') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
