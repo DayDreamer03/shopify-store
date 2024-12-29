@@ -3697,14 +3697,12 @@ details-disclosure > details {
 .homepage-menu {
   background-color: white;
   padding: 1rem;
-  text-align: center; /* Center-aligns all text within the menu */
 }
 
 .menu-list {
   list-style-type: none;
-  margin: 0 auto; /* Centers the menu list horizontally */
+  margin: 0;
   padding: 0;
-  display: inline-block; /* Ensures the list is centered */
 }
 
 .menu-item {
@@ -3715,17 +3713,14 @@ details-disclosure > details {
   text-decoration: none;
   color: black;
   font-weight: bold;
-  display: inline-block; /* Centers each link */
 }
 
 .menu-link:hover {
   text-decoration: underline;
 }
 
-/* Featured collection */
 .featured-collection {
   margin-top: 1rem;
-  text-align: center; /* Center-aligns the text within the collection */
 }
 
 .featured-collection h3 {
@@ -3736,15 +3731,10 @@ details-disclosure > details {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
   gap: 1rem;
-  justify-content: center; /* Centers the grid items horizontally */
 }
 
 .featured-collection .product-item img {
   max-width: 100%;
   border: 1px solid #ddd;
   border-radius: 5px;
-}
-
-.featured-collection .product-item p {
-  text-align: center; /* Centers the product titles */
 }
