@@ -3645,3 +3645,50 @@ details-disclosure > details {
   font-weight: normal;
   font-style: normal;
 }
+
+/* Transparent header for homepage */
+.header.homepage {
+  background-color: transparent !important;
+  position: absolute;
+  top: 0;
+  z-index: 10;
+  color: white;
+  width: 100%; /* Ensures the header spans the full width */
+}
+
+.header.homepage a,
+.header.homepage .header__icon,
+.header.homepage .menu-drawer-toggle {
+  color: white !important; /* Ensures all text and icons are white */
+}
+
+.header.homepage .menu-drawer {
+  background-color: white !important; /* Drawer menu background: white */
+  color: black !important; /* Drawer menu text: black */
+}
+
+.header.homepage .menu-drawer a {
+  color: black !important; /* Links in drawer menu: black */
+}
+
+/* Default header for other pages */
+.header {
+  background-color: white !important;
+  position: relative;
+  color: black;
+}
+
+.header a,
+.header .header__icon,
+.header .menu-drawer-toggle {
+  color: black !important; /* Ensures text and icons are black */
+}
+
+.header .menu-drawer {
+  background-color: white !important; /* Drawer menu background: white */
+  color: black !important; /* Drawer menu text: black */
+}
+
+.header .menu-drawer a {
+  color: black !important; /* Links in drawer menu: black */
+}
