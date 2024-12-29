@@ -264,7 +264,7 @@ h5,
 .h3,
 .h4,
 .h5 {
-  font-family: 'Milkman', sans-serif;
+  font-family: 'Ageo', sans-serif;
   font-weight: normal;
   font-style: var(--font-heading-style);
   letter-spacing: calc(var(--font-heading-scale) * 0.06rem);
@@ -274,7 +274,7 @@ h5,
 }
 
 h1 {
-  font-family: 'Milkman', sans-serif;
+  font-family: 'Ageo', sans-serif;
   font-weight: normal;
 }
 
