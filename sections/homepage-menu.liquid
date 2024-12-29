@@ -1,37 +1,36 @@
 <div class="homepage-menu">
   <ul class="menu-list">
-    {% assign menu_items = "ALL,TOPS,BOTTOMS,SOCKS,SHOES,ACCESSORIES" | split: "," %}
-    {% assign menu_links = "/collections/all,/collections/tops,/collections/bottoms,/collections/socks,/collections/shoes,/collections/accessories" | split: "," %}
+    {% assign menu_items = 'ALL,TOPS,BOTTOMS,SOCKS,SHOES,ACCESSORIES' | split: ',' %}
+    {% assign menu_handles = 'all,tops,bottoms,socks,shoes,accessories' | split: ',' %}
 
     {% for item in menu_items %}
       <li class="menu-item">
-        <a href="{{ menu_links[forloop.index0] }}" class="menu-link">
+        <a href="#" class="menu-link" data-collection-handle="{{ menu_handles[forloop.index0] }}">
           {{ item }}
         </a>
       </li>
     {% endfor %}
   </ul>
 
-  {% if section.settings.featured_collection %}
-    <div class="featured-collection">
-      {% assign collection_handle = section.settings.featured_collection %}
-      {% assign collection = collections[collection_handle] %}
-
-      {% if collection and collection.products.size > 0 %}
-        <h3>{{ collection.title }}</h3>
-        <div class="products">
-          {% for product in collection.products %}
-            <div class="product-item">
-              <a href="{{ product.url }}">
-                <img src="{{ product.featured_image | img_url: '300x300' }}" alt="{{ product.title }}">
-                <p>{{ product.title }}</p>
-              </a>
-            </div>
-          {% endfor %}
-        </div>
-      {% endif %}
-    </div>
-  {% endif %}
+  <!-- Featured Collection Container -->
+  <div id="featured-collection" class="featured-collection">
+    {% assign collection = collections[section.settings.featured_collection] %}
+    {% if collection and collection.products.size > 0 %}
+      <h3>{{ collection.title }}</h3>
+      <div class="products">
+        {% for product in collection.products %}
+          <div class="product-item">
+            <a href="{{ product.url }}">
+              <img src="{{ product.featured_image | img_url: '300x300' }}" alt="{{ product.title }}">
+              <p>{{ product.title }}</p>
+            </a>
+          </div>
+        {% endfor %}
+      </div>
+    {% else %}
+      <p>No products found.</p>
+    {% endif %}
+  </div>
 </div>
 
 {% schema %}
