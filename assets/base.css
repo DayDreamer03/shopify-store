@@ -248,6 +248,11 @@ body:has(.section-header .drawer-menu) .announcement-bar-section .page-width {
   font-style: var(--font-body-style);
 }
 
+body {
+  font-family: 'Aspekta', sans-serif;
+  font-weight: 200;
+}
+
 h1,
 h2,
 h3,
@@ -499,7 +504,8 @@ h6:empty {
   color: rgb(var(--color-link));
   background-color: transparent;
   font-size: 1.4rem;
-  font-family: inherit;
+  font-family: 'Aspekta', sans-serif;
+  font-weight: 200;
 }
 
 .link--text {
@@ -1923,9 +1929,9 @@ input[type='checkbox'] {
 
 .quantity__input {
   color: currentColor;
-  font-family: var(--font-body-family);
+  font-family: 'Aspekta', sans-serif;
+  font-weight: 200;
   font-style: var(--font-body-style);
-  font-weight: var(--font-body-weight);
   font-size: 1.6rem;
   font-weight: 500;
   opacity: 0.85;
