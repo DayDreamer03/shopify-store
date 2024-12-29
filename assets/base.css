@@ -260,7 +260,7 @@ h5,
 .h4,
 .h5 {
   font-family: 'Aspekta', sans-serif;
-  font-weight: 350; /* Matches the Aspekta-200 font */
+  font-weight: 350;
   font-style: var(--font-heading-style);
   letter-spacing: calc(var(--font-heading-scale) * 0.06rem);
   color: rgb(var(--color-foreground));
@@ -268,9 +268,7 @@ h5,
   word-break: break-word;
 }
 
-h1,
-h2,
-h3 {
+h1 {
   font-family: 'Ageo', sans-serif;
   font-weight: normal;
 }
@@ -339,7 +337,8 @@ h3,
 
 h4,
 .h4 {
-  font-family: var(--font-heading-family);
+  font-family: 'Aspekta', sans-serif;
+  font-weight: 200;
   font-style: var(--font-heading-style);
   font-size: calc(var(--font-heading-scale) * 1.5rem);
 }
@@ -1578,7 +1577,8 @@ details[open] > .share-button__fallback {
   appearance: none;
   background-color: rgb(var(--color-background));
   color: rgb(var(--color-foreground));
-  font-family: var(--font-body-family);
+  font-family: 'Aspekta', sans-serif;
+  font-weight: 200;
   font-style: var(--font-body-style);
   font-weight: var(--font-body-weight);
   font-size: 1.6rem;
@@ -1631,7 +1631,8 @@ details[open] > .share-button__fallback {
 }
 
 .select__select {
-  font-family: var(--font-body-family);
+  font-family: 'Aspekta', sans-serif;
+  font-weight: 200;
   font-style: var(--font-body-style);
   font-weight: var(--font-body-weight);
   font-size: 1.2rem;
@@ -1806,9 +1807,9 @@ details[open] > .share-button__fallback {
 /* Text area */
 
 .text-area {
-  font-family: var(--font-body-family);
+  font-family: 'Aspekta', sans-serif;
+  font-weight: 200;
   font-style: var(--font-body-style);
-  font-weight: var(--font-body-weight);
   min-height: 10rem;
   resize: none;
 }
