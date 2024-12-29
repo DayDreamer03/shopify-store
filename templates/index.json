@@ -27,6 +27,7 @@
     },
     "homepage_menu_AAH48p": {
       "type": "homepage-menu",
+      "disabled": true,
       "settings": {
         "featured_collection": ""
       }
