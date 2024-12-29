@@ -25,13 +25,6 @@
         "show_text_below": false
       }
     },
-    "homepage_menu_AAH48p": {
-      "type": "homepage-menu",
-      "disabled": true,
-      "settings": {
-        "featured_collection": ""
-      }
-    },
     "featured_collection_y9nmyc": {
       "type": "featured-collection",
       "settings": {
@@ -63,7 +56,6 @@
   },
   "order": [
     "image_banner",
-    "homepage_menu_AAH48p",
     "featured_collection_y9nmyc"
   ]
 }
