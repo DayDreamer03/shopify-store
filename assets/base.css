@@ -259,8 +259,8 @@ h5,
 .h3,
 .h4,
 .h5 {
-  font-family: 'Aspekta', sans-serif;
-  font-weight: 350;
+  font-family: 'Milkman', sans-serif;
+  font-weight: normal;
   font-style: var(--font-heading-style);
   letter-spacing: calc(var(--font-heading-scale) * 0.06rem);
   color: rgb(var(--color-foreground));
@@ -269,7 +269,7 @@ h5,
 }
 
 h1 {
-  font-family: 'Ageo', sans-serif;
+  font-family: 'Milkman', sans-serif;
   font-weight: normal;
 }
 
@@ -3629,6 +3629,13 @@ details-disclosure > details {
   font-family: 'Ageo';
   src: url('{{ "AgeoPersonalUse-Medium.woff2" | asset_url }}') format('woff2'),
     url('{{ "AgeoPersonalUse-Medium.woff" | asset_url }}') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Milkman';
+  src: url('{{ "Milkman.woff2" | asset_url }}') format('woff2'), url('{{ "Milkman.woff" | asset_url }}') format('woff');
   font-weight: normal;
   font-style: normal;
 }
