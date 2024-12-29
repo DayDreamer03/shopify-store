@@ -264,8 +264,8 @@ h5,
 .h3,
 .h4,
 .h5 {
-  font-family: 'Ageo', sans-serif;
-  font-weight: normal;
+  font-family: 'Aspekta', sans-serif;
+  font-weight: '350';
   font-style: var(--font-heading-style);
   letter-spacing: calc(var(--font-heading-scale) * 0.06rem);
   color: rgb(var(--color-foreground));
@@ -274,8 +274,8 @@ h5,
 }
 
 h1 {
-  font-family: 'Ageo', sans-serif;
-  font-weight: normal;
+  font-family: 'Aspekta', sans-serif;
+  font-weight: '350';
 }
 
 .hxxl {
