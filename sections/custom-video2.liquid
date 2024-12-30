@@ -1,6 +1,51 @@
+<div class="custom-video-section">
+  <video 
+    autoplay 
+    loop 
+    muted 
+    playsinline 
+    class="custom-video"
+  >
+    <source src="{{ section.settings.video_url }}" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+</div>
+
 {% schema %}
-  {
-    "name": "Section name",
-    "settings": []
-  }
+{
+  "name": "Custom Video Section",
+  "settings": [
+    {
+      "type": "url",
+      "id": "video_url",
+      "label": "Video URL"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Padding Top",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "default": 20,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Padding Bottom",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "default": 20,
+      "unit": "px"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Custom Video",
+      "category": "Media"
+    }
+  ]
+}
 {% endschema %}
