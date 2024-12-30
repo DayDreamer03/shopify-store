@@ -3738,7 +3738,3 @@ details-disclosure > details {
   border: 1px solid #ddd;
   border-radius: 5px;
 }
-
-body.template-index .header__heading-link {
-  display: none;
-}
