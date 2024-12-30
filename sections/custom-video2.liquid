@@ -70,7 +70,8 @@
   }
   }
 
-  .custom-video-section {
+  @media (min-width: 769px) {
+    .custom-video-section {
     position: relative; /* Make the container positionable */
     width: 100vw; /* Full screen width */
     height: 80vh; /* Full screen height */
@@ -85,5 +86,6 @@
     width: 100vw; /* Make video span full width */
     height: 100vh; /* Make video span full height */
     object-fit: cover; /* Scale video to cover container */
+  }
   }
 {% endstyle %}
