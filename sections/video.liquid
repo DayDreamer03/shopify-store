@@ -73,6 +73,11 @@
         {%- else -%}
           {{ 'hero-apparel-3' | placeholder_svg_tag: 'placeholder-svg placeholder' }}
         {%- endif -%}
+        <span class="deferred-media__poster-button motion-reduce">
+          <span class="svg-wrapper">
+            {{- 'icon-play.svg' | inline_asset_content -}}
+          </span>
+        </span>
       </button>
       <template>
         {%- if section.settings.video == null and section.settings.video_url != null -%}
@@ -105,10 +110,9 @@
             | video_tag:
               image_size: '1100x',
               autoplay: true,
-              loop: true,
-              controls: false,
-              muted: true,
-              playsinline: true
+              loop: section.settings.enable_video_looping,
+              controls: true,
+              muted: false
           }}
         {%- endif -%}
       </template>
