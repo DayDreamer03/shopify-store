@@ -1,0 +1,52 @@
+<div class="custom-text-section">
+  <div class="centered-content">
+    <h1>WE ARE CONSTANTLY SURROUNDED BY DISTRACTIONS AND FAKE DOPAMINE</h1>
+    <div class="info-links">
+      <a href="#" class="info-link">ABOUT</a>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Custom Text Section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "main_text",
+      "label": "Main Text",
+      "default": "WE ARE CONSTANTLY SURROUNDED BY DISTRACTIONS AND FAKE DOPAMINE"
+    },
+    {
+      "type": "text",
+      "id": "left_link",
+      "label": "Left Link Text",
+      "default": "INFO"
+    },
+    {
+      "type": "url",
+      "id": "left_link_url",
+      "label": "Left Link URL",
+      "default": "#"
+    },
+    {
+      "type": "text",
+      "id": "right_link",
+      "label": "Right Link Text",
+      "default": "FAKE HAPPINESS"
+    },
+    {
+      "type": "url",
+      "id": "right_link_url",
+      "label": "Right Link URL",
+      "default": "#"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Custom Text Section",
+      "category": "Custom"
+    }
+  ]
+}
+{% endschema %}

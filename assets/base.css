@@ -3738,3 +3738,43 @@ details-disclosure > details {
   border: 1px solid #ddd;
   border-radius: 5px;
 }
+
+.custom-text-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh; /* Full-screen height */
+  background-color: black; /* Background color */
+  color: white; /* Text color */
+  text-transform: uppercase; /* Make text uppercase */
+  font-family: 'Courier New', Courier, monospace; /* Optional aesthetic font */
+}
+
+.centered-content {
+  text-align: center;
+}
+
+.centered-content h1 {
+  font-size: 2vw; /* Responsive font size */
+  font-weight: normal;
+  line-height: 1.4;
+}
+
+.info-links {
+  display: flex;
+  justify-content: center;
+  gap: 2rem; /* Space between links */
+  margin-top: 1rem;
+}
+
+.info-link {
+  text-decoration: none;
+  color: white;
+  font-size: 1vw;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.info-link:hover {
+  color: gray; /* Change color on hover */
+}
