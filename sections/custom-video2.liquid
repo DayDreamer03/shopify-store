@@ -1,9 +1,9 @@
 <div class="custom-video-section">
-  <video 
-    autoplay 
-    loop 
-    muted 
-    playsinline 
+  <video
+    autoplay
+    loop
+    muted
+    playsinline
     class="custom-video"
   >
     <source src="{{ section.settings.video_url }}" type="video/mp4">
@@ -49,3 +49,22 @@
   ]
 }
 {% endschema %}
+
+{% style %}
+  .custom-video-section {
+    padding-top: {{ section.settings.padding_top }}px;
+    padding-bottom: {{ section.settings.padding_bottom }}px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #000; /* Adjust to your design */
+  }
+
+  .custom-video {
+    width: 100%; /* Make the video responsive */
+    height: auto; /* Maintain the aspect ratio */
+    max-width: 1200px; /* Set a maximum width to prevent it from being too large */
+    border-radius: 8px; /* Optional styling for rounded corners */
+    object-fit: cover; /* Ensures the video scales properly without distortion */
+  }
+{% endstyle %}
