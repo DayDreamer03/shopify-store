@@ -1,0 +1,25 @@
+<div class="container">
+  <div class="intro-copy">
+    <p>This message stays right here,</p>
+    <p>no matter where you go,</p>
+    <p>it won't move an inch,</p>
+    <p>even if you scroll up or down.</p>
+  </div>
+
+  <div class="headers">
+    {% for i in (1..7) %}
+      <section id="section-{{ i }}">
+        <h1>Section {{ i }}</h1>
+      </section>
+    {% endfor %}
+    <div class="spacer"></div>
+  </div>
+
+  <div class="section-previews">
+    {% for i in (1..7) %}
+      <div class="img" id="preview-{{ i }}">
+        <img src="{{ 'img-' | append: i | append: '.png' | asset_url }}" alt="Image {{ i }}">
+      </div>
+    {% endfor %}
+  </div>
+</div>
