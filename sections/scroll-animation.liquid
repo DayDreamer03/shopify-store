@@ -1,13 +1,15 @@
 <div class="container">
-  <div class="intro-copy">
-    <p>This message stays right here,</p>
-    <p>no matter where you go,</p>
-    <p>it won't move an inch,</p>
-    <p>even if you scroll up or down.</p>
-  </div>
+  {% if section.settings.show_intro_text %}
+    <div class="intro-copy">
+      <p>{{ section.settings.intro_text_line_1 }}</p>
+      <p>{{ section.settings.intro_text_line_2 }}</p>
+      <p>{{ section.settings.intro_text_line_3 }}</p>
+      <p>{{ section.settings.intro_text_line_4 }}</p>
+    </div>
+  {% endif %}
 
   <div class="headers">
-    {% for i in (1..7) %}
+    {% for i in (1..section.settings.number_of_sections) %}
       <section id="section-{{ i }}">
         <h1>Section {{ i }}</h1>
       </section>
@@ -16,10 +18,63 @@
   </div>
 
   <div class="section-previews">
-    {% for i in (1..7) %}
+    {% for i in (1..section.settings.number_of_sections) %}
       <div class="img" id="preview-{{ i }}">
         <img src="{{ 'img-' | append: i | append: '.png' | asset_url }}" alt="Image {{ i }}">
       </div>
     {% endfor %}
   </div>
 </div>
+
+{% schema %}
+{
+  "name": "Scroll Effect Section",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "show_intro_text",
+      "label": "Show Intro Text",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "intro_text_line_1",
+      "label": "Intro Text Line 1",
+      "default": "This message stays right here,"
+    },
+    {
+      "type": "text",
+      "id": "intro_text_line_2",
+      "label": "Intro Text Line 2",
+      "default": "no matter where you go,"
+    },
+    {
+      "type": "text",
+      "id": "intro_text_line_3",
+      "label": "Intro Text Line 3",
+      "default": "it won't move an inch,"
+    },
+    {
+      "type": "text",
+      "id": "intro_text_line_4",
+      "label": "Intro Text Line 4",
+      "default": "even if you scroll up or down."
+    },
+    {
+      "type": "range",
+      "id": "number_of_sections",
+      "label": "Number of Sections",
+      "min": 1,
+      "max": 10,
+      "step": 1,
+      "default": 7
+    }
+  ],
+  "presets": [
+    {
+      "name": "Scroll Effect Section",
+      "category": "Custom"
+    }
+  ]
+}
+{% endschema %}
