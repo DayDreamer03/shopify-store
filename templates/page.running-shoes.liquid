@@ -10,37 +10,36 @@
       margin-bottom: 20px;
     }
 
-    .brand-row {
-      margin-bottom: 40px;
+    .table {
+      display: grid;
+      grid-template-columns: 1fr repeat(3, 1fr); /* 1 column for brands, 3 for distances */
+      gap: 20px;
     }
 
-    .brand-row h2 {
-      font-size: 24px;
+    .table-header {
+      text-align: center;
+      font-weight: bold;
       text-transform: uppercase;
-      margin-bottom: 10px;
-      border-bottom: 2px solid #000;
-      padding-bottom: 5px;
+      padding: 10px 0;
     }
 
-    .distance-columns {
-      display: flex;
-      justify-content: space-between;
-    }
-
-    .distance-column {
-      width: 24%; /* Each distance column takes up 1/4 of the row */
+    .brand-cell {
+      font-size: 20px;
+      font-weight: bold;
+      text-transform: uppercase;
+      border-right: 2px solid #000;
+      padding: 10px;
       text-align: center;
     }
 
-    .distance-column h3 {
-      font-size: 18px;
-      margin-bottom: 10px;
-      color: #333;
+    .distance-cell {
+      text-align: center;
     }
 
     .product-card {
-      margin-bottom: 15px;
+      display: inline-block;
       text-align: center;
+      margin-bottom: 10px;
     }
 
     .product-card img {
@@ -52,57 +51,64 @@
 
     .product-card p {
       font-size: 14px;
-      margin-top: 5px;
       color: #555;
     }
 
     @media (max-width: 768px) {
-      .distance-columns {
-        flex-wrap: wrap;
+      .table {
+        grid-template-columns: 1fr; /* Stack all columns on mobile */
       }
 
-      .distance-column {
-        width: 48%; /* Adjust for smaller screens */
-        margin-bottom: 20px;
+      .brand-cell {
+        border-right: none;
       }
     }
   </style>
 
-  <h1>Running Shoese</h1>
+  <h1>Running Shoes</h1>
 
   {% assign brands = 'nike,newbalance' | split: ',' %}
   {% assign distances = '42k,10k,training' | split: ',' %}
 
-  <div class="brands">
+  <!-- Table Header -->
+  <div class="table">
+    <div></div>
+    <!-- Empty cell for the top-left corner -->
+    {% for distance in distances %}
+      <div class="table-header">{{ distance | upcase }}</div>
+    {% endfor %}
+
+    <!-- Table Body -->
     {% for brand in brands %}
-      <div class="brand-row">
-        <h2>{{ brand | capitalize }}</h2>
-        <div class="distance-columns">
-          {% for distance in distances %}
-            <div class="distance-column">
-              <h3>{{ distance | upcase }}</h3>
-              <div class="products">
-                {% assign products = all_products
-                  | where: 'tags', 'brand-#{brand}'
-                  | where: 'tags', 'distance-#{distance}'
-                %}
-                {% if products.size > 0 %}
-                  {% for product in products %}
-                    <div class="product-card">
-                      <a href="{{ product.url }}">
-                        <img src="{{ product.featured_image | img_url: '300x300' }}" alt="{{ product.title }}">
-                        <p>{{ product.title }}</p>
-                      </a>
-                    </div>
-                  {% endfor %}
-                {% else %}
-                  <p>No products available</p>
-                {% endif %}
-              </div>
-            </div>
+      <div class="brand-cell">{{ brand | capitalize }}</div>
+      {% for distance in distances %}
+        <div class="distance-cell">
+          {% assign products = collections.all.products %}
+          {% assign filtered_products = '' %}
+          {% for product in products %}
+            {% if product.tags contains 'brand-#{brand}' and product.tags contains 'distance-#{distance}' %}
+              {% assign filtered_products = filtered_products | append: product.id | append: ',' %}
+            {% endif %}
           {% endfor %}
+
+          {% assign filtered_product_ids = filtered_products | split: ',' | uniq %}
+
+          {% if filtered_product_ids.size > 1 %}
+            {% for product in products %}
+              {% if filtered_product_ids contains product.id %}
+                <div class="product-card">
+                  <a href="{{ product.url }}">
+                    <img src="{{ product.featured_image | img_url: '300x300' }}" alt="{{ product.title }}">
+                    <p>{{ product.title }}</p>
+                  </a>
+                </div>
+              {% endif %}
+            {% endfor %}
+          {% else %}
+            <p>No products available</p>
+          {% endif %}
         </div>
-      </div>
+      {% endfor %}
     {% endfor %}
   </div>
 </div>
