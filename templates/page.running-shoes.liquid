@@ -88,7 +88,12 @@
             {% if product.tags contains 'brand-#{brand}' and product.tags contains 'distance-#{distance}' %}
               <div class="product-card">
                 <a href="{{ product.url }}">
-                  <img src="{{ product.featured_image | img_url: '300x300' }}" alt="{{ product.title }}">
+                  <img
+                    src="{{ product.featured_image | img_url: '300x300' }}"
+                    alt="{{ product.title }}"
+                    width="300"
+                    height="300"
+                  >
                   <p>{{ product.title }}</p>
                 </a>
               </div>
