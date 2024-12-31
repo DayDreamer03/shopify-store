@@ -3841,7 +3841,7 @@ details-disclosure > details {
 .animated-landing-section a,
 .animated-landing-section p {
   text-decoration: none;
-  color: transparent;
+  color: #fff;
   font-family: 'Arial', sans-serif;
   font-weight: 500;
   font-size: 13px;
@@ -3914,6 +3914,6 @@ details-disclosure > details {
   bottom: 2em;
   transform: translateX(-50%);
   text-align: center;
-  color: transparent;
+  color: white;
   font-family: 'Arial', sans-serif;
 }
