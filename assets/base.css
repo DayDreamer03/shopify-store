@@ -3852,10 +3852,12 @@ details-disclosure > details {
   }
 
   .block {
-    flex: 1;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
     height: 100%;
-    background: #000;
-    clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+    background-color: transparent; /* Ensure no unwanted colors */
   }
 
   h1 {
@@ -3902,4 +3904,22 @@ details-disclosure > details {
     transform: translateX(-50%);
     text-align: center;
   }
+}
+
+.animated-landing-section {
+  position: relative;
+  background-color: transparent; /* Ensure transparency */
+  overflow: hidden; /* Prevent content overflow */
+  width: 100vw; /* Full-width background */
+  height: 100vh; /* Full-height background */
+}
+
+.animated-landing-section video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%; /* Stretch to fill the section */
+  height: 100%; /* Stretch to fill the section */
+  object-fit: cover; /* Maintain aspect ratio and crop overflow */
+  z-index: -1; /* Push the video behind other elements */
 }
