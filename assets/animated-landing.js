@@ -1,9 +1,10 @@
-// Load local GSAP
-const gsapScript = document.createElement('script');
-gsapScript.src = "{{ 'gsap.min.js' | asset_url }}";
-gsapScript.onload = () => {
-  // Your GSAP animation code
-  document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener('DOMContentLoaded', function () {
+  // Ensure GSAP is loaded first
+  const gsapScript = document.createElement('script');
+  gsapScript.src = "{{ 'gsap.min.js' | asset_url }}";
+
+  gsapScript.onload = function () {
+    // Your GSAP animation code
     gsap.set('h1', { y: 100 });
     gsap.set('.counter p', { y: 35 });
 
@@ -50,7 +51,7 @@ gsapScript.onload = () => {
     });
 
     tl.from('.logo, .link, footer p', { y: 40, opacity: 0, stagger: 0.2 });
-  });
-};
+  };
 
-document.head.appendChild(gsapScript);
+  document.head.appendChild(gsapScript);
+});
