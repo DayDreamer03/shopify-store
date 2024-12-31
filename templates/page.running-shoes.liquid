@@ -71,34 +71,37 @@
   {% assign brands = 'nike,newbalance' | split: ',' %}
   {% assign distances = '42k,10k,training' | split: ',' %}
 
-  <!-- Table -->
   <div class="table">
     <!-- Distance Headers -->
-    <div class="table-header">
-      <div></div>
-      <!-- Empty cell for the top-left corner -->
-      {% for distance in distances %}
-        <div>{{ distance | upcase }}</div>
-      {% endfor %}
-    </div>
+    <div class="table-header"></div>
+    {% for distance in distances %}
+      <div class="table-header">{{ distance | upcase }}</div>
+    {% endfor %}
 
     <!-- Table Body -->
     {% for brand in brands %}
       <div class="brand-cell">{{ brand | capitalize }}</div>
       {% for distance in distances %}
         <div class="distance-cell">
-          {% assign filtered_products = collections.all.products
-            | where: 'tags', 'brand-#{brand}'
-            | where: 'tags', 'distance-#{distance}'
-          %}
-          {% if filtered_products.size > 0 %}
-            {% for product in filtered_products %}
-              <div class="product-card">
-                <a href="{{ product.url }}">
-                  <img src="{{ product.featured_image | img_url: '300x300' }}" alt="{{ product.title }}">
-                  <p>{{ product.title }}</p>
-                </a>
-              </div>
+          {% assign filtered_products = '' %}
+          {% for product in collections.all.products %}
+            {% if product.tags contains 'brand-#{brand}' and product.tags contains 'distance-#{distance}' %}
+              {% assign filtered_products = filtered_products | append: product.id | append: ',' %}
+            {% endif %}
+          {% endfor %}
+
+          {% assign filtered_product_ids = filtered_products | split: ',' | uniq %}
+
+          {% if filtered_product_ids.size > 1 %}
+            {% for product in collections.all.products %}
+              {% if filtered_product_ids contains product.id %}
+                <div class="product-card">
+                  <a href="{{ product.url }}">
+                    <img src="{{ product.featured_image | img_url: '300x300' }}" alt="{{ product.title }}">
+                    <p>{{ product.title }}</p>
+                  </a>
+                </div>
+              {% endif %}
             {% endfor %}
           {% else %}
             <p>No products available</p>
