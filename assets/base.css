@@ -3778,13 +3778,3 @@ details-disclosure > details {
 .info-link:hover {
   color: gray; /* Change color on hover */
 }
-
-.footer-copyright {
-  position: fixed; /* Keeps it at the bottom-left regardless of scrolling */
-  bottom: 1rem; /* Adjusts the distance from the bottom of the screen */
-  left: 1rem; /* Adjusts the distance from the left side of the screen */
-  color: black; /* Sets the text color to black */
-  font-family: Arial, sans-serif; /* Optional: Set a clean font */
-  font-size: 14px; /* Adjusts the font size */
-  z-index: 10; /* Ensures it appears above other elements */
-}
