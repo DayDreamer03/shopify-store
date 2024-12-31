@@ -1,0 +1,36 @@
+<div class="running-shoes-grid">
+  <h1>Running Shoes Organized by Brand and Distance</h1>
+
+  {% assign brands = "nike,adidas,puma" | split: ',' %}
+  {% assign distances = "42k,10k,training,footing" | split: ',' %}
+
+  <div class="brands">
+    {% for brand in brands %}
+      <div class="brand-row">
+        <h2>{{ brand | capitalize }}</h2>
+        <div class="distance-columns">
+          {% for distance in distances %}
+            <div class="distance-column">
+              <h3>{{ distance | upcase }}</h3>
+              <div class="products">
+                {% assign products = all_products | where: "tags", "brand-#{brand}" | where: "tags", "distance-#{distance}" %}
+                {% if products.size > 0 %}
+                  {% for product in products %}
+                    <div class="product-card">
+                      <a href="{{ product.url }}">
+                        <img src="{{ product.featured_image | img_url: '300x300' }}" alt="{{ product.title }}">
+                        <p>{{ product.title }}</p>
+                      </a>
+                    </div>
+                  {% endfor %}
+                {% else %}
+                  <p>No products available</p>
+                {% endif %}
+              </div>
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+</div>
