@@ -9,12 +9,6 @@
  */
 {
   "sections": {
-    "animated_landing_LL8Jkj": {
-      "type": "animated-landing",
-      "settings": {
-        "video_url": "https://cdn.shopify.com/videos/c/o/v/2075626a9a4a4cc9bdf1cd910d6c184d.mov"
-      }
-    },
     "custom_video2_epKzzD": {
       "type": "custom-video2",
       "settings": {
@@ -59,7 +53,6 @@
     }
   },
   "order": [
-    "animated_landing_LL8Jkj",
     "custom_video2_epKzzD",
     "homepage_menu_DXBgar",
     "featured_collection_y9nmyc"
