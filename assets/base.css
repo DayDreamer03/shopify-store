@@ -3778,3 +3778,71 @@ details-disclosure > details {
 .info-link:hover {
   color: gray; /* Change color on hover */
 }
+
+.running-shoes-grid {
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.brand-row {
+  margin-bottom: 40px;
+}
+
+.brand-row h2 {
+  font-size: 24px;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  border-bottom: 2px solid #000;
+  padding-bottom: 5px;
+}
+
+.distance-columns {
+  display: flex;
+  justify-content: space-between;
+}
+
+.distance-column {
+  width: 24%; /* Each distance column takes up 1/4 of the row */
+  text-align: center;
+}
+
+.distance-column h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.product-card {
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.product-card img {
+  width: 100%;
+  max-width: 150px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.product-card p {
+  font-size: 14px;
+  margin-top: 5px;
+  color: #555;
+}
+
+@media (max-width: 768px) {
+  .distance-columns {
+    flex-wrap: wrap;
+  }
+
+  .distance-column {
+    width: 48%; /* Adjust for smaller screens */
+    margin-bottom: 20px;
+  }
+}
+
