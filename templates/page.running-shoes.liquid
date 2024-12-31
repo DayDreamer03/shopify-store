@@ -84,26 +84,17 @@
       {% for distance in distances %}
         <div class="distance-cell">
           {% assign filtered_products = '' %}
-          {% for product in collections.all.products %}
+          {% for product in collections.shoes.products %}
             {% if product.tags contains 'brand-#{brand}' and product.tags contains 'distance-#{distance}' %}
-              {% assign filtered_products = filtered_products | append: product.id | append: ',' %}
+              <div class="product-card">
+                <a href="{{ product.url }}">
+                  <img src="{{ product.featured_image | img_url: '300x300' }}" alt="{{ product.title }}">
+                  <p>{{ product.title }}</p>
+                </a>
+              </div>
             {% endif %}
           {% endfor %}
-
-          {% assign filtered_product_ids = filtered_products | split: ',' | uniq %}
-
-          {% if filtered_product_ids.size > 1 %}
-            {% for product in collections.all.products %}
-              {% if filtered_product_ids contains product.id %}
-                <div class="product-card">
-                  <a href="{{ product.url }}">
-                    <img src="{{ product.featured_image | img_url: '300x300' }}" alt="{{ product.title }}">
-                    <p>{{ product.title }}</p>
-                  </a>
-                </div>
-              {% endif %}
-            {% endfor %}
-          {% else %}
+          {% if filtered_products == '' %}
             <p>No products available</p>
           {% endif %}
         </div>
