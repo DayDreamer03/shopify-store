@@ -3820,6 +3820,7 @@ details-disclosure > details {
   display: flex;
   justify-content: space-between;
   z-index: 2;
+  background-color: transparent;
 }
 
 .animated-landing-section footer {
@@ -3840,7 +3841,7 @@ details-disclosure > details {
 .animated-landing-section a,
 .animated-landing-section p {
   text-decoration: none;
-  color: #fff;
+  color: transparent;
   font-family: 'Arial', sans-serif;
   font-weight: 500;
   font-size: 13px;
@@ -3913,6 +3914,6 @@ details-disclosure > details {
   bottom: 2em;
   transform: translateX(-50%);
   text-align: center;
-  color: white;
+  color: transparent;
   font-family: 'Arial', sans-serif;
 }
