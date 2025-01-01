@@ -21,6 +21,7 @@
       font-weight: bold;
       text-transform: uppercase;
       padding: 10px 0;
+      grid-column: span 1; /* Ensure headers span one column */
     }
 
     .brand-cell {
@@ -45,8 +46,9 @@
 
     .product-card img {
       width: 100%;
-      max-width: 150px;
-      border: 1px solid #ddd;
+      max-width: 100px; /* Smaller image size */
+      height: auto; /* Maintain aspect ratio */
+      border: none; /* Remove outline */
       border-radius: 5px;
     }
 
@@ -93,8 +95,8 @@
                   <img
                     src="{{ product.featured_image | img_url: '300x300' }}"
                     alt="{{ product.title }}"
-                    width="300"
-                    height="300"
+                    width="100"
+                    height="auto"
                   >
                   <p>{{ product.title }}</p>
                 </a>
