@@ -30,6 +30,7 @@
       border-right: 2px solid #000;
       padding: 10px;
       text-align: center;
+      grid-column: 1; /* Ensure brand names are in the first column */
     }
 
     .distance-cell {
@@ -84,7 +85,9 @@
         <div class="distance-cell">
           {% assign filtered_products = false %}
           {% for product in collections.shoes.products %}
-            {% if product.tags contains 'brand-' | append: brand and product.tags contains 'distance-' | append: distance %}
+            {% assign brand_tag = 'brand-' | append: brand %}
+            {% assign distance_tag = 'distance-' | append: distance %}
+            {% if product.tags contains brand_tag and product.tags contains distance_tag %}
               <div class="product-card">
                 <a href="{{ product.url }}">
                   <img
