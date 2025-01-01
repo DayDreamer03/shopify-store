@@ -108,16 +108,20 @@
             {% assign distance_tag = 'distance-' | append: distance %}
             {% if product.tags contains brand_tag and product.tags contains distance_tag %}
               <div class="product-card">
-                <a href="{{ product.url }}">
-                  <img
-                    src="{{ product.featured_image | img_url: '300x300' }}"
-                    alt="{{ product.title }}"
-                    width="100"
-                    height="auto"
+                <h3
+                  class="card__heading{% if product.featured_media or settings.card_style == 'standard' %} h5{% endif %}"
+                  id="title-{{ section.id }}-{{ product.id }}"
+                >
+                  <a
+                    href="{{ product.url }}"
+                    id="CardLink-{{ section.id }}-{{ product.id }}"
+                    class="full-unstyled-link"
+                    aria-labelledby="CardLink-{{ section.id }}-{{ product.id }} Badge-{{ section.id }}-{{ product.id }}"
                   >
-                  <p class="product-card__title">{{ product.title }}</p>
-                </a>
-                <p class="product-card__price">{{ product.price | money_with_currency }}</p>
+                    {{ product.title | escape }}
+                  </a>
+                </h3>
+                {% render 'price', product: product, price_class: '', show_compare_at_price: true %}
               </div>
               {% assign filtered_products = true %}
             {% endif %}
