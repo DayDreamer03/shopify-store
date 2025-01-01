@@ -37,6 +37,11 @@
       justify-content: center;
     }
 
+    .brand-logo {
+      max-width: 100px; /* Adjust the size of the logo */
+      height: auto;
+    }
+
     .distance-cell {
       text-align: center;
     }
@@ -79,7 +84,13 @@
 
     <!-- Table Body -->
     {% for brand in brands %}
-      <div class="brand-cell">{{ brand | capitalize }}</div>
+      <div class="brand-cell">
+        <img
+          src="{{ 'logo-' | append: brand | append: '.png' | asset_url }}"
+          alt="{{ brand | capitalize }}"
+          class="brand-logo"
+        >
+      </div>
       {% for distance in distances %}
         <div class="distance-cell">
           {% assign filtered_products = false %}
@@ -97,7 +108,7 @@
                   >
                   <p>{{ product.title }}</p>
                 </a>
-                <p>{{ product.price }}</p>
+                <p>{{ product.price | money_with_currency }}</p>
               </div>
               {% assign filtered_products = true %}
             {% endif %}
