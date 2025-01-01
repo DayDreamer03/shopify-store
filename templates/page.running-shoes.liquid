@@ -32,6 +32,9 @@
       padding: 10px;
       text-align: center;
       grid-column: 1; /* Ensure brand names are in the first column */
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
 
     .distance-cell {
@@ -94,6 +97,7 @@
                   >
                   <p>{{ product.title }}</p>
                 </a>
+                <p>{{ product.price }}</p>
               </div>
               {% assign filtered_products = true %}
             {% endif %}
