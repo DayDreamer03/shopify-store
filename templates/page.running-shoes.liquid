@@ -17,7 +17,6 @@
     }
 
     .table-header {
-      grid-column: 2 / span 3; /* Distance headers span columns 2 to 4 */
       text-align: center;
       font-weight: bold;
       text-transform: uppercase;
@@ -83,9 +82,9 @@
       <div class="brand-cell">{{ brand | capitalize }}</div>
       {% for distance in distances %}
         <div class="distance-cell">
-          {% assign filtered_products = '' %}
+          {% assign filtered_products = false %}
           {% for product in collections.shoes.products %}
-            {% if product.tags contains 'brand-#{brand}' and product.tags contains 'distance-#{distance}' %}
+            {% if product.tags contains 'brand-' | append: brand and product.tags contains 'distance-' | append: distance %}
               <div class="product-card">
                 <a href="{{ product.url }}">
                   <img
@@ -97,11 +96,12 @@
                   <p>{{ product.title }}</p>
                 </a>
               </div>
+              {% assign filtered_products = true %}
             {% endif %}
           {% endfor %}
-          {% if filtered_products == '' %}
+          {% unless filtered_products %}
             <p>No products available</p>
-          {% endif %}
+          {% endunless %}
         </div>
       {% endfor %}
     {% endfor %}
