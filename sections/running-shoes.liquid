@@ -57,11 +57,6 @@
       text-align: center;
       text-transform: uppercase;
     }
-
-    .product-card img {
-      width: 100px;
-      height: auto;
-    }
   </style>
 
   <img
@@ -97,19 +92,17 @@
           {% for product in collections.shoes.products %}
             {% assign brand_tag = 'brand-' | append: brand %}
             {% assign distance_tag = 'distance-' | append: distance %}
-            <div class="product-card">
-              {% if product.tags contains brand_tag and product.tags contains distance_tag %}
-                {% render 'card-product',
-                  card_product: product,
-                  media_aspect_ratio: 'square',
-                  image_shape: 'default',
-                  show_secondary_image: false,
-                  show_vendor: false,
-                  show_rating: false
-                %}
-                {% assign filtered_products = true %}
-              {% endif %}
-            </div>
+            {% if product.tags contains brand_tag and product.tags contains distance_tag %}
+              {% render 'card-product',
+                card_product: product,
+                media_aspect_ratio: 'square',
+                image_shape: 'default',
+                show_secondary_image: false,
+                show_vendor: false,
+                show_rating: false
+              %}
+              {% assign filtered_products = true %}
+            {% endif %}
           {% endfor %}
           {% unless filtered_products %}
             <p>No products available</p>
@@ -119,3 +112,23 @@
     {% endfor %}
   </div>
 </div>
+
+{% schema %}
+{
+  "name": "Running Shoes Grid",
+  "settings": [
+    {
+      "type": "text",
+      "id": "section_title",
+      "label": "Section Title",
+      "default": "SHOES"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Running Shoes Grid",
+      "category": "Custom"
+    }
+  ]
+}
+{% endschema %}
