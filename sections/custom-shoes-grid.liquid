@@ -71,9 +71,8 @@
         font-size: 11px;
       }
 
-      .card__heading a:after (
-        outline-offset: 0;
-      )
+      .card-information > *:not(.visually-hidden:first-child) + *:not(.rating):not(.card__information-volume-pricing-note) {
+        margin-top: 0.3rem; /* Reduce the space between elements */
     }
 
     @media (min-width: 768px) {
