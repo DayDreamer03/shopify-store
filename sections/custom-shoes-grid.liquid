@@ -54,10 +54,6 @@
 
     @media (max-width: 768px) {
 
-        {% assign brands = 'nike,newbalance' | split: ',' %}
-        {% assign distance_names = '42K / 21K,10K / 5K' | split: ',' %}
-        {% assign distances = '42k,10K' | split: ',' %}
-
       .table-header {
         font-size: 16px;
       }
@@ -77,10 +73,6 @@
 
     @media (min-width: 768px) {
 
-        {% assign brands = 'nike,newbalance' | split: ',' %}
-        {% assign distance_names = '42K / 21K,10K / 5K,training' | split: ',' %}
-        {% assign distances = '42k,10K,training' | split: ',' %}
-
       .card {
         width: 50px; /* Smaller card size for large screens */
         height: auto; /* Adjust height */
@@ -91,6 +83,20 @@
         }
     }
   </style>
+
+  <script>
+    let brands = ['nike', 'newbalance'];
+    let distanceNames = [];
+    let distances = [];
+
+    if (window.innerWidth > 768) {
+      distanceNames = ['42K / 21K', '10K / 5K', 'Training'];
+      distances = ['42k', '10K', 'training'];
+    } else {
+      distanceNames = ['42K / 21K', '10K / 5K'];
+      distances = ['42k', '10K'];
+    }
+  </script>
 
   <div class="table">
     <!-- Distance Headers -->
