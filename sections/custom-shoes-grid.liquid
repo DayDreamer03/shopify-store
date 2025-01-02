@@ -53,6 +53,11 @@
     }
 
     @media (max-width: 768px) {
+
+        {% assign brands = 'nike,newbalance' | split: ',' %}
+        {% assign distance_names = '42K / 21K,10K / 5K' | split: ',' %}
+        {% assign distances = '42k,10K' | split: ',' %}
+
       .table-header {
         font-size: 16px;
       }
@@ -71,6 +76,11 @@
     }
 
     @media (min-width: 768px) {
+
+        {% assign brands = 'nike,newbalance' | split: ',' %}
+        {% assign distance_names = '42K / 21K,10K / 5K,training' | split: ',' %}
+        {% assign distances = '42k,10K,training' | split: ',' %}
+
       .card {
         width: 50px; /* Smaller card size for large screens */
         height: auto; /* Adjust height */
@@ -81,10 +91,6 @@
         }
     }
   </style>
-
-  {% assign brands = 'nike,newbalance' | split: ',' %}
-  {% assign distance_names = '42K / 21K,10K / 5K' | split: ',' %}
-  {% assign distances = '42k,10K' | split: ',' %}
 
   <div class="table">
     <!-- Distance Headers -->
