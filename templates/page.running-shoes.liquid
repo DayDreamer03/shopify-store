@@ -23,7 +23,7 @@
     .table {
       display: grid;
       grid-template-columns: 1fr repeat(3, 1fr); /* One column for brands, three for distances */
-      gap: 10px;
+      gap: 20px;
     }
 
     .table-header {
@@ -58,26 +58,11 @@
       text-transform: uppercase;
     }
 
-    .product-card {
-      display: inline-block;
-      text-align: center;
-    }
-
-    .product-card img {
-      width: 100%;
-      max-width: 200px; /* Smaller image size */
+    .card-product img {
+      max-width: 150px; /* Adjust size as needed */
+      max-height: 150px;
+      width: auto; /* Maintain aspect ratio */
       height: auto; /* Maintain aspect ratio */
-      border: none; /* Remove outline */
-      border-radius: 5px;
-    }
-
-    .product-card a {
-      text-decoration: none;
-    }
-
-    .product-card p {
-      font-size: 14px;
-      color: #000;
     }
   </style>
 
