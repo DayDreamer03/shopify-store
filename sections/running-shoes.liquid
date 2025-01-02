@@ -28,11 +28,17 @@
 
     .table-header {
       text-align: center;
-      font-size: 32px;
+      font-size: 30px;
       color: #000;
       text-transform: uppercase;
       padding: 10px 0;
       grid-column: span 1; /* Ensure headers span one column */
+    }
+
+    @media (max-width: 768px) {
+      .table-header {
+        font-size: 14px;
+      }
     }
 
     .brand-cell {
