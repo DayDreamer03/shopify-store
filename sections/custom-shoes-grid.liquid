@@ -1,0 +1,159 @@
+{{ 'component-card.css' | asset_url | stylesheet_tag }}
+{{ 'component-price.css' | asset_url | stylesheet_tag }}
+
+<div class="running-shoes-grid">
+  <style>
+    .running-shoes-grid {
+      padding: 20px;
+    }
+
+    h1 {
+      margin-bottom: 20px;
+    }
+
+    .image-section {
+      width: 100%;
+      height: 300px; /* Adjust the height as needed */
+      object-fit: cover;
+      object-position: center;
+      margin-bottom: 20px;
+    }
+
+    .table {
+      display: grid;
+      grid-template-columns: 1fr repeat(3, 1fr); /* One column for brands, three for distances */
+      gap: 20px;
+    }
+
+    .table-header {
+      text-align: center;
+      font-size: 30px;
+      color: #000;
+      text-transform: uppercase;
+      padding: 10px 0;
+      grid-column: span 1; /* Ensure headers span one column */
+    }
+
+    .brand-cell {
+      font-size: 20px;
+      font-weight: bold;
+      text-transform: uppercase;
+      border-right: 1px solid #000;
+      text-align: center;
+      grid-column: 1; /* Ensure brand names are in the first column */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .brand-logo {
+      max-width: 75px;
+      height: auto;
+    }
+
+    .distance-cell {
+      text-align: center;
+      text-transform: uppercase;
+    }
+
+    @media (max-width: 768px) {
+      .table-header {
+        font-size: 12px;
+      }
+
+      .brand-logo {
+        max-width: 35px;
+        height: auto;
+      }
+
+      .running-shoes-grid {
+        padding: 10px;
+      }
+
+      .distance-cell {
+        font-size: 11px;
+      }
+    }
+
+    @media (min-width: 768px) {
+      .running-shoes-grid {
+        padding: 50px;
+      }
+    }
+  </style>
+
+  {% assign brands = 'nike,newbalance' | split: ',' %}
+  {% assign distance_names = '42K / 21K,10K / 5K,TRAINING' | split: ',' %}
+  {% assign distances = '42k,10K,training' | split: ',' %}
+
+  <div class="table">
+    <!-- Distance Headers -->
+    <div class="table-header"></div>
+    {% for distance in distance_names %}
+      <div
+        class="table-header"
+        {{ section.settings.heading_size -}}
+        {% if settings.animations_reveal_on_scroll %}
+          scroll-trigger animate--slide-in
+        {% endif %}
+        style="grid-column: {{ forloop.index | plus: 1 }}"
+      >
+        {{ distance | upcase }}
+      </div>
+    {% endfor %}
+
+    <!-- Table Body -->
+    {% for brand in brands %}
+      <div class="brand-cell">
+        <img
+          src="{{ 'logo-' | append: brand | append: '.png' | asset_url }}"
+          alt="{{ brand | capitalize }}"
+          class="brand-logo"
+        >
+      </div>
+      {% for distance in distances %}
+        <div class="distance-cell">
+          {% assign filtered_products = false %}
+          {% for product in collections.shoes.products %}
+            {% assign brand_tag = 'brand-' | append: brand %}
+            {% assign distance_tag = 'distance-' | append: distance %}
+            {% if product.tags contains brand_tag and product.tags contains distance_tag %}
+              {% render 'card-product',
+                card_product: product,
+                media_aspect_ratio: 'square',
+                image_shape: 'default',
+                show_secondary_image: false,
+                show_vendor: false,
+                show_rating: false
+              %}
+              {% assign filtered_products = true %}
+            {% endif %}
+          {% endfor %}
+          {% unless filtered_products %}
+            <p>No products available</p>
+          {% endunless %}
+        </div>
+      {% endfor %}
+    {% endfor %}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Running Shoes Grid",
+  "settings": [
+    {
+      "type": "text",
+      "id": "section_title",
+      "label": "Section Title",
+      "default": "SHOES"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Running Shoes Grid",
+      "category": "Custom"
+    }
+  ]
+}
+{% endschema %}
