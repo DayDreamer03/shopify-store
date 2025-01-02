@@ -35,12 +35,6 @@
       grid-column: span 1; /* Ensure headers span one column */
     }
 
-    @media (max-width: 768px) {
-      .table-header {
-        font-size: 14px;
-      }
-    }
-
     .brand-cell {
       font-size: 20px;
       font-weight: bold;
@@ -62,6 +56,17 @@
     .distance-cell {
       text-align: center;
       text-transform: uppercase;
+    }
+
+    @media (max-width: 768px) {
+      .table-header {
+        font-size: 12px;
+      }
+
+      .brand-logo {
+        max-width: 35px;
+        height: auto;
+      }
     }
   </style>
 
