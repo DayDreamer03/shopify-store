@@ -84,19 +84,9 @@
     }
   </style>
 
-  <script>
-    let brands = ['nike', 'newbalance'];
-    let distanceNames = [];
-    let distances = [];
-
-    if (window.innerWidth > 768) {
-      distanceNames = ['42K / 21K', '10K / 5K', 'Training'];
-      distances = ['42k', '10K', 'training'];
-    } else {
-      distanceNames = ['42K / 21K', '10K / 5K'];
-      distances = ['42k', '10K'];
-    }
-  </script>
+  {% assign brands = 'nike,newbalance' | split: ',' %}
+  {% assign distance_names = '42K / 21K,10K / 5K' | split: ',' %}
+  {% assign distances = '42k,10K' | split: ',' %}
 
   <div class="table">
     <!-- Distance Headers -->
