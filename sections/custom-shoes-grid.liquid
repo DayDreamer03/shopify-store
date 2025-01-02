@@ -71,26 +71,9 @@
         font-size: 11px;
       }
 
-      .card-information {
-        padding: 0; /* Remove unnecessary padding */
-      }
-
-      .card-information > * {
-        margin: 0; /* Remove default margin for all children */
-      }
-
-      .card-information > .price {
-        margin-top: 0; /* Remove specific margin for the price */
-      }
-
-      .card-information > .card__heading {
-        margin-bottom: 0; /* Ensure no margin below the title */
-      }
-
-      .card__content {
-        grid-template-rows: max-content max-content; /* Adjust row heights */
-        row-gap: 0.1rem; /* Reduce space between title and price */
-      }
+      .card__heading a:after (
+        outline-offset: 0;
+      )
     }
 
     @media (min-width: 768px) {
