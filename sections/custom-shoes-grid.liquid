@@ -71,14 +71,16 @@
         font-size: 11px;
       }
 
-      .card-information {
-        margin-top: 0;
-        padding: 0;
+      .card-information > * + * {
+        margin-top: 0.3rem; /* Reduce general spacing between title and other elements */
+      }
+
+      .card-information > .card__heading + .price {
+        margin-top: 0.2rem; /* Reduce space specifically between title and price */
       }
 
       .card-information .price {
-        margin-top: 0; /* Add or adjust margin for the price */
-        padding: 0;
+        margin-top: 0; /* Ensure no additional margin for price */
       }
     }
 
