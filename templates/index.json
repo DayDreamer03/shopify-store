@@ -17,44 +17,39 @@
         "padding_bottom": 0
       }
     },
-    "homepage_menu_DXBgar": {
-      "type": "homepage-menu",
+    "rich_text_8C4Q87": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_6yR9Nw": {
+          "type": "heading",
+          "settings": {
+            "heading": "Running shoes",
+            "heading_size": "h2"
+          }
+        }
+      },
+      "block_order": [
+        "heading_6yR9Nw"
+      ],
       "settings": {
-        "featured_collection": ""
+        "desktop_content_position": "left",
+        "content_alignment": "left",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 20,
+        "padding_bottom": 16
       }
     },
-    "featured_collection_y9nmyc": {
-      "type": "featured-collection",
+    "custom_shoes_grid_cCjxcW": {
+      "type": "custom-shoes-grid",
       "settings": {
-        "title": "",
-        "heading_size": "h2",
-        "description": "",
-        "show_description": false,
-        "description_style": "body",
-        "collection": "all-collections",
-        "products_to_show": 25,
-        "columns_desktop": 4,
-        "full_width": false,
-        "show_view_all": true,
-        "view_all_style": "solid",
-        "enable_desktop_slider": false,
-        "color_scheme": "",
-        "image_ratio": "square",
-        "image_shape": "default",
-        "show_secondary_image": true,
-        "show_vendor": true,
-        "show_rating": false,
-        "quick_add": "none",
-        "columns_mobile": "2",
-        "swipe_on_mobile": false,
-        "padding_top": 36,
-        "padding_bottom": 36
+        "section_title": "SHOES"
       }
     }
   },
   "order": [
     "custom_video2_epKzzD",
-    "homepage_menu_DXBgar",
-    "featured_collection_y9nmyc"
+    "rich_text_8C4Q87",
+    "custom_shoes_grid_cCjxcW"
   ]
 }
