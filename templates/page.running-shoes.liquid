@@ -1,3 +1,6 @@
+{{ 'component-card.css' | asset_url | stylesheet_tag }}
+{{ 'component-price.css' | asset_url | stylesheet_tag }}
+
 <div class="running-shoes-grid">
   <style>
     .running-shoes-grid {
@@ -112,18 +115,14 @@
             {% assign brand_tag = 'brand-' | append: brand %}
             {% assign distance_tag = 'distance-' | append: distance %}
             {% if product.tags contains brand_tag and product.tags contains distance_tag %}
-              <div class="product-card">
-                <a href="{{ product.url }}">
-                  <img
-                    src="{{ product.featured_image | img_url: '300x300' }}"
-                    alt="{{ product.title }}"
-                    width="100"
-                    height="auto"
-                  >
-                  <p>{{ product.title }}</p>
-                </a>
-                <p>{{ product.price | money_with_currency }}</p>
-              </div>
+              {% render 'card-product',
+                card_product: product,
+                media_aspect_ratio: 'square',
+                image_shape: 'default',
+                show_secondary_image: false,
+                show_vendor: false,
+                show_rating: false
+              %}
               {% assign filtered_products = true %}
             {% endif %}
           {% endfor %}
