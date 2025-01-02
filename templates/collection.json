@@ -12,7 +12,7 @@
     "image_banner_inJAP6": {
       "type": "image-banner",
       "settings": {
-        "image": "shopify://shop_images/Screenshot_2024-12-30_at_21.40.29.png",
+        "image": "shopify://shop_images/shoes-image_Medium_b0bb4287-1880-49a8-8698-5a11978d02c1.jpg",
         "image_overlay_opacity": 0,
         "image_height": "small",
         "desktop_content_position": "middle-center",
@@ -33,8 +33,15 @@
         "color_scheme": "scheme-1"
       }
     },
+    "running_shoes_9AkwnG": {
+      "type": "running-shoes",
+      "settings": {
+        "section_title": "SHOES"
+      }
+    },
     "product-grid": {
       "type": "main-collection-product-grid",
+      "disabled": true,
       "settings": {
         "products_per_page": 16,
         "columns_desktop": 4,
@@ -57,6 +64,7 @@
   "order": [
     "image_banner_inJAP6",
     "banner",
+    "running_shoes_9AkwnG",
     "product-grid"
   ]
 }
