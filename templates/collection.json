@@ -12,7 +12,7 @@
     "image_banner_inJAP6": {
       "type": "image-banner",
       "settings": {
-        "image": "shopify://shop_images/shoes-image_Medium_b0bb4287-1880-49a8-8698-5a11978d02c1.jpg",
+        "image": "shopify://shop_images/shoes-image_2.jpg",
         "image_overlay_opacity": 0,
         "image_height": "small",
         "desktop_content_position": "middle-center",
@@ -41,7 +41,6 @@
     },
     "product-grid": {
       "type": "main-collection-product-grid",
-      "disabled": true,
       "settings": {
         "products_per_page": 16,
         "columns_desktop": 4,
