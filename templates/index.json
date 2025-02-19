@@ -24,8 +24,109 @@
         "content_alignment": "left",
         "color_scheme": "",
         "full_width": true,
-        "padding_top": 24,
+        "padding_top": 0,
         "padding_bottom": 0
+      }
+    },
+    "multirow_6eVeLD": {
+      "type": "multirow",
+      "blocks": {
+        "row_ypRBYP": {
+          "type": "row",
+          "settings": {
+            "image": "shopify://shop_images/Screenshot_2024-12-25_at_10.10.18_b4fc7afd-0106-4bd6-b85a-8d6f2e26e301.png",
+            "caption": "FREE GUIDE",
+            "heading": "<strong>Find your next running shoes with 5 game-changing secrets that will SHATTER your strava PRs and avoid months of injury</strong>",
+            "text": "<p>(download your free guide to cut through running stores’ bullsh*t and find the perfect fit for your mileage and pace)</p>",
+            "button_label": "GET YOUR FREE GUIDE",
+            "button_link": ""
+          }
+        },
+        "row_cymeNE": {
+          "type": "row",
+          "settings": {
+            "caption": "Caption",
+            "heading": "Row",
+            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
+            "button_label": "Button label",
+            "button_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "row_ypRBYP",
+        "row_cymeNE"
+      ],
+      "disabled": true,
+      "settings": {
+        "image_height": "small",
+        "desktop_image_width": "small",
+        "heading_size": "h2",
+        "text_style": "body",
+        "button_style": "secondary",
+        "desktop_content_position": "middle",
+        "desktop_content_alignment": "left",
+        "image_layout": "alternate-left",
+        "section_color_scheme": "",
+        "row_color_scheme": "",
+        "mobile_content_alignment": "left",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "multicolumn_89rGF3": {
+      "type": "multicolumn",
+      "blocks": {
+        "column_kCXY7a": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/Screenshot_2024-12-25_at_10.10.18_b4fc7afd-0106-4bd6-b85a-8d6f2e26e301.png",
+            "title": "<strong>Find your next running shoes with 5 game-changing secrets that will SHATTER your strava PRs and avoid months of injury</strong>",
+            "text": "<p>(free guide to cut through running stores’ bullsh*t and find the perfect fit for YOUR mileage and pace!).</p>",
+            "link_label": "GET YOUR FREE GUIDE",
+            "link": ""
+          }
+        },
+        "column_BiCM3A": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/6.png",
+            "title": "Column",
+            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_7B7wNd": {
+          "type": "column",
+          "settings": {
+            "title": "Column",
+            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "column_kCXY7a",
+        "column_BiCM3A",
+        "column_7B7wNd"
+      ],
+      "settings": {
+        "title": "FREEBIES",
+        "heading_size": "h2",
+        "image_width": "full",
+        "image_ratio": "square",
+        "columns_desktop": 3,
+        "column_alignment": "left",
+        "background_style": "primary",
+        "button_label": "",
+        "button_link": "",
+        "color_scheme": "",
+        "columns_mobile": "1",
+        "swipe_on_mobile": true,
+        "padding_top": 36,
+        "padding_bottom": 36
       }
     },
     "custom_shoes_grid_cCjxcW": {
@@ -33,11 +134,47 @@
       "settings": {
         "section_title": "SHOES"
       }
+    },
+    "newsletter_QWjrkU": {
+      "type": "newsletter",
+      "blocks": {
+        "heading_BVHgDK": {
+          "type": "heading",
+          "settings": {
+            "heading": "JOIN THE WAITILIST",
+            "heading_size": "h2"
+          }
+        },
+        "email_form_3bHRNq": {
+          "type": "email_form",
+          "settings": {}
+        },
+        "paragraph_4dqJ3j": {
+          "type": "paragraph",
+          "settings": {
+            "text": "<p>Browse & purchase high-end sportswear from curated club brands for running, cycling, swimming and more.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_BVHgDK",
+        "email_form_3bHRNq",
+        "paragraph_4dqJ3j"
+      ],
+      "settings": {
+        "color_scheme": "scheme-2",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
     }
   },
   "order": [
     "custom_video2_epKzzD",
     "rich_text_wB6xif",
-    "custom_shoes_grid_cCjxcW"
+    "multirow_6eVeLD",
+    "multicolumn_89rGF3",
+    "custom_shoes_grid_cCjxcW",
+    "newsletter_QWjrkU"
   ]
 }
