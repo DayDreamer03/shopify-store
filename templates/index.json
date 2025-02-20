@@ -9,21 +9,10 @@
  */
 {
   "sections": {
-    "custom_video2_epKzzD": {
+    "custom_video2_NnEyxf": {
       "type": "custom-video2",
       "settings": {
         "video_url": "https://cdn.shopify.com/videos/c/o/v/23d891b0dd51443ebe5fc7dd2671ce76.mov",
-        "padding_top": 0,
-        "padding_bottom": 0
-      }
-    },
-    "rich_text_wB6xif": {
-      "type": "rich-text",
-      "settings": {
-        "desktop_content_position": "left",
-        "content_alignment": "left",
-        "color_scheme": "",
-        "full_width": true,
         "padding_top": 0,
         "padding_bottom": 0
       }
@@ -182,8 +171,7 @@
     }
   },
   "order": [
-    "custom_video2_epKzzD",
-    "rich_text_wB6xif",
+    "custom_video2_NnEyxf",
     "multirow_6eVeLD",
     "multicolumn_89rGF3",
     "custom_shoes_grid_cCjxcW",
