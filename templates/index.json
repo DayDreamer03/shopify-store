@@ -26,8 +26,8 @@
           "settings": {
             "image": "shopify://shop_images/Screenshot_2024-12-25_at_10.10.18_b4fc7afd-0106-4bd6-b85a-8d6f2e26e301.png",
             "title": "<strong>Find your next running shoes with 5 game-changing secrets that will SHATTER your strava PRs and avoid months of injury</strong>",
-            "text": "<p>(free guide to cut through running stores’ bullsh*t and find the perfect fit for YOUR mileage and pace!).</p>",
-            "link_label": "GET YOUR FREE GUIDE",
+            "text": "<p><em>(FREE PDF to cut through running stores’ bullsh*t and find the perfect fit for YOUR mileage and pace)</em></p>",
+            "link_label": "GET YOUR FREE PDF",
             "link": ""
           }
         },
