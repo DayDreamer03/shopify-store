@@ -1,6 +1,41 @@
+{% comment %}
+  A simple custom text section that allows basic formatting 
+  via a rich text field in the theme editor.
+{% endcomment %}
+
+<section class="custom-text-section">
+  <div class="page-width">
+    <div class="text-container">
+      {{ section.settings.text | escape }}
+      <!-- or:
+           {{ section.settings.text | richtext }}
+           if you want support for bold, italics, etc. from the editor
+      -->
+    </div>
+  </div>
+</section>
+
 {% schema %}
-  {
-    "name": "Section name",
-    "settings": []
-  }
+{
+  "name": "Custom Text Section",
+  "settings": [
+    {
+      "type": "richtext",
+      "id": "text",
+      "label": "Text",
+      "default": "<p>Add your text here</p>"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Custom Text"
+    }
+  ]
+}
 {% endschema %}
+
+{% stylesheet %}
+.custom-text-section {
+  padding: 2rem 0;
+}
+{% endstylesheet %}
