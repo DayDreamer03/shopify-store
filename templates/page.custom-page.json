@@ -9,6 +9,16 @@
  */
 {
   "sections": {
+    "custom_image_banner_Dbrddw": {
+      "type": "custom-image-banner",
+      "settings": {
+        "image": "shopify://shop_images/Screenshot_2024-12-25_at_10.10.18_b4fc7afd-0106-4bd6-b85a-8d6f2e26e301.png",
+        "image_alt": "Banner image alt text",
+        "mobile_height": 36,
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
     "rich_text_VYfQKi": {
       "type": "rich-text",
       "blocks": {
@@ -89,6 +99,7 @@
     }
   },
   "order": [
+    "custom_image_banner_Dbrddw",
     "rich_text_VYfQKi",
     "rich_text_zJQdcB",
     "newsletter_edXBib"
