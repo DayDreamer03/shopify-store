@@ -1,0 +1,60 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "image_banner_mahW7c": {
+      "type": "image-banner",
+      "blocks": {
+        "heading_UdByMX": {
+          "type": "heading",
+          "settings": {
+            "heading": "Don’t Buy Another Pair of Running Shoes before you know 5 game-changing secrets to SHATTER your strava PRs and avoid months of injury",
+            "heading_size": "h2"
+          }
+        },
+        "text_zDyWNm": {
+          "type": "text",
+          "settings": {
+            "text": "(free guide to cut through running stores’ bullsh*t and find the perfect fit for YOUR mileage and pace!)",
+            "text_style": "body"
+          }
+        }
+      },
+      "block_order": [
+        "heading_UdByMX",
+        "text_zDyWNm"
+      ],
+      "settings": {
+        "image": "shopify://shop_images/shoes-image_2.jpg",
+        "image_overlay_opacity": 40,
+        "image_height": "medium",
+        "desktop_content_position": "middle-center",
+        "show_text_box": true,
+        "desktop_content_alignment": "center",
+        "color_scheme": "",
+        "image_behavior": "none",
+        "mobile_content_alignment": "left",
+        "stack_images_on_mobile": false,
+        "show_text_below": true
+      }
+    },
+    "main": {
+      "type": "main-page",
+      "settings": {
+        "padding_top": 28,
+        "padding_bottom": 28
+      }
+    }
+  },
+  "order": [
+    "image_banner_mahW7c",
+    "main"
+  ]
+}
