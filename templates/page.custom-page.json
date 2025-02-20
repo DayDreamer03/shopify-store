@@ -31,6 +31,7 @@
         "heading_UdByMX",
         "text_zDyWNm"
       ],
+      "custom_css": [],
       "settings": {
         "image": "shopify://shop_images/shoes-image_2.jpg",
         "image_overlay_opacity": 40,
@@ -45,13 +46,31 @@
         "show_text_below": true
       }
     },
-      "custom-text": {
-      "type": "custom-text-section",
-      "settings": {}
-    },
+    "rich_text_zJQdcB": {
+      "type": "rich-text",
+      "blocks": {
+        "text_VkrddP": {
+          "type": "text",
+          "settings": {
+            "text": "<p><strong>ARE YOU TIRED OF:</strong></p><p>If you answered “yes” to any of the above, this free guide is your long-overdue game-changer.</p><p><strong>WHAT YOU’LL DISCOVER INSIDE</strong></p><p>5K, 10K, Half, Marathon or Ultra? Find what running shoes match YOUR race goal.</p><p>The truth about carbon plates and if you really need them.</p><p>Sunday long run? Intervals? Race day? 6:30 or 4:00 minutes / km? Find the cushioning that suits YOUR mileage and pace.</p><p>Nike, New Balance, Hoka, Asics, Saucony… find the top brand to push past your current PR without blowing your budget.</p><p><strong>ALSO</strong>:</p><p><br/><br/></p><p><br/><br/></p><p><br/><br/></p><p><strong><br/></strong><em><strong>Snag this guide now to turbocharge your Strava and stop ditching runs.</strong></em></p>"
+          }
+        }
+      },
+      "block_order": [
+        "text_VkrddP"
+      ],
+      "settings": {
+        "desktop_content_position": "left",
+        "content_alignment": "left",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    }
   },
   "order": [
     "image_banner_mahW7c",
-    "custom-text"
+    "rich_text_zJQdcB"
   ]
 }
