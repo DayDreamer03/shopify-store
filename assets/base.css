@@ -3778,8 +3778,3 @@ details-disclosure > details {
 .info-link:hover {
   color: gray; /* Change color on hover */
 }
-
-.template-page .section:first-of-type {
-  margin-top: 0 !important;
-  padding-top: 0 !important;
-}
