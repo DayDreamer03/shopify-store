@@ -29,20 +29,9 @@
         "padding_top": 12,
         "padding_bottom": 36
       }
-    },
-    "custom_image_banner_GMhJbN": {
-      "type": "custom-image-banner",
-      "settings": {
-        "image": "shopify://shop_images/shoes-image_2.jpg",
-        "image_alt": "Banner image alt text",
-        "mobile_height": 37,
-        "padding_top": 0,
-        "padding_bottom": 0
-      }
     }
   },
   "order": [
-    "header",
-    "custom_image_banner_GMhJbN"
+    "header"
   ]
 }
