@@ -41,16 +41,6 @@
             "link": ""
           }
         },
-        "column_7B7wNd": {
-          "type": "column",
-          "settings": {
-            "image": "shopify://shop_images/shoes-image_2.jpg",
-            "title": "Finish a marathon in <span style=\"text-decoration:underline\">only 6 months</span>, even If you’ve <em>never</em> run a mile before: grab your FREE cheat sheet now",
-            "text": "<p>(ditch the plan in your head for this notion blueprint that will make people think you got it from Eliud Kipchoge himself)</p>",
-            "link_label": "GET YOUR FREE TRAINING PLAN",
-            "link": ""
-          }
-        },
         "column_Pfgdtz": {
           "type": "column",
           "settings": {
@@ -60,13 +50,23 @@
             "link_label": "GET YOUR FREE RACE DAY NUTRITION PLAN",
             "link": ""
           }
+        },
+        "column_7B7wNd": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/shoes-image_2.jpg",
+            "title": "Finish a marathon in <span style=\"text-decoration:underline\">only 6 months</span>, even If you’ve <em>never</em> run a mile before: grab your FREE cheat sheet now",
+            "text": "<p>(ditch the plan in your head for this notion blueprint that will make people think you got it from Eliud Kipchoge himself)</p>",
+            "link_label": "GET YOUR FREE TRAINING PLAN",
+            "link": ""
+          }
         }
       },
       "block_order": [
         "column_kCXY7a",
         "column_BiCM3A",
-        "column_7B7wNd",
-        "column_Pfgdtz"
+        "column_Pfgdtz",
+        "column_7B7wNd"
       ],
       "settings": {
         "title": "FREE STUFF",
