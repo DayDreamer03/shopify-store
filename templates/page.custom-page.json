@@ -9,41 +9,34 @@
  */
 {
   "sections": {
-    "image_banner_mahW7c": {
-      "type": "image-banner",
+    "rich_text_VYfQKi": {
+      "type": "rich-text",
       "blocks": {
-        "heading_UdByMX": {
+        "heading_9mhrni": {
           "type": "heading",
           "settings": {
             "heading": "Don’t Buy Another Pair of Running Shoes before you know 5 game-changing secrets to SHATTER your strava PRs and avoid months of injury",
-            "heading_size": "h2"
+            "heading_size": "h1"
           }
         },
-        "text_zDyWNm": {
+        "text_yPTg7i": {
           "type": "text",
           "settings": {
-            "text": "(free guide to cut through running stores’ bullsh*t and find the perfect fit for YOUR mileage and pace!)",
-            "text_style": "body"
+            "text": "<p>(free guide to cut through running stores’ bullsh*t and find the perfect fit for YOUR mileage and pace!)</p>"
           }
         }
       },
       "block_order": [
-        "heading_UdByMX",
-        "text_zDyWNm"
+        "heading_9mhrni",
+        "text_yPTg7i"
       ],
-      "custom_css": [],
       "settings": {
-        "image": "shopify://shop_images/shoes-image_2.jpg",
-        "image_overlay_opacity": 40,
-        "image_height": "medium",
-        "desktop_content_position": "middle-center",
-        "show_text_box": true,
-        "desktop_content_alignment": "center",
+        "desktop_content_position": "left",
+        "content_alignment": "left",
         "color_scheme": "",
-        "image_behavior": "none",
-        "mobile_content_alignment": "left",
-        "stack_images_on_mobile": false,
-        "show_text_below": true
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
       }
     },
     "rich_text_zJQdcB": {
@@ -96,7 +89,7 @@
     }
   },
   "order": [
-    "image_banner_mahW7c",
+    "rich_text_VYfQKi",
     "rich_text_zJQdcB",
     "newsletter_edXBib"
   ]
