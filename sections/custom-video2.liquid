@@ -39,16 +39,6 @@
       "step": 5,
       "default": 20,
       "unit": "px"
-    },
-    {
-      "type": "range",
-      "id": "mobile_height",
-      "label": "Mobile Video Height (vh)",
-      "min": 20,
-      "max": 100,
-      "step": 1,
-      "default": 35,
-      "unit": "vh"
     }
   ],
   "presets": [
@@ -63,21 +53,21 @@
 {% style %}
   @media (max-width: 768px) {
     .custom-video-section {
-      height: {{ section.settings.mobile_height }}vh; /* New setting for height in vh */
-      padding-top: {{ section.settings.padding_top }}px;
-      padding-bottom: {{ section.settings.padding_bottom }}px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      background-color: #000; /* Adjust to your design */
-      overflow: hidden; /* Hide overflow to crop the sides */
-    }
+    padding-top: {{ section.settings.padding_top }}px;
+    padding-bottom: {{ section.settings.padding_bottom }}px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #000; /* Adjust to your design */
+  }
 
-    .custom-video {
-      width: 100%; /* Ensure full width */
-      height: 100%; /* Fill the container's height */
-      object-fit: cover; /* Crop the video as needed */
-    }
+  .custom-video {
+    width: 100%; /* Make the video responsive */
+    height: auto; /* Maintain the aspect ratio */
+    max-width: 1200px; /* Set a maximum width to prevent it from being too large */
+    border-radius: 8px; /* Optional styling for rounded corners */
+    object-fit: cover; /* Ensures the video scales properly without distortion */
+  }
   }
 
   @media (min-width: 769px) {
