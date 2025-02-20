@@ -1,12 +1,3 @@
-.banner {
-  display: flex;
-  position: relative;
-  flex-direction: column;
-  margin-top: 0;
-  z-index: 0;
-  isolation: isolate;
-}
-
 .banner__box {
   text-align: center;
 }
@@ -490,4 +481,13 @@
   .banner--desktop-transparent .rte a:hover {
     color: currentColor;
   }
+}
+
+.banner {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  margin-top: 0;
+  z-index: 0;
+  isolation: isolate;
 }
