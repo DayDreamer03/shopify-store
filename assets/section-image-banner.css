@@ -85,18 +85,6 @@
     flex-direction: row;
   }
 
-  .banner--small:not(.banner--adapt) {
-    min-height: 42rem;
-  }
-
-  .banner--medium:not(.banner--adapt) {
-    min-height: 56rem;
-  }
-
-  .banner--large:not(.banner--adapt) {
-    min-height: 72rem;
-  }
-
   .banner__content.banner__content--top-left {
     align-items: flex-start;
     justify-content: flex-start;
