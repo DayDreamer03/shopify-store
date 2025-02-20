@@ -9,6 +9,16 @@
  */
 {
   "sections": {
+    "custom_image_banner_zaqDjV": {
+      "type": "custom-image-banner",
+      "settings": {
+        "image": "shopify://shop_images/shoes-image_2.jpg",
+        "image_alt": "Banner image alt text",
+        "mobile_height": 40,
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
     "rich_text_VYfQKi": {
       "type": "rich-text",
       "blocks": {
@@ -89,6 +99,7 @@
     }
   },
   "order": [
+    "custom_image_banner_zaqDjV",
     "rich_text_VYfQKi",
     "rich_text_zJQdcB",
     "newsletter_edXBib"
