@@ -25,14 +25,14 @@
         "heading_9mhrni": {
           "type": "heading",
           "settings": {
-            "heading": "Don’t Buy Another Pair of Running Shoes before you know 5 game-changing secrets to SHATTER your strava PRs and avoid months of injury",
+            "heading": "<strong>Find your next running shoes with 5 game-changing secrets that will SHATTER your strava PRs and avoid months of injury</strong>",
             "heading_size": "h1"
           }
         },
         "text_yPTg7i": {
           "type": "text",
           "settings": {
-            "text": "<p>(free guide to cut through running stores’ bullsh*t and find the perfect fit for YOUR mileage and pace!)</p>"
+            "text": "<p>(FREE guide to cut through running stores’ bullsh*t and find the perfect fit for YOUR mileage and pace)</p>"
           }
         }
       },
@@ -55,7 +55,7 @@
         "text_VkrddP": {
           "type": "text",
           "settings": {
-            "text": "<p><strong>ARE YOU TIRED OF:</strong></p><p>If you answered “yes” to any of the above, this free guide is your long-overdue game-changer.</p><p><strong>WHAT YOU’LL DISCOVER INSIDE</strong></p><p>5K, 10K, Half, Marathon or Ultra? Find what running shoes match YOUR race goal.</p><p>The truth about carbon plates and if you really need them.</p><p>Sunday long run? Intervals? Race day? 6:30 or 4:00 minutes / km? Find the cushioning that suits YOUR mileage and pace.</p><p>Nike, New Balance, Hoka, Asics, Saucony… find the top brand to push past your current PR without blowing your budget.</p><p><strong>ALSO</strong>:</p><p><br/><br/></p><p><br/><br/></p><p><br/><br/></p><p><strong><br/></strong><em><strong>Snag this guide now to turbocharge your Strava and stop ditching runs.</strong></em></p>"
+            "text": "<p><strong>ARE YOU TIRED OF:<br/></strong></p><ul><li>Store “experts” pushing you into their ugliest pair, when it may not even suit your running style?</li><li>Overpaying for shoes that wreck your shins, ankles and knees and leave you off Strava for weeks?</li><li>Trial-and-error shopping that turns running into a guessing game?</li></ul><p>If you answered “yes” to any of the above, this free guide is your long-overdue game-changer.</p><p><strong>WHAT YOU’LL DISCOVER INSIDE</strong></p><ul><li>Nike, New Balance, Hoka, Asics, Saucony… find an overview of each brand's latest pairs.</li><li>5K, 10K, Half, Marathon or Ultra? Find what running shoes match YOUR race goal.</li><li>The truth about carbon plates and if you <em>really</em> need them.</li><li>Sunday long run? Intervals? Race day? 6:30 or 4:00 m/km? Find the cushioning that suits YOUR mileage and pace.</li></ul><p><strong>ALSO</strong>:</p><ul><li>How to instantly identify your foot type at home.</li><li>Our TOP strategies to avoid shin splints, runner’s knee and tendonitis.</li><li>The most costly mistake beginner & intermediate runners make (Hint: It’s not about brand names, but about a detail 90% of runners never check.)</li></ul><p><span style=\"text-decoration:underline\"><em><strong><br/></strong></em></span><span style=\"text-decoration:underline\"><strong>Snag your FREE PDF now to turbocharge your runs.</strong></span></p>"
           }
         }
       },
@@ -67,7 +67,7 @@
         "content_alignment": "left",
         "color_scheme": "",
         "full_width": true,
-        "padding_top": 0,
+        "padding_top": 16,
         "padding_bottom": 52
       }
     },
