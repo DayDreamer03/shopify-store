@@ -1,6 +1,113 @@
+<div class="custom-image-banner">
+  {% if section.settings.image != blank %}
+    <img
+      src="{{ section.settings.image | image_url: width: 3000 }}"
+      alt="{{ section.settings.image_alt | escape }}"
+      class="banner-image"
+    >
+  {% endif %}
+</div>
+
 {% schema %}
-  {
-    "name": "Section name",
-    "settings": []
-  }
+{
+  "name": "Custom Image Banner",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Banner Image"
+    },
+    {
+      "type": "text",
+      "id": "image_alt",
+      "label": "Alt Text",
+      "default": "Banner image alt text"
+    },
+    {
+      "type": "range",
+      "id": "mobile_height",
+      "label": "Mobile Banner Height (vh)",
+      "min": 20,
+      "max": 100,
+      "step": 1,
+      "default": 35,
+      "unit": "vh"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Padding Top (mobile only)",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "default": 20,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Padding Bottom (mobile only)",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "default": 20,
+      "unit": "px"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Custom Image Banner",
+      "category": "Media"
+    }
+  ]
+}
 {% endschema %}
+
+{% style %}
+  /* ---- Mobile (<= 768px) ---- */
+  @media (max-width: 768px) {
+    .custom-image-banner {
+      height: {{ section.settings.mobile_height }}vh;
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: #000; /* So you see black edges if the image is narrower */
+      overflow: hidden;
+      position: relative; /* Position container so child can be absolutely placed if needed */
+      width: 100%;
+      margin: 0;
+      z-index: 0; /* Under the header */
+    }
+
+    .custom-image-banner .banner-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  /* ---- Desktop (>= 769px) ---- */
+  @media (min-width: 769px) {
+    .custom-image-banner {
+      position: relative;
+      width: 100vw;         /* Full viewport width */
+      height: 80vh;         /* Adjust as desired; 80% of screen height */
+      overflow: hidden;
+      margin: 0;
+      z-index: 0;           /* Keep behind a higher-z-index header */
+    }
+
+    .custom-image-banner .banner-image {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 100vw;
+      height: 100vh;
+      object-fit: cover;
+    }
+  }
+{% endstyle %}
