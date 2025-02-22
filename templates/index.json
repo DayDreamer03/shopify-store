@@ -88,13 +88,66 @@
     },
     "custom_shoes_grid_cCjxcW": {
       "type": "custom-shoes-grid",
+      "disabled": true,
       "settings": {
         "section_title": "SHOES"
+      }
+    },
+    "image_with_text_eAKJP6": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_ebhByd": {
+          "type": "heading",
+          "settings": {
+            "heading": "Strava Route Designer",
+            "heading_size": "h1"
+          }
+        },
+        "text_6xqrMQ": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Display your last run or cycle in a sleek way, to share on socials or for your own contemplation.</p>",
+            "text_style": "body"
+          }
+        },
+        "button_RbzLEH": {
+          "type": "button",
+          "settings": {
+            "button_label": "Button label",
+            "button_link": "",
+            "button_style_secondary": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_ebhByd",
+        "text_6xqrMQ",
+        "button_RbzLEH"
+      ],
+      "settings": {
+        "height": "adapt",
+        "desktop_image_width": "medium",
+        "layout": "image_first",
+        "desktop_content_position": "top",
+        "desktop_content_alignment": "left",
+        "content_layout": "no-overlap",
+        "section_color_scheme": "",
+        "color_scheme": "",
+        "image_behavior": "none",
+        "mobile_content_alignment": "left",
+        "padding_top": 36,
+        "padding_bottom": 36
       }
     },
     "newsletter_QWjrkU": {
       "type": "newsletter",
       "blocks": {
+        "paragraph_4dqJ3j": {
+          "type": "paragraph",
+          "settings": {
+            "text": "<p>Browse & purchase high-end sportswear from curated club brands for running, cycling, swimming and more.</p>"
+          }
+        },
         "heading_BVHgDK": {
           "type": "heading",
           "settings": {
@@ -105,18 +158,12 @@
         "email_form_3bHRNq": {
           "type": "email_form",
           "settings": {}
-        },
-        "paragraph_4dqJ3j": {
-          "type": "paragraph",
-          "settings": {
-            "text": "<p>Browse & purchase high-end sportswear from curated club brands for running, cycling, swimming and more.</p>"
-          }
         }
       },
       "block_order": [
+        "paragraph_4dqJ3j",
         "heading_BVHgDK",
-        "email_form_3bHRNq",
-        "paragraph_4dqJ3j"
+        "email_form_3bHRNq"
       ],
       "settings": {
         "color_scheme": "scheme-2",
@@ -130,6 +177,7 @@
     "custom_video2_NnEyxf",
     "multicolumn_89rGF3",
     "custom_shoes_grid_cCjxcW",
+    "image_with_text_eAKJP6",
     "newsletter_QWjrkU"
   ]
 }
