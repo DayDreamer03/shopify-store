@@ -113,7 +113,7 @@
         "button_RbzLEH": {
           "type": "button",
           "settings": {
-            "button_label": "Button label",
+            "button_label": "Design your route",
             "button_link": "",
             "button_style_secondary": false
           }
@@ -126,13 +126,13 @@
       ],
       "settings": {
         "height": "adapt",
-        "desktop_image_width": "medium",
+        "desktop_image_width": "small",
         "layout": "image_first",
         "desktop_content_position": "top",
         "desktop_content_alignment": "left",
         "content_layout": "no-overlap",
-        "section_color_scheme": "",
-        "color_scheme": "",
+        "section_color_scheme": "scheme-1",
+        "color_scheme": "scheme-1",
         "image_behavior": "none",
         "mobile_content_alignment": "left",
         "padding_top": 36,
