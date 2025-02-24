@@ -102,7 +102,7 @@
         "button_RbzLEH": {
           "type": "button",
           "settings": {
-            "button_label": "BEAUTIFY ROUTE",
+            "button_label": "BEAUTIFY YOUR ROUTE",
             "button_link": "https://strava.thepurposecompany.store/",
             "button_style_secondary": false
           }
@@ -114,7 +114,8 @@
         "button_RbzLEH"
       ],
       "settings": {
-        "height": "small",
+        "image": "shopify://shop_images/Screenshot_2025-02-24_at_19.21.58.png",
+        "height": "large",
         "desktop_image_width": "small",
         "layout": "image_first",
         "desktop_content_position": "top",
