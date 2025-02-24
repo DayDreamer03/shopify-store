@@ -31,16 +31,6 @@
             "link": "shopify://pages/don-t-buy-another-pair-of-running-shoes-before-you-know-these-5-game-changing-secrets-to-shatter-your-strava-prs-and-avoid-months-of-injury"
           }
         },
-        "column_BiCM3A": {
-          "type": "column",
-          "settings": {
-            "image": "shopify://shop_images/6.png",
-            "title": "Download this FREE Garmin/Apple watch face to <span style=\"text-decoration:underline\">supercharge</span> your performance",
-            "text": "<p>The most aesthetic watch face on the market, for free. (seriously, we'll remove it if you find a better one)</p>",
-            "link_label": "GET YOUR FREE WATCH FACE",
-            "link": ""
-          }
-        },
         "column_Pfgdtz": {
           "type": "column",
           "settings": {
@@ -55,16 +45,15 @@
           "type": "column",
           "settings": {
             "image": "shopify://shop_images/shoes-image_2.jpg",
-            "title": "Finish a marathon in <span style=\"text-decoration:underline\">only 6 months</span>, even If you’ve <em>never</em> run a mile before: grab your FREE cheat sheet now",
+            "title": "Finish a marathon in <span style=\"text-decoration:underline\">only 6 months</span>, even If you’ve <em>never</em> run a mile before: grab your FREE training plan now",
             "text": "<p>(ditch the plan in your head for this notion blueprint that will make people think you got it from Eliud Kipchoge himself)</p>",
-            "link_label": "GET YOUR FREE TRAINING PLAN",
+            "link_label": "GET YOUR FREE NOTION TRAINING PLAN",
             "link": ""
           }
         }
       },
       "block_order": [
         "column_kCXY7a",
-        "column_BiCM3A",
         "column_Pfgdtz",
         "column_7B7wNd"
       ],
