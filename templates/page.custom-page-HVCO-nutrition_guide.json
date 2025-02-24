@@ -1,0 +1,107 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "custom_image_banner_Dbrddw": {
+      "type": "custom-image-banner",
+      "settings": {
+        "image": "shopify://shop_images/Screenshot_2024-12-25_at_10.10.18_b4fc7afd-0106-4bd6-b85a-8d6f2e26e301.png",
+        "image_alt": "Banner image alt text",
+        "mobile_height": 36,
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "rich_text_VYfQKi": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_9mhrni": {
+          "type": "heading",
+          "settings": {
+            "heading": "<strong>Find your next running shoes with the 2025 ultimate FREE PDF that will SHATTER your Strava PRs and avoid months of injury</strong>",
+            "heading_size": "h1"
+          }
+        },
+        "text_yPTg7i": {
+          "type": "text",
+          "settings": {
+            "text": "<p><em>(avoid running stores’ ugliest pairs and find the perfect fit for YOUR mileage and pace)</em></p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_9mhrni",
+        "text_yPTg7i"
+      ],
+      "settings": {
+        "desktop_content_position": "left",
+        "content_alignment": "left",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 4
+      }
+    },
+    "rich_text_zJQdcB": {
+      "type": "rich-text",
+      "blocks": {
+        "text_VkrddP": {
+          "type": "text",
+          "settings": {
+            "text": "<p><strong>ARE YOU TIRED OF:</strong></p><ul><li>Store “experts” pushing you into a pair SO UGLY that even your grandfather wouldn’t wear them to mow the lawn?</li><li>Overpaying for shoes that wreck your shins, ankles and knees, and leave you off Strava for weeks?</li><li>Being confused by brands launching so many new pairs with names that sound like math equations?</li></ul><p>If you answered “YES” to ANY of the above, this free guide is <span style=\"text-decoration:underline\">your long-overdue game-changer</span>.</p><p><strong>WHAT YOU’LL DISCOVER INSIDE</strong></p><ul><li>Nike, New Balance, Hoka, Asics, Saucony… find the ULTIMATE 2025 overview of each brand's best pairs.</li><li>Sunday long run? Intervals? Race day? 6:30 or 4:00 m/km? Find the shoes that suit YOUR mileage and pace.</li><li>Why finding the right shoe really really matters.</li><li>What to <span style=\"text-decoration:underline\">actually</span> look for when shopping running shoes (the criteria that really matter)</li></ul><p><strong>ALSO</strong>:</p><ul><li>The TRUTH about carbon plates and if you <em>really</em> need them.</li><li>How to <span style=\"text-decoration:underline\">instantly</span> identify your foot type at home, and what that means for choosing running shoes.</li><li>What to do once you bought a new shoe (DON'T make these beginner mistakes!)</li><li>The RED FLAGS to look out for to not f*ck up your legs.</li></ul>"
+          }
+        }
+      },
+      "block_order": [
+        "text_VkrddP"
+      ],
+      "settings": {
+        "desktop_content_position": "left",
+        "content_alignment": "left",
+        "color_scheme": "scheme-1",
+        "full_width": true,
+        "padding_top": 16,
+        "padding_bottom": 0
+      }
+    },
+    "newsletter_edXBib": {
+      "type": "newsletter",
+      "blocks": {
+        "heading_kMXULP": {
+          "type": "heading",
+          "settings": {
+            "heading": "SNAG your FREE PDF to turbocharge your runs.",
+            "heading_size": "h2"
+          }
+        },
+        "email_form_eHFy9D": {
+          "type": "email_form",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "heading_kMXULP",
+        "email_form_eHFy9D"
+      ],
+      "settings": {
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    }
+  },
+  "order": [
+    "custom_image_banner_Dbrddw",
+    "rich_text_VYfQKi",
+    "rich_text_zJQdcB",
+    "newsletter_edXBib"
+  ]
+}
