@@ -76,6 +76,14 @@
             {% endif %}
           >
             <div class="multicolumn-card content-container">
+              {% if block.settings.link != blank %}
+                <a
+                  href="{{ block.settings.link }}"
+                  class="multicolumn-card__link-wrapper"
+                  style="text-decoration:none; color:inherit;"
+                >
+              {% endif %}
+
               {%- if block.settings.image != blank -%}
                 {% if section.settings.image_ratio == 'adapt' or section.settings.image_ratio == 'circle' %}
                   {% assign spaced_image = true %}
@@ -118,10 +126,17 @@
                   </div>
                 </div>
               {%- endif -%}
+
+              {%- if block.settings.title != blank -%}
+                <h3 class="inline-richtext">{{ block.settings.title }}</h3>
+              {%- endif -%}
+
+              {% if block.settings.link != blank %}
+                </a>
+                <!-- Close anchor after title -->
+              {% endif %}
+
               <div class="multicolumn-card__info">
-                {%- if block.settings.title != blank -%}
-                  <h3 class="inline-richtext">{{ block.settings.title }}</h3>
-                {%- endif -%}
                 {%- if block.settings.text != blank -%}
                   <div class="rte">{{ block.settings.text }}</div>
                 {%- endif -%}
@@ -135,9 +150,9 @@
                     {% endif %}
                   >
                     {{- block.settings.link_label | escape -}}
-                    <span class="svg-wrapper"
-                      ><span class="icon-wrap">&nbsp;{{ 'icon-arrow.svg' | inline_asset_content }}</span></span
-                    >
+                    <span class="svg-wrapper">
+                      <span class="icon-wrap">&nbsp;{{ 'icon-arrow.svg' | inline_asset_content }}</span>
+                    </span>
                   </a>
                 {%- endif -%}
               </div>
