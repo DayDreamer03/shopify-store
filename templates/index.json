@@ -167,39 +167,9 @@
         "section_title": "SHOES"
       }
     },
-    "newsletter_QWjrkU": {
-      "type": "newsletter",
-      "blocks": {
-        "paragraph_4dqJ3j": {
-          "type": "paragraph",
-          "settings": {
-            "text": "<p>Browse & purchase high-end sportswear from curated club brands for running, cycling, swimming and more.</p>"
-          }
-        },
-        "heading_BVHgDK": {
-          "type": "heading",
-          "settings": {
-            "heading": "JOIN THE WAITILIST",
-            "heading_size": "h2"
-          }
-        },
-        "email_form_3bHRNq": {
-          "type": "email_form",
-          "settings": {}
-        }
-      },
-      "block_order": [
-        "paragraph_4dqJ3j",
-        "heading_BVHgDK",
-        "email_form_3bHRNq"
-      ],
-      "settings": {
-        "color_scheme": "scheme-1",
-        "full_width": true,
-        "padding_top": 40,
-        "padding_bottom": 52
+    "signup_form": {
+      "type": "klaviyo-signup-form"
       }
-    }
   },
   "order": [
     "custom_video2_NnEyxf",
@@ -208,6 +178,6 @@
     "multicolumn_89rGF3",
     "rich_text_QTk4VP",
     "custom_shoes_grid_cCjxcW",
-    "newsletter_QWjrkU"
+    "signup_form"
   ]
 }
