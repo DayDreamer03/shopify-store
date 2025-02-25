@@ -373,17 +373,19 @@
       <script src="{{ 'cart-drawer.js' | asset_url }}" defer="defer"></script>
     {%- endif -%}
     <script>
-      window.addEventListener("klaviyoForms", function(e) {
-    
-      if (e.detail.type == 'submit') {
-        var _learnq = window._learnq || [];
-        var url_visit = window.location.pathname;
-        
-          _learnq.push(['identify', {
-            '$hvvo_type' : url_visit
-          }]);
-      } // if
-    }); // addEventListener
+      window.addEventListener('klaviyoForms', function (e) {
+        if (e.detail.type == 'submit') {
+          var _learnq = window._learnq || [];
+          var url_visit = window.location.pathname;
+
+          _learnq.push([
+            'identify',
+            {
+              $hvco_type: url_visit,
+            },
+          ]);
+        } // if
+      }); // addEventListener
     </script>
   </body>
 </html>
