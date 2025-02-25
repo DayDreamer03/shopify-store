@@ -84,7 +84,7 @@
         "column_kCXY7a": {
           "type": "column",
           "settings": {
-            "image": "shopify://shop_images/Free_Design_1080x1080_6b3b7c52-1066-4262-8403-3d49aafd112d.png",
+            "image": "shopify://shop_images/Free_Design_1080x1080_1.png",
             "title": "<strong>Find your next running shoes with this ultimate 2025 guide that will SHATTER your Strava PRs and avoid months of injury</strong>",
             "text": "<p><em>(avoid running stores’ ugliest pairs and find the perfect fit for YOUR mileage and pace)</em></p>",
             "link_label": "GET YOUR FREE PDF",
@@ -149,6 +149,7 @@
       "block_order": [
         "heading_fGkd9x"
       ],
+      "disabled": true,
       "settings": {
         "desktop_content_position": "center",
         "content_alignment": "left",
@@ -160,6 +161,7 @@
     },
     "custom_shoes_grid_cCjxcW": {
       "type": "custom-shoes-grid",
+      "disabled": true,
       "settings": {
         "section_title": "SHOES"
       }
@@ -190,7 +192,6 @@
         "heading_BVHgDK",
         "email_form_3bHRNq"
       ],
-      "disabled": true,
       "settings": {
         "color_scheme": "scheme-2",
         "full_width": true,
