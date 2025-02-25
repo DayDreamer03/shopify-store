@@ -4,20 +4,15 @@
 </div>
 <script>
   document.addEventListener('DOMContentLoaded', function () {
-    // Wait for the form submission event
+    // Store the current page title in a JS variable
+    var pageTitle = document.title;
+
     document.addEventListener('submit', function (event) {
       if (event.target && event.target.classList.contains('klaviyo-form')) {
         setTimeout(function () {
           var emailField = event.target.querySelector("input[type='email']");
           if (emailField && emailField.value) {
             // Send profile update request to Klaviyo API
-            var profileData = {
-              email: emailField.value,
-              properties: {
-                hvco_page: '{{ page.title }}', // Capture the page title dynamically
-              },
-            };
-
             fetch('https://a.klaviyo.com/api/identify', {
               method: 'POST',
               headers: {
@@ -25,11 +20,14 @@
               },
               body: JSON.stringify({
                 token: 'RYhhqf',
-                properties: profileData,
+                properties: {
+                  $email: emailField.value,
+                  hvco_page: pageTitle, // Now using JS to dynamically get the page title
+                },
               }),
             });
           }
-        }, 1000); // Delay execution to ensure the email is captured
+        }, 1000); // Wait to ensure form submission is complete
       }
     });
   });
