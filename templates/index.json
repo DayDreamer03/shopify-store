@@ -135,9 +135,31 @@
         "padding_bottom": 20
       }
     },
+    "rich_text_QTk4VP": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_fGkd9x": {
+          "type": "heading",
+          "settings": {
+            "heading": "RUNNING SHOE GRID",
+            "heading_size": "h1"
+          }
+        }
+      },
+      "block_order": [
+        "heading_fGkd9x"
+      ],
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "left",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    },
     "custom_shoes_grid_cCjxcW": {
       "type": "custom-shoes-grid",
-      "disabled": true,
       "settings": {
         "section_title": "SHOES"
       }
@@ -182,6 +204,7 @@
     "rich_text_ycy9PV",
     "image_with_text_eAKJP6",
     "multicolumn_89rGF3",
+    "rich_text_QTk4VP",
     "custom_shoes_grid_cCjxcW",
     "newsletter_QWjrkU"
   ]
