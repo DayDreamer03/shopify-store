@@ -1,34 +1,5 @@
 <!-- Klaviyo Form Wrapper -->
 <div class="klaviyo-form-Whvmr4">
   <!-- Hidden input field for tracking the HVCO page -->
-  <input type="hidden" id="hvco_page" name="hvco_page" value="">
+  <input type="hidden" name="contact[tags]" value="HVCO-{{ page.handle }}">
 </div>
-
-<!-- JavaScript to Inject the Page Title Before Form Submission -->
-<script>
-  document.addEventListener('DOMContentLoaded', function () {
-    // Wait for the Klaviyo form to load inside the iframe
-    setTimeout(function () {
-      // Select the Klaviyo form inside the iframe
-      var klaviyoForm = document.querySelector('iframe');
-
-      // If the form exists, inject the page title inside it
-      if (klaviyoForm) {
-        var hvcoField = document.createElement('input');
-        hvcoField.setAttribute('type', 'hidden');
-        hvcoField.setAttribute('name', 'hvco_page');
-        hvcoField.setAttribute('value', document.title);
-
-        // Wait for the form to be fully loaded before inserting the hidden field
-        klaviyoForm.onload = function () {
-          var iframeDoc = klaviyoForm.contentDocument || klaviyoForm.contentWindow.document;
-          var form = iframeDoc.querySelector('form');
-
-          if (form) {
-            form.appendChild(hvcoField);
-          }
-        };
-      }
-    }, 2000); // Give Klaviyo time to load
-  });
-</script>
