@@ -1,1 +1,17 @@
-<div class="klaviyo-form-Whvmr4"><input type="hidden" name="hvco_page" value="{{ page.title }}"></div>
+<div class="klaviyo-form-Whvmr4">
+  <input type="hidden" id="hvco_page" name="hvco_page" value="">
+</div>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    // Get the hidden input field inside the Klaviyo form
+    var hvcoField = document.querySelector(".klaviyo-form-Whvmr4 input[name='hvco_page']");
+
+    if (hvcoField) {
+      // Get the current Shopify page title
+      var pageTitle = document.title;
+
+      // Set the hidden input value to the page title
+      hvcoField.value = pageTitle;
+    }
+  });
+</script>
