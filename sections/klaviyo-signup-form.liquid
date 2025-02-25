@@ -1,5 +1,36 @@
 <!-- Klaviyo Form Wrapper -->
 <div class="klaviyo-form-Whvmr4">
   <!-- Hidden input field for tracking the HVCO page -->
-  <input type="hidden" name="contact[tags]" value="HVCO-{{ page.handle }}">
 </div>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    // Wait for the form submission event
+    document.addEventListener('submit', function (event) {
+      if (event.target && event.target.classList.contains('klaviyo-form')) {
+        setTimeout(function () {
+          var emailField = event.target.querySelector("input[type='email']");
+          if (emailField && emailField.value) {
+            // Send profile update request to Klaviyo API
+            var profileData = {
+              email: emailField.value,
+              properties: {
+                hvco_page: '{{ page.title }}', // Capture the page title dynamically
+              },
+            };
+
+            fetch('https://a.klaviyo.com/api/identify', {
+              method: 'POST',
+              headers: {
+                'Content-Type': 'application/json',
+              },
+              body: JSON.stringify({
+                token: 'RYhhqf',
+                properties: profileData,
+              }),
+            });
+          }
+        }, 1000); // Delay execution to ensure the email is captured
+      }
+    });
+  });
+</script>
