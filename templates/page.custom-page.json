@@ -71,31 +71,9 @@
         "padding_bottom": 0
       }
     },
-    "newsletter_edXBib": {
-      "type": "newsletter",
-      "blocks": {
-        "heading_kMXULP": {
-          "type": "heading",
-          "settings": {
-            "heading": "SNAG your FREE PDF to turbocharge your runs.",
-            "heading_size": "h2"
-          }
-        },
-        "signup_form": {
-          "type": "klaviyo-signup-form"
-        }
-      },
-      "block_order": [
-        "heading_kMXULP",
-        "email_form_eHFy9D"
-      ],
-      "settings": {
-        "color_scheme": "",
-        "full_width": true,
-        "padding_top": 40,
-        "padding_bottom": 52
+      "signup_form": {
+      "type": "klaviyo-signup-form"
       }
-    }
   },
   "order": [
     "custom_image_banner_Dbrddw",
