@@ -81,9 +81,8 @@
             "heading_size": "h2"
           }
         },
-        "email_form_eHFy9D": {
-          "type": "email_form",
-          "settings": {}
+        "signup_form": {
+          "type": "klaviyo-signup-form"
         }
       },
       "block_order": [
@@ -102,6 +101,6 @@
     "custom_image_banner_Dbrddw",
     "rich_text_VYfQKi",
     "rich_text_zJQdcB",
-    "newsletter_edXBib"
+    "signup_form"
   ]
 }
