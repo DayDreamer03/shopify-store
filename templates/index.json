@@ -18,6 +18,95 @@
         "mobile_height": 48
       }
     },
+    "rich_text_ycy9PV": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_x3BpCA": {
+          "type": "heading",
+          "settings": {
+            "heading": "BEAUTIFY STRAVA",
+            "heading_size": "h1"
+          }
+        },
+        "text_MJczGW": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Showcase your last run or ride in a sexy way, to repost in your instagram story or just for your own contemplation.</p>"
+          }
+        },
+        "button_gPbygN": {
+          "type": "button",
+          "settings": {
+            "button_label": "BEAUTIFY YOUR ROUTE",
+            "button_link": "https://strava.thepurposecompany.store/",
+            "button_style_secondary": true,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_x3BpCA",
+        "text_MJczGW",
+        "button_gPbygN"
+      ],
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    },
+    "image_with_text_eAKJP6": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_ebhByd": {
+          "type": "heading",
+          "settings": {
+            "heading": "BEAUTIFY STRAVA",
+            "heading_size": "h1"
+          }
+        },
+        "text_6xqrMQ": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Showcase your last run or ride in a sexy way, to repost in your instagram story or just for your own contemplation.</p>",
+            "text_style": "body"
+          }
+        },
+        "button_RbzLEH": {
+          "type": "button",
+          "settings": {
+            "button_label": "BEAUTIFY YOUR ROUTE",
+            "button_link": "https://strava.thepurposecompany.store/",
+            "button_style_secondary": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_ebhByd",
+        "text_6xqrMQ",
+        "button_RbzLEH"
+      ],
+      "settings": {
+        "image": "shopify://shop_images/Beige_Skincare_Product_Features_Instagram_Post.png",
+        "height": "medium",
+        "desktop_image_width": "small",
+        "layout": "image_first",
+        "desktop_content_position": "top",
+        "desktop_content_alignment": "left",
+        "content_layout": "no-overlap",
+        "section_color_scheme": "scheme-1",
+        "color_scheme": "scheme-1",
+        "image_behavior": "none",
+        "mobile_content_alignment": "left",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
     "multicolumn_89rGF3": {
       "type": "multicolumn",
       "blocks": {
@@ -82,53 +171,6 @@
         "section_title": "SHOES"
       }
     },
-    "image_with_text_eAKJP6": {
-      "type": "image-with-text",
-      "blocks": {
-        "heading_ebhByd": {
-          "type": "heading",
-          "settings": {
-            "heading": "BEAUTIFY STRAVA",
-            "heading_size": "h1"
-          }
-        },
-        "text_6xqrMQ": {
-          "type": "text",
-          "settings": {
-            "text": "<p>Showcase your last run or ride in a sexy way, to repost in your instagram story or just for your own contemplation.</p>",
-            "text_style": "body"
-          }
-        },
-        "button_RbzLEH": {
-          "type": "button",
-          "settings": {
-            "button_label": "BEAUTIFY YOUR ROUTE",
-            "button_link": "https://strava.thepurposecompany.store/",
-            "button_style_secondary": false
-          }
-        }
-      },
-      "block_order": [
-        "heading_ebhByd",
-        "text_6xqrMQ",
-        "button_RbzLEH"
-      ],
-      "settings": {
-        "image": "shopify://shop_images/Beige_Skincare_Product_Features_Instagram_Post.png",
-        "height": "medium",
-        "desktop_image_width": "small",
-        "layout": "image_first",
-        "desktop_content_position": "top",
-        "desktop_content_alignment": "left",
-        "content_layout": "no-overlap",
-        "section_color_scheme": "scheme-1",
-        "color_scheme": "scheme-1",
-        "image_behavior": "none",
-        "mobile_content_alignment": "left",
-        "padding_top": 36,
-        "padding_bottom": 36
-      }
-    },
     "newsletter_QWjrkU": {
       "type": "newsletter",
       "blocks": {
@@ -166,9 +208,10 @@
   },
   "order": [
     "custom_video2_NnEyxf",
+    "rich_text_ycy9PV",
+    "image_with_text_eAKJP6",
     "multicolumn_89rGF3",
     "custom_shoes_grid_cCjxcW",
-    "image_with_text_eAKJP6",
     "newsletter_QWjrkU"
   ]
 }
