@@ -60,8 +60,25 @@
         "padding_bottom": 40
       }
     },
+    "image_banner_jFaVaX": {
+      "type": "image-banner",
+      "settings": {
+        "image": "shopify://shop_images/Free_Computer_Wallpaper_1.png",
+        "image_overlay_opacity": 0,
+        "image_height": "medium",
+        "desktop_content_position": "middle-center",
+        "show_text_box": true,
+        "desktop_content_alignment": "center",
+        "color_scheme": "",
+        "image_behavior": "none",
+        "mobile_content_alignment": "center",
+        "stack_images_on_mobile": true,
+        "show_text_below": true
+      }
+    },
     "image_with_text_eAKJP6": {
       "type": "image-with-text",
+      "disabled": true,
       "settings": {
         "image": "shopify://shop_images/Beige_Skincare_Product_Features_Instagram_Post.png",
         "height": "medium",
@@ -203,6 +220,7 @@
   "order": [
     "custom_video2_NnEyxf",
     "rich_text_ycy9PV",
+    "image_banner_jFaVaX",
     "image_with_text_eAKJP6",
     "multicolumn_89rGF3",
     "rich_text_QTk4VP",
