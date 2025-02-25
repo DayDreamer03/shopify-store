@@ -1,31 +1,22 @@
 <div class="klaviyo-form-Whvmr4"></div>
 
 <script>
-  // This function will keep trying to find and update the form
-  function updateKlaviyoForm() {
-    var klaviyoForm = document.querySelector('.klaviyo-form-Whvmr4 form');
-    if (klaviyoForm) {
-      var hiddenField = klaviyoForm.querySelector('input[name="$hvco_type"]');
-      if (hiddenField) {
-        hiddenField.value = '{{ page.title }}';
-        console.log('Updated hidden field value to: {{ page.title }}');
-        return true; // Success
-      }
-    }
-    return false; // Not found or not updated
-  }
+  document.addEventListener('klaviyoForms', function (event) {
+    if (event.detail.formId == 'Whvmr4' && event.detail.type == 'submit') {
+      // Get the email that was submitted
+      var email = event.detail.klaviyoData.email;
 
-  // Try immediately after DOM loads
-  document.addEventListener('DOMContentLoaded', function () {
-    // Try multiple times with increasing delays
-    setTimeout(() => {
-      if (!updateKlaviyoForm()) {
-        setTimeout(() => {
-          if (!updateKlaviyoForm()) {
-            setTimeout(updateKlaviyoForm, 1500);
-          }
-        }, 1000);
-      }
-    }, 500);
+      // Create a direct identify call to update the profile with our property
+      var _learnq = window._learnq || [];
+      _learnq.push([
+        'identify',
+        {
+          $email: email,
+          $hvco_type: '{{ page.title }}',
+        },
+      ]);
+
+      console.log('Added property via direct identify call: {{ page.title }}');
+    }
   });
 </script>
