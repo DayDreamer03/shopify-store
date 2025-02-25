@@ -1,12 +1,22 @@
 <div class="klaviyo-form-Whvmr4"></div>
-
 <script>
-  var _learnq = _learnq || [];
-
-  document.addEventListener('klaviyoForms', function(e) {
-    if (e.detail.type == 'submit' && e.detail.formId == 'Whvmr4') {
-      // Add the custom property to the submission
-      e.detail.klaviyoData.$hvco_type = {{ page.title | json }};
-    }
+  document.addEventListener('DOMContentLoaded', function() {
+    // Klaviyo will load its form asynchronously
+    // Wait a bit before attempting to modify the form
+    setTimeout(function() {
+      var klaviyoForm = document.querySelector('.klaviyo-form-Whvmr4 form');
+      if (klaviyoForm) {
+        // Find existing hidden field or create one
+        var hiddenField = klaviyoForm.querySelector('input[name="$hvco_type"]');
+        if (!hiddenField) {
+          hiddenField = document.createElement('input');
+          hiddenField.type = 'hidden';
+          hiddenField.name = '$hvco_type';
+          klaviyoForm.appendChild(hiddenField);
+        }
+        // Set the value
+        hiddenField.value = {{ page.title | json }};
+      }
+    }, 1000); // Wait 1 second for the form to load
   });
 </script>
