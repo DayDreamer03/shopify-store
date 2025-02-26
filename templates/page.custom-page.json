@@ -25,7 +25,7 @@
         "heading_9mhrni": {
           "type": "heading",
           "settings": {
-            "heading": "<strong>Find your next running shoes with this ultimate guide that will SHATTER your Strava PRs and avoid months of injury</strong>",
+            "heading": "<strong>find your next running shoes with this ultimate guide that will shetter your Strava prs and avoid months of injury</strong>",
             "heading_size": "h2"
           }
         },
@@ -71,9 +71,10 @@
         "padding_bottom": 0
       }
     },
-      "signup_form": {
-      "type": "klaviyo-signup-form"
-      }
+    "signup_form": {
+      "type": "klaviyo-signup-form",
+      "settings": {}
+    }
   },
   "order": [
     "custom_image_banner_Dbrddw",
