@@ -264,8 +264,7 @@ h5,
 .h3,
 .h4,
 .h5 {
-  font-family: 'Aspekta', sans-serif;
-  font-weight: '350';
+  font-family: 'milkman', sans-serif;
   font-style: var(--font-heading-style);
   letter-spacing: calc(var(--font-heading-scale) * 0.06rem);
   color: rgb(var(--color-foreground));
@@ -274,8 +273,7 @@ h5,
 }
 
 h1 {
-  font-family: 'Aspekta', sans-serif;
-  font-weight: '350';
+  font-family: 'milkman', sans-serif;
 }
 
 .hxxl {
@@ -3726,17 +3724,6 @@ details-disclosure > details {
   max-width: 100%;
   border: 1px solid #ddd;
   border-radius: 5px;
-}
-
-.custom-text-section {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100vh; /* Full-screen height */
-  background-color: black; /* Background color */
-  color: white; /* Text color */
-  text-transform: uppercase; /* Make text uppercase */
-  font-family: 'Courier New', Courier, monospace; /* Optional aesthetic font */
 }
 
 .centered-content {
