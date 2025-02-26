@@ -168,8 +168,10 @@
       }
     },
     "signup_form": {
-      "type": "klaviyo-signup-form"
-      }
+      "type": "klaviyo-signup-form",
+      "disabled": true,
+      "settings": {}
+    }
   },
   "order": [
     "custom_video2_NnEyxf",
