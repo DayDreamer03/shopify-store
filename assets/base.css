@@ -255,7 +255,7 @@ body {
 
 h1,
 h2 {
-  font-family: 'Milkman', sans-serif;
+  font-family: 'Aspekta', sans-serif;
   font-style: var(--font-heading-style);
   letter-spacing: calc(var(--font-heading-scale) * 0.06rem);
   color: rgb(var(--color-foreground));
