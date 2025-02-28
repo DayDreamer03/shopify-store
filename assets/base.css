@@ -3624,16 +3624,17 @@ details-disclosure > details {
 /* Define Aspekta-350 */
 @font-face {
   font-family: 'Aspekta';
-  src: url('{{ "ppneuemontreal-medium.otf" | asset_url }}') format('otf');
+  src: url('ppneuemontreal-medium.otf') format('otf');
   font-weight: 350;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'Milkman';
-  src: url('{{ "Milkman.woff2" | asset_url }}') format('woff2'), url('{{ "Milkman.woff" | asset_url }}') format('woff');
+  src: url('Milkman.woff2') format('woff2'), url('Milkman.woff') format('woff');
   font-weight: normal;
   font-style: normal;
+  font-display: swap;
 }
 
 /* Transparent header for homepage */

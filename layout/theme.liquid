@@ -277,6 +277,10 @@
       {% comment %}theme-check-enable AssetPreload{% endcomment %}
     {%- endunless -%}
 
+    <!-- Preload Milkman font -->
+    <link rel="preload" as="font" href="{{ 'Milkman.woff2' | asset_url }}" type="font/woff2" crossorigin>
+    <link rel="preload" as="font" href="{{ 'Milkman.woff' | asset_url }}" type="font/woff" crossorigin>
+
     {%- if localization.available_countries.size > 1 or localization.available_languages.size > 1 -%}
       {{ 'component-localization-form.css' | asset_url | stylesheet_tag: preload: true }}
       <script src="{{ 'localization-form.js' | asset_url }}" defer="defer"></script>
