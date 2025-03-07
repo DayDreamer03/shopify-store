@@ -5,13 +5,25 @@
   <style>
     .running-shoes-grid {
       padding: 20px;
-      overflow-x: auto; /* Enable horizontal scrolling */
-      -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      position: relative; /* For absolute positioning of pseudo-element */
+    }
+
+    .running-shoes-grid::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      height: 100%;
+      width: 20px; /* Match left padding */
+      background: #fff;
+      z-index: 2;
     }
 
     .image-section {
       width: 100%;
-      height: 300px; /* Adjust the height as needed */
+      height: 300px;
       object-fit: cover;
       object-position: center;
       margin-bottom: 20px;
@@ -19,9 +31,9 @@
 
     .table {
       display: grid;
-      grid-template-columns: 1fr repeat(3, 1fr); /* Updated to accommodate 3 distance types */
+      grid-template-columns: 80px repeat(3, 1fr); /* Reduced brand column width */
       gap: 20px;
-      min-width: 800px; /* Ensure minimum width for scrolling */
+      min-width: 800px;
     }
 
     .table-header {
@@ -30,7 +42,7 @@
       color: #000;
       text-transform: uppercase;
       padding: 10px 0;
-      grid-column: span 1; /* Ensure headers span one column */
+      grid-column: span 1;
     }
 
     .brand-cell {
@@ -39,18 +51,19 @@
       text-transform: uppercase;
       border-right: 1px solid #000;
       text-align: center;
-      grid-column: 1; /* Ensure brand names are in the first column */
+      grid-column: 1;
       display: flex;
       align-items: center;
       justify-content: center;
-      position: sticky; /* Make brand column sticky */
-      left: 0; /* Stick to left */
-      background: #fff; /* Ensure background covers scrolling content */
-      z-index: 1; /* Keep above scrolling content */
+      position: sticky;
+      left: 0;
+      background: #fff;
+      z-index: 3; /* Increased z-index to be above the pseudo-element */
+      width: 80px; /* Match grid column width */
     }
 
     .brand-logo {
-      max-width: 75px;
+      max-width: 50px; /* Reduced logo size */
       height: auto;
     }
 
@@ -59,36 +72,70 @@
       text-transform: uppercase;
     }
 
+    /* Product card size adjustments */
+    .distance-cell .card-wrapper {
+      max-width: 200px; /* Control maximum width */
+      margin: 0 auto;
+    }
+
     @media (max-width: 768px) {
+      .table {
+        grid-template-columns: 60px repeat(3, 1fr); /* Even smaller brand column on mobile */
+      }
+
+      .brand-cell {
+        width: 60px;
+      }
+
       .table-header {
         font-size: 16px;
       }
 
       .brand-logo {
         max-width: 35px;
-        height: auto;
       }
 
       .running-shoes-grid {
         padding: 10px;
       }
 
+      .running-shoes-grid::before {
+        width: 10px; /* Match mobile padding */
+      }
+
+      /* Smaller product cards on mobile */
+      .distance-cell .card-wrapper {
+        max-width: 150px;
+      }
+
       .card-information
         > *:not(.visually-hidden:first-child)
         + *:not(.rating):not(.card__information-volume-pricing-note) {
-        margin-top: 0.3rem; /* Reduce the space between elements */
+        margin-top: 0.3rem;
       }
     }
 
-    @media (min-width: 768px) {
-      .card {
-        width: 50px; /* Smaller card size for large screens */
-        height: auto; /* Adjust height */
-      }
-
+    @media (min-width: 769px) {
       .running-shoes-grid {
         padding: 50px;
       }
+
+      .running-shoes-grid::before {
+        width: 50px; /* Match desktop padding */
+      }
+
+      /* Larger product cards on desktop */
+      .distance-cell .card-wrapper {
+        max-width: 300px;
+      }
+    }
+
+    /* Fix for header overlap */
+    .table-header:first-child {
+      position: sticky;
+      left: 0;
+      background: #fff;
+      z-index: 3;
     }
   </style>
 
