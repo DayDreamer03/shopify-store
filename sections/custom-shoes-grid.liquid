@@ -5,6 +5,8 @@
   <style>
     .running-shoes-grid {
       padding: 20px;
+      overflow-x: auto; /* Enable horizontal scrolling */
+      -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
     }
 
     .image-section {
@@ -17,8 +19,9 @@
 
     .table {
       display: grid;
-      grid-template-columns: 1fr repeat(2, 1fr); /* One column for brands, three for distances */
+      grid-template-columns: 1fr repeat(3, 1fr); /* Updated to accommodate 3 distance types */
       gap: 20px;
+      min-width: 800px; /* Ensure minimum width for scrolling */
     }
 
     .table-header {
@@ -40,6 +43,10 @@
       display: flex;
       align-items: center;
       justify-content: center;
+      position: sticky; /* Make brand column sticky */
+      left: 0; /* Stick to left */
+      background: #fff; /* Ensure background covers scrolling content */
+      z-index: 1; /* Keep above scrolling content */
     }
 
     .brand-logo {
@@ -53,7 +60,6 @@
     }
 
     @media (max-width: 768px) {
-
       .table-header {
         font-size: 16px;
       }
@@ -67,12 +73,14 @@
         padding: 10px;
       }
 
-      .card-information > *:not(.visually-hidden:first-child) + *:not(.rating):not(.card__information-volume-pricing-note) {
+      .card-information
+        > *:not(.visually-hidden:first-child)
+        + *:not(.rating):not(.card__information-volume-pricing-note) {
         margin-top: 0.3rem; /* Reduce the space between elements */
+      }
     }
 
     @media (min-width: 768px) {
-
       .card {
         width: 50px; /* Smaller card size for large screens */
         height: auto; /* Adjust height */
@@ -80,13 +88,13 @@
 
       .running-shoes-grid {
         padding: 50px;
-        }
+      }
     }
   </style>
 
   {% assign brands = 'nike,newbalance' | split: ',' %}
-  {% assign distance_names = '42K / 21K,10K / 5K' | split: ',' %}
-  {% assign distances = '42k,10K' | split: ',' %}
+  {% assign distance_names = 'half / marathon,speed,training' | split: ',' %}
+  {% assign distances = '42k,10K,training' | split: ',' %}
 
   <div class="table">
     <!-- Distance Headers -->
