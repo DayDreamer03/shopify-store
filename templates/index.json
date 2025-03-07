@@ -162,7 +162,6 @@
     },
     "custom_shoes_grid_cCjxcW": {
       "type": "custom-shoes-grid",
-      "disabled": true,
       "settings": {
         "section_title": "SHOES"
       }
@@ -171,6 +170,12 @@
       "type": "klaviyo-signup-form",
       "disabled": true,
       "settings": {}
+    },
+    "homepage_menu_p84W6A": {
+      "type": "homepage-menu",
+      "settings": {
+        "featured_collection": ""
+      }
     }
   },
   "order": [
@@ -179,6 +184,7 @@
     "image_with_text_eAKJP6",
     "multicolumn_89rGF3",
     "rich_text_QTk4VP",
+    "homepage_menu_p84W6A",
     "custom_shoes_grid_cCjxcW",
     "signup_form"
   ]
