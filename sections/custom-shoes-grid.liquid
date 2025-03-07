@@ -95,16 +95,16 @@
 
     @media (max-width: 768px) {
       .table {
-        grid-template-columns: 100px repeat(3, 1fr);
+        grid-template-columns: 80px repeat(3, 1fr);
         gap: 0;
       }
 
       .brand-cell {
-        width: 100px;
+        width: 80px;
       }
 
       .brand-header {
-        width: 100px;
+        width: 80px;
       }
 
       .brand-cell::after {
@@ -114,6 +114,7 @@
 
       .table-header {
         font-size: 16px;
+        padding: 5px 0;
       }
 
       .brand-logo {
@@ -124,8 +125,12 @@
         padding: 0;
       }
 
+      .distance-cell {
+        padding: 0 5px;
+      }
+
       .distance-cell .card-wrapper {
-        max-width: 120px;
+        max-width: 100px;
       }
 
       .card-information
