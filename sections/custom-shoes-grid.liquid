@@ -4,14 +4,13 @@
 <div class="running-shoes-grid">
   <style>
     .running-shoes-grid {
-      padding: 20px;
+      padding: 0;
       overflow-x: auto;
       -webkit-overflow-scrolling: touch;
       position: relative;
       background: #fff;
     }
 
-    /* Remove the ::before pseudo-element and use a wrapper div instead */
     .table-wrapper {
       position: relative;
       background: #fff;
@@ -38,7 +37,6 @@
       font-size: 20px;
       font-weight: bold;
       text-transform: uppercase;
-      border-right: 1px solid #000;
       text-align: center;
       grid-column: 1;
       display: flex;
@@ -49,6 +47,17 @@
       background: #fff;
       z-index: 3;
       width: 80px;
+      position: relative;
+    }
+
+    .brand-cell::after {
+      content: '';
+      position: absolute;
+      right: 0;
+      top: 10px;
+      bottom: 10px;
+      width: 1px;
+      background: #000;
     }
 
     .brand-logo {
@@ -62,7 +71,7 @@
     }
 
     .distance-cell .card-wrapper {
-      max-width: 180px; /* Reduced from 200px */
+      max-width: 180px;
       margin: 0 auto;
     }
 
@@ -76,6 +85,11 @@
         width: 100px;
       }
 
+      .brand-cell::after {
+        top: 5px;
+        bottom: 5px;
+      }
+
       .table-header {
         font-size: 16px;
       }
@@ -85,11 +99,11 @@
       }
 
       .running-shoes-grid {
-        padding: 10px;
+        padding: 0;
       }
 
       .distance-cell .card-wrapper {
-        max-width: 120px; /* Reduced from 150px */
+        max-width: 120px;
       }
 
       .card-information
@@ -101,11 +115,11 @@
 
     @media (min-width: 769px) {
       .running-shoes-grid {
-        padding: 50px;
+        padding: 0;
       }
 
       .distance-cell .card-wrapper {
-        max-width: 250px; /* Reduced from 300px */
+        max-width: 250px;
       }
     }
 
