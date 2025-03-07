@@ -8,18 +8,18 @@
       overflow-x: auto;
       -webkit-overflow-scrolling: touch;
       position: relative;
-      background: #fff; /* Ensure white background */
+      background: #fff;
     }
 
     .running-shoes-grid::before {
       content: '';
-      position: fixed; /* Changed to fixed to ensure it stays in viewport */
+      position: absolute; /* Changed from fixed to absolute */
       left: 0;
       top: 0;
-      height: 100vh; /* Full viewport height */
+      height: 100%; /* Changed from 100vh to 100% */
       width: 20px;
       background: #fff;
-      z-index: 4; /* Increased z-index to be above all content */
+      z-index: 4;
     }
 
     .image-section {
@@ -32,19 +32,29 @@
 
     .table {
       display: grid;
-      grid-template-columns: 80px repeat(3, 1fr);
+      grid-template-columns: 120px repeat(3, 1fr); /* Wider brand column on desktop */
       gap: 20px;
       min-width: 800px;
-      background: #fff; /* Ensure white background */
+      background: #fff;
     }
 
     .table-header {
       text-align: center;
-      font-size: 30px;
+      font-size: 24px; /* Reduced from 30px */
       color: #000;
       text-transform: uppercase;
       padding: 10px 0;
       grid-column: span 1;
+    }
+
+    /* Brand header cell that stays fixed */
+    .brand-header {
+      position: sticky;
+      left: 0;
+      background: #fff;
+      z-index: 5; /* Higher than the scrolling headers */
+      width: 120px;
+      height: 100%;
     }
 
     .brand-cell {
@@ -61,7 +71,7 @@
       left: 0;
       background: #fff;
       z-index: 3;
-      width: 80px;
+      width: 120px;
     }
 
     .brand-logo {
@@ -81,16 +91,21 @@
 
     @media (max-width: 768px) {
       .table {
-        grid-template-columns: 120px repeat(3, 1fr); /* Doubled brand column width */
-        gap: 10px; /* Reduced gap on mobile */
+        grid-template-columns: 100px repeat(3, 1fr); /* Adjusted brand column width */
+        gap: 0; /* Removed gap on mobile */
       }
 
       .brand-cell {
-        width: 120px; /* Match the grid column width */
+        width: 100px;
+      }
+
+      .brand-header {
+        width: 100px;
       }
 
       .table-header {
-        font-size: 16px;
+        font-size: 14px;
+        padding: 5px 0;
       }
 
       .brand-logo {
@@ -107,12 +122,7 @@
 
       .distance-cell .card-wrapper {
         max-width: 150px;
-      }
-
-      .card-information
-        > *:not(.visually-hidden:first-child)
-        + *:not(.rating):not(.card__information-volume-pricing-note) {
-        margin-top: 0.3rem;
+        padding: 0 5px; /* Add small padding between cards */
       }
     }
 
@@ -128,13 +138,10 @@
       .distance-cell .card-wrapper {
         max-width: 300px;
       }
-    }
 
-    .table-header:first-child {
-      position: sticky;
-      left: 0;
-      background: #fff;
-      z-index: 3;
+      .table {
+        gap: 20px;
+      }
     }
   </style>
 
@@ -144,7 +151,7 @@
 
   <div class="table">
     <!-- Distance Headers -->
-    <div class="table-header"></div>
+    <div class="table-header brand-header"></div>
     {% for distance in distance_names %}
       <div
         class="table-header"
