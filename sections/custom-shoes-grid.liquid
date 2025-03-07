@@ -7,18 +7,19 @@
       padding: 20px;
       overflow-x: auto;
       -webkit-overflow-scrolling: touch;
-      position: relative; /* For absolute positioning of pseudo-element */
+      position: relative;
+      background: #fff; /* Ensure white background */
     }
 
     .running-shoes-grid::before {
       content: '';
-      position: absolute;
+      position: fixed; /* Changed to fixed to ensure it stays in viewport */
       left: 0;
       top: 0;
-      height: 100%;
-      width: 20px; /* Match left padding */
+      height: 100vh; /* Full viewport height */
+      width: 20px;
       background: #fff;
-      z-index: 2;
+      z-index: 4; /* Increased z-index to be above all content */
     }
 
     .image-section {
@@ -31,9 +32,10 @@
 
     .table {
       display: grid;
-      grid-template-columns: 80px repeat(3, 1fr); /* Reduced brand column width */
+      grid-template-columns: 80px repeat(3, 1fr);
       gap: 20px;
       min-width: 800px;
+      background: #fff; /* Ensure white background */
     }
 
     .table-header {
@@ -58,12 +60,12 @@
       position: sticky;
       left: 0;
       background: #fff;
-      z-index: 3; /* Increased z-index to be above the pseudo-element */
-      width: 80px; /* Match grid column width */
+      z-index: 3;
+      width: 80px;
     }
 
     .brand-logo {
-      max-width: 50px; /* Reduced logo size */
+      max-width: 50px;
       height: auto;
     }
 
@@ -72,19 +74,19 @@
       text-transform: uppercase;
     }
 
-    /* Product card size adjustments */
     .distance-cell .card-wrapper {
-      max-width: 200px; /* Control maximum width */
+      max-width: 200px;
       margin: 0 auto;
     }
 
     @media (max-width: 768px) {
       .table {
-        grid-template-columns: 60px repeat(3, 1fr); /* Even smaller brand column on mobile */
+        grid-template-columns: 120px repeat(3, 1fr); /* Doubled brand column width */
+        gap: 10px; /* Reduced gap on mobile */
       }
 
       .brand-cell {
-        width: 60px;
+        width: 120px; /* Match the grid column width */
       }
 
       .table-header {
@@ -100,10 +102,9 @@
       }
 
       .running-shoes-grid::before {
-        width: 10px; /* Match mobile padding */
+        width: 10px;
       }
 
-      /* Smaller product cards on mobile */
       .distance-cell .card-wrapper {
         max-width: 150px;
       }
@@ -121,16 +122,14 @@
       }
 
       .running-shoes-grid::before {
-        width: 50px; /* Match desktop padding */
+        width: 50px;
       }
 
-      /* Larger product cards on desktop */
       .distance-cell .card-wrapper {
         max-width: 300px;
       }
     }
 
-    /* Fix for header overlap */
     .table-header:first-child {
       position: sticky;
       left: 0;
