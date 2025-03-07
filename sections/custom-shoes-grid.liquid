@@ -91,7 +91,7 @@
 
     @media (max-width: 768px) {
       .table {
-        grid-template-columns: 100px repeat(3, 1fr); /* Adjusted brand column width */
+        grid-template-columns: 80px repeat(3, 1fr); /* Adjusted brand column width */
         gap: 0; /* Removed gap on mobile */
       }
 
@@ -101,6 +101,7 @@
 
       .brand-header {
         width: 100px;
+        background: #fff;
       }
 
       .table-header {
@@ -116,13 +117,8 @@
         padding: 10px;
       }
 
-      .running-shoes-grid::before {
-        width: 10px;
-      }
-
       .distance-cell .card-wrapper {
-        max-width: 150px;
-        padding: 0 5px; /* Add small padding between cards */
+        max-width: 100px;
       }
     }
 
