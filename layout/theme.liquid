@@ -380,17 +380,26 @@
       window.addEventListener('klaviyoForms', function (e) {
         if (e.detail.type === 'submit') {
           var _learnq = window._learnq || [];
+          if (!_learnq.push) return;
+
           var url_visit = window.location.pathname;
+          var freebieList = null;
 
-          // Force update of the hvco_type value and keep track of past submissions
-          _learnq.push([
-            'identify',
-            {
-              $hvco_type: url_visit, // Always overwrite with latest URL
-            },
-          ]);
+          // Assign freebie list name based on URL
+          if (url_visit.includes('/6-months-to-sub-4-marathon-training-plan')) {
+            freebieList = 'HVCO 2 - MARATHON GUIDE';
+          } else if (
+            url_visit.includes(
+              '/don-t-buy-another-pair-of-running-shoes-before-you-know-these-5-game-changing-secrets-to-shatter-your-strava-prs-and-avoid-months-of-injury'
+            )
+          ) {
+            freebieList = 'HVCO 1 - Shoe grid';
+          }
 
-          // Fetch existing user profile to maintain history
+          // Overwrite latest signup URL
+          _learnq.push(['identify', { $hvco_type: url_visit }]);
+
+          // Maintain signup history
           _learnq.push([
             'get',
             'user',
@@ -400,15 +409,17 @@
                 ? [...new Set([...currentHistory, url_visit])]
                 : [url_visit];
 
-              // Update the history field with unique URLs
-              _learnq.push([
-                'identify',
-                {
-                  $hvco_history: newHistory,
-                },
-              ]);
+              _learnq.push(['identify', { $hvco_history: newHistory }]);
             },
           ]);
+
+          // Add user to the general email list
+          _learnq.push(['track', 'Subscribed to List', { 'List Name': 'Email List' }]);
+
+          // Add user to the freebie list *only if applicable*
+          if (freebieList) {
+            _learnq.push(['track', 'Subscribed to List', { 'List Name': freebieList }]);
+          }
         }
       });
     </script>
