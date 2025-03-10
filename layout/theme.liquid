@@ -329,30 +329,22 @@
         // Listen for Klaviyo form submissions
         window.addEventListener('klaviyoForms', function (e) {
           if (e.detail.type === 'submit') {
-            // Log the full event data to see structure
             console.log('Klaviyo form submitted:', e.detail);
 
-            // Extract email (multiple possible locations)
+            // Extract email from metaData (most reliable based on your logs)
             var email = '';
-
-            // Check for email in Klaviyo's standard locations
-            if (e.detail.formSubmission && e.detail.formSubmission.email) {
-              email = e.detail.formSubmission.email;
-            } else if (e.detail.$email) {
-              email = e.detail.$email;
-            } else if (e.detail.email) {
-              email = e.detail.email;
-            } else if (e.detail.profile && e.detail.profile.email) {
-              email = e.detail.profile.email;
+            if (e.detail.metaData && e.detail.metaData.$email) {
+              email = e.detail.metaData.$email;
             }
 
-            // Form fields can also be found here
-            if (!email && e.detail.formFields) {
-              for (var i = 0; i < e.detail.formFields.length; i++) {
-                if (e.detail.formFields[i].name === 'email') {
-                  email = e.detail.formFields[i].value;
-                  break;
-                }
+            // Fallbacks for email extraction
+            if (!email) {
+              if (e.detail.$email) {
+                email = e.detail.$email;
+              } else if (e.detail.formSubmission && e.detail.formSubmission.email) {
+                email = e.detail.formSubmission.email;
+              } else if (e.detail.email) {
+                email = e.detail.email;
               }
             }
 
@@ -365,7 +357,7 @@
             var freebieType = '';
             var freebieListId = '';
 
-            // Determine which freebie
+            // Determine which freebie based on URL
             if (url_visit.includes('marathon') || url_visit.includes('sub-4')) {
               freebieType = 'marathon-guide';
               freebieListId = 'YxwiYs';
@@ -383,33 +375,26 @@
               email: email,
               freebieType: freebieType,
               listId: freebieListId,
+              url: url_visit,
             });
 
-            // Step 1: Identify the user
             var _learnq = window._learnq || [];
+
+            // STEP 1: Reset/update the profile with fresh data
+            // Use identify to update/set the $hvco_type property
             _learnq.push([
               'identify',
               {
                 $email: email,
-                $source: url_visit,
+                $hvco_type: url_visit,
                 last_freebie_requested: freebieType,
                 last_freebie_requested_at: new Date().toISOString(),
               },
             ]);
 
-            // Step 2: Track the event for backup triggering
-            _learnq.push([
-              'track',
-              'requested-HVCO',
-              {
-                freebie_type: freebieType,
-                source_url: url_visit,
-              },
-            ]);
+            // STEP 2: Try all available methods to add to list
 
-            // Step 3: Subscribe to the list using both available methods
-
-            // Method 1: Standard subscribe API
+            // Method 1: Standard list subscribe API
             _learnq.push([
               'lists',
               freebieListId,
@@ -417,11 +402,12 @@
               {
                 profiles: {
                   $email: email,
+                  $hvco_type: url_visit,
                 },
               },
             ]);
 
-            // Method 2: Alternative subscribe approach (more reliable for some setups)
+            // Method 2: Use the backup "Subscribed to List" event
             _learnq.push([
               'track',
               'Subscribed to List',
@@ -431,7 +417,29 @@
               },
             ]);
 
-            console.log('Subscription attempts completed for list:', freebieListId);
+            // Method 3: Use a direct property to indicate list membership
+            _learnq.push([
+              'identify',
+              {
+                $email: email,
+                $hvco_type: url_visit,
+                [`list_${freebieListId}`]: true,
+              },
+            ]);
+
+            // STEP 3: Track the specific freebie request event for flows
+            _learnq.push([
+              'track',
+              'requested-HVCO',
+              {
+                freebie_type: freebieType,
+                source_url: url_visit,
+                list_id: freebieListId,
+                $email: email,
+              },
+            ]);
+
+            console.log('All Klaviyo tracking and list subscription attempts completed');
           }
         });
       });
