@@ -382,7 +382,15 @@
           var _learnq = window._learnq || [];
           var url_visit = window.location.pathname;
 
-          // Fetch current Klaviyo profile data
+          // Force update of the hvco_type value and keep track of past submissions
+          _learnq.push([
+            'identify',
+            {
+              $hvco_type: url_visit, // Always overwrite with latest URL
+            },
+          ]);
+
+          // Fetch existing user profile to maintain history
           _learnq.push([
             'get',
             'user',
@@ -392,11 +400,11 @@
                 ? [...new Set([...currentHistory, url_visit])]
                 : [url_visit];
 
+              // Update the history field with unique URLs
               _learnq.push([
                 'identify',
                 {
-                  $hvco_type: url_visit, // Overwrite with latest signup URL
-                  $hvco_history: newHistory, // Store all previous signups in an array
+                  $hvco_history: newHistory,
                 },
               ]);
             },
