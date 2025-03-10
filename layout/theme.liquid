@@ -383,42 +383,28 @@
           if (!_learnq.push) return;
 
           var url_visit = window.location.pathname;
-          var freebieList = null;
+          var freebieListId = null; // Use List ID for reliability
+          var email = e.detail.profile && e.detail.profile.email;
 
-          // Assign freebie list name based on URL
+          // Assign freebie list ID based on URL
           if (url_visit.includes('/6-months-to-sub-4-marathon-training-plan')) {
-            freebieList = 'HVCO 2 - MARATHON GUIDE';
+            freebieListId = 'Wt2aMv';
           } else if (
             url_visit.includes(
               '/don-t-buy-another-pair-of-running-shoes-before-you-know-these-5-game-changing-secrets-to-shatter-your-strava-prs-and-avoid-months-of-injury'
             )
           ) {
-            freebieList = 'HVCO 1 - Shoe grid';
+            freebieListId = 'TnxbTf';
           }
+
+          console.log('Submitting to Klaviyo:', { url_visit, email, freebieListId });
 
           // Overwrite latest signup URL
           _learnq.push(['identify', { $hvco_type: url_visit }]);
 
-          // Maintain signup history
-          _learnq.push([
-            'get',
-            'user',
-            function (profile) {
-              var currentHistory = profile && profile.$hvco_history;
-              var newHistory = Array.isArray(currentHistory)
-                ? [...new Set([...currentHistory, url_visit])]
-                : [url_visit];
-
-              _learnq.push(['identify', { $hvco_history: newHistory }]);
-            },
-          ]);
-
-          // Add user to the general email list
-          _learnq.push(['track', 'Subscribed to List', { 'List Name': 'Email List' }]);
-
           // Add user to the freebie list *only if applicable*
-          if (freebieList) {
-            _learnq.push(['track', 'Subscribed to List', { 'List Name': freebieList }]);
+          if (freebieListId) {
+            _learnq.push(['track', 'Subscribed to List', { 'List ID': freebieListId, $email: email }]);
           }
         }
       });
