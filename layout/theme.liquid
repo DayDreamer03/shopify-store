@@ -404,7 +404,7 @@
 
           console.log('Processing Klaviyo submission:', { url_visit, email, freebieListId });
 
-          // First identify the user
+          // First identify the user with their email
           _learnq.push([
             'identify',
             {
@@ -418,13 +418,29 @@
 
           // Add user to the freebie list if applicable
           if (freebieListId) {
-            console.log('Adding to list:', freebieListId);
+            console.log('Adding to Klaviyo list:', freebieListId);
+
+            // Method 1: List subscription
             _learnq.push([
               'lists',
               freebieListId,
               'subscribe',
               {
+                profiles: {
+                  $email: email,
+                  $source: url_visit,
+                  $consent_method: 'Klaviyo Form',
+                },
+              },
+            ]);
+
+            // Method 2: Track subscription event
+            _learnq.push([
+              'track',
+              'Subscribed to List',
+              {
                 $email: email,
+                'List ID': freebieListId,
                 $source: url_visit,
                 $consent_method: 'Klaviyo Form',
               },
