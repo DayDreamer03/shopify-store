@@ -378,22 +378,27 @@
     {%- endif -%}
     <script>
       window.addEventListener('klaviyoForms', function (e) {
-        if (e.detail.type == 'submit') {
+        if (e.detail.type === 'submit') {
           var _learnq = window._learnq || [];
           var url_visit = window.location.pathname;
 
+          // Fetch current Klaviyo profile data
           _learnq.push([
-            'identify',
+            'get',
+            'user',
             function (profile) {
               var currentHistory = profile && profile.$hvco_history;
               var newHistory = Array.isArray(currentHistory)
                 ? [...new Set([...currentHistory, url_visit])]
                 : [url_visit];
 
-              return {
-                $hvco_type: url_visit, // Overwrite with latest signup URL
-                $hvco_history: newHistory, // Store all previous signups in an array
-              };
+              _learnq.push([
+                'identify',
+                {
+                  $hvco_type: url_visit, // Overwrite with latest signup URL
+                  $hvco_history: newHistory, // Store all previous signups in an array
+                },
+              ]);
             },
           ]);
         }
