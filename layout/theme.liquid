@@ -381,15 +381,9 @@
         if (e.detail.type === 'submit') {
           var _learnq = window._learnq || [];
           if (!_learnq.push) return;
-
           var url_visit = window.location.pathname;
           var freebieListId = null;
           var email = e.detail.profile && e.detail.profile.email;
-
-          if (!email) {
-            console.log('No email found in form submission');
-            return;
-          }
 
           // Assign freebie list ID based on URL
           if (url_visit.includes('/6-months-to-sub-4-marathon-training-plan')) {
@@ -402,25 +396,19 @@
             freebieListId = 'TnxbTf';
           }
 
-          console.log('Processing Klaviyo submission:', { url_visit, email, freebieListId });
+          console.log('Submitting to Klaviyo:', { url_visit, email, freebieListId });
 
-          // First identify the user with their email
+          // Store the URL they signed up from
           _learnq.push([
             'identify',
             {
               $email: email,
-              $source: url_visit,
-              $consent_method: 'Klaviyo Form',
-              $consent_form_id: e.detail.formId,
-              $consent_form_version: '1.0',
+              $hvco_type: url_visit,
             },
           ]);
 
-          // Add user to the freebie list if applicable
-          if (freebieListId) {
-            console.log('Adding to Klaviyo list:', freebieListId);
-
-            // Method 1: List subscription
+          // Add user to the specific list - correct method for list subscription
+          if (freebieListId && email) {
             _learnq.push([
               'lists',
               freebieListId,
@@ -428,21 +416,7 @@
               {
                 profiles: {
                   $email: email,
-                  $source: url_visit,
-                  $consent_method: 'Klaviyo Form',
                 },
-              },
-            ]);
-
-            // Method 2: Track subscription event
-            _learnq.push([
-              'track',
-              'Subscribed to List',
-              {
-                $email: email,
-                'List ID': freebieListId,
-                $source: url_visit,
-                $consent_method: 'Klaviyo Form',
               },
             ]);
           }
