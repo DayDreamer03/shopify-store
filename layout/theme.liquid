@@ -325,63 +325,115 @@
     </ul>
 
     <script>
-      window.shopUrl = '{{ request.origin }}';
-      window.routes = {
-        cart_add_url: '{{ routes.cart_add_url }}',
-        cart_change_url: '{{ routes.cart_change_url }}',
-        cart_update_url: '{{ routes.cart_update_url }}',
-        cart_url: '{{ routes.cart_url }}',
-        predictive_search_url: '{{ routes.predictive_search_url }}',
-      };
+      document.addEventListener('DOMContentLoaded', function () {
+        // Listen for Klaviyo form submissions
+        window.addEventListener('klaviyoForms', function (e) {
+          if (e.detail.type === 'submit') {
+            // Log the full event data to see structure
+            console.log('Klaviyo form submitted:', e.detail);
 
-      window.cartStrings = {
-        error: `{{ 'sections.cart.cart_error' | t }}`,
-        quantityError: `{{ 'sections.cart.cart_quantity_error_html' | t: quantity: '[quantity]' }}`,
-      };
+            // Extract email (multiple possible locations)
+            var email = '';
 
-      window.variantStrings = {
-        addToCart: `{{ 'products.product.add_to_cart' | t }}`,
-        soldOut: `{{ 'products.product.sold_out' | t }}`,
-        unavailable: `{{ 'products.product.unavailable' | t }}`,
-        unavailable_with_option: `{{ 'products.product.value_unavailable' | t: option_value: '[value]' }}`,
-      };
+            // Check for email in Klaviyo's standard locations
+            if (e.detail.formSubmission && e.detail.formSubmission.email) {
+              email = e.detail.formSubmission.email;
+            } else if (e.detail.$email) {
+              email = e.detail.$email;
+            } else if (e.detail.email) {
+              email = e.detail.email;
+            } else if (e.detail.profile && e.detail.profile.email) {
+              email = e.detail.profile.email;
+            }
 
-      window.quickOrderListStrings = {
-        itemsAdded: `{{ 'sections.quick_order_list.items_added.other' | t: quantity: '[quantity]' }}`,
-        itemAdded: `{{ 'sections.quick_order_list.items_added.one' | t: quantity: '[quantity]' }}`,
-        itemsRemoved: `{{ 'sections.quick_order_list.items_removed.other' | t: quantity: '[quantity]' }}`,
-        itemRemoved: `{{ 'sections.quick_order_list.items_removed.one' | t: quantity: '[quantity]' }}`,
-        viewCart: `{{- 'sections.quick_order_list.view_cart' | t -}}`,
-        each: `{{- 'sections.quick_order_list.each' | t: money: '[money]' }}`,
-        min_error: `{{- 'sections.quick_order_list.min_error' | t: min: '[min]' }}`,
-        max_error: `{{- 'sections.quick_order_list.max_error' | t: max: '[max]' }}`,
-        step_error: `{{- 'sections.quick_order_list.step_error' | t: step: '[step]' }}`,
-      };
+            // Form fields can also be found here
+            if (!email && e.detail.formFields) {
+              for (var i = 0; i < e.detail.formFields.length; i++) {
+                if (e.detail.formFields[i].name === 'email') {
+                  email = e.detail.formFields[i].value;
+                  break;
+                }
+              }
+            }
 
-      window.accessibilityStrings = {
-        imageAvailable: `{{ 'products.product.media.image_available' | t: index: '[index]' }}`,
-        shareSuccess: `{{ 'general.share.success_message' | t }}`,
-        pauseSlideshow: `{{ 'sections.slideshow.pause_slideshow' | t }}`,
-        playSlideshow: `{{ 'sections.slideshow.play_slideshow' | t }}`,
-        recipientFormExpanded: `{{ 'recipient.form.expanded' | t }}`,
-        recipientFormCollapsed: `{{ 'recipient.form.collapsed' | t }}`,
-        countrySelectorSearchCount: `{{ 'localization.country_results_count' | t: count: '[count]' }}`,
-      };
-    </script>
-    <script>
-      window.addEventListener('klaviyoForms', function (e) {
-        if (e.detail.type === 'submit') {
-          var _learnq = window._learnq || [];
-          var url_visit = window.location.pathname;
+            if (!email) {
+              console.error('No email found in Klaviyo form submission');
+              return;
+            }
 
-          // Force update of the hvco_type value and keep track of past submissions
-          _learnq.push([
-            'identify',
-            {
-              $hvco_type: url_visit, // Always overwrite with latest URL
-            },
-          ]);
-        }
+            var url_visit = window.location.pathname;
+            var freebieType = '';
+            var freebieListId = '';
+
+            // Determine which freebie
+            if (url_visit.includes('marathon') || url_visit.includes('sub-4')) {
+              freebieType = 'marathon-guide';
+              freebieListId = 'YxwiYs';
+            } else if (url_visit.includes('shoes') || url_visit.includes('running-shoes')) {
+              freebieType = 'shoes-guide';
+              freebieListId = 'SDRSkh';
+            }
+
+            if (!freebieListId) {
+              console.log('No matching freebie for URL:', url_visit);
+              return;
+            }
+
+            console.log('Processing submission:', {
+              email: email,
+              freebieType: freebieType,
+              listId: freebieListId,
+            });
+
+            // Step 1: Identify the user
+            var _learnq = window._learnq || [];
+            _learnq.push([
+              'identify',
+              {
+                $email: email,
+                $source: url_visit,
+                last_freebie_requested: freebieType,
+                last_freebie_requested_at: new Date().toISOString(),
+              },
+            ]);
+
+            // Step 2: Track the event for backup triggering
+            _learnq.push([
+              'track',
+              'requested-HVCO',
+              {
+                freebie_type: freebieType,
+                source_url: url_visit,
+              },
+            ]);
+
+            // Step 3: Subscribe to the list using both available methods
+
+            // Method 1: Standard subscribe API
+            _learnq.push([
+              'lists',
+              freebieListId,
+              'subscribe',
+              {
+                profiles: {
+                  $email: email,
+                },
+              },
+            ]);
+
+            // Method 2: Alternative subscribe approach (more reliable for some setups)
+            _learnq.push([
+              'track',
+              'Subscribed to List',
+              {
+                $email: email,
+                List: freebieListId,
+              },
+            ]);
+
+            console.log('Subscription attempts completed for list:', freebieListId);
+          }
+        });
       });
     </script>
   </body>
