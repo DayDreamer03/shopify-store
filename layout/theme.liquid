@@ -383,8 +383,13 @@
           if (!_learnq.push) return;
 
           var url_visit = window.location.pathname;
-          var freebieListId = null; // Use List ID for reliability
+          var freebieListId = null;
           var email = e.detail.profile && e.detail.profile.email;
+
+          if (!email) {
+            console.log('No email found in form submission');
+            return;
+          }
 
           // Assign freebie list ID based on URL
           if (url_visit.includes('/6-months-to-sub-4-marathon-training-plan')) {
@@ -397,14 +402,33 @@
             freebieListId = 'TnxbTf';
           }
 
-          console.log('Submitting to Klaviyo:', { url_visit, email, freebieListId });
+          console.log('Processing Klaviyo submission:', { url_visit, email, freebieListId });
 
-          // Overwrite latest signup URL
-          _learnq.push(['identify', { $hvco_type: url_visit }]);
+          // First identify the user
+          _learnq.push([
+            'identify',
+            {
+              $email: email,
+              $source: url_visit,
+              $consent_method: 'Klaviyo Form',
+              $consent_form_id: e.detail.formId,
+              $consent_form_version: '1.0',
+            },
+          ]);
 
-          // Add user to the freebie list *only if applicable*
+          // Add user to the freebie list if applicable
           if (freebieListId) {
-            _learnq.push(['track', 'Subscribed to List', { 'List ID': freebieListId, $email: email }]);
+            console.log('Adding to list:', freebieListId);
+            _learnq.push([
+              'lists',
+              freebieListId,
+              'subscribe',
+              {
+                $email: email,
+                $source: url_visit,
+                $consent_method: 'Klaviyo Form',
+              },
+            ]);
           }
         }
       });
