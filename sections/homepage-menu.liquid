@@ -1,6 +1,7 @@
 {% style %}
   .homepage-menu {
     position: relative;
+    width: 100%;
   }
 
   .menu-list {
@@ -9,10 +10,19 @@
     margin: 0;
     display: flex;
     gap: 20px;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE and Edge */
+  }
+
+  .menu-list::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera */
   }
 
   .menu-item {
     position: relative;
+    flex-shrink: 0; /* Prevent items from shrinking */
   }
 
   .menu-link {
@@ -20,6 +30,9 @@
     color: #000;
     font-weight: bold;
     cursor: pointer;
+    white-space: nowrap; /* Prevent text wrapping */
+    padding: 10px 0;
+    display: block;
   }
 
   .menu-link.coming-soon {
@@ -29,14 +42,12 @@
 
   .submenu {
     display: none;
-    position: absolute;
-    top: 100%;
-    left: 0;
+    position: static; /* Changed from absolute */
     background: white;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     padding: 10px 0;
-    min-width: 150px;
-    z-index: 1000;
+    width: 100%;
+    margin-top: 10px;
+    border-top: 1px solid #eee;
   }
 
   .submenu.active {
@@ -95,6 +106,13 @@
     cursor: pointer;
     font-size: 20px;
   }
+
+  @media screen and (min-width: 768px) {
+    .menu-list {
+      justify-content: center;
+      overflow-x: visible;
+    }
+  }
 {% endstyle %}
 
 <div class="homepage-menu">
@@ -109,27 +127,27 @@
         <a href="#" class="menu-link {% unless item == 'RUNNING' %}coming-soon{% endunless %}" data-sport="{{ item }}">
           {{ item }}
         </a>
-        {% if item == 'RUNNING' %}
-          <div class="submenu">
-            {% assign submenu_items = 'SHOES,TOPS,BOTTOMS,SOCKS' | split: ',' %}
-            {% assign submenu_links = '/collections/running-shoes,/collections/running-tops,/collections/running-bottoms,/collections/running-socks'
-              | split: ','
-            %}
-
-            {% for subitem in submenu_items %}
-              <a
-                href="{{ submenu_links[forloop.index0] }}"
-                class="submenu-item {% unless subitem == 'SHOES' %}coming-soon{% endunless %}"
-                data-sport="{{ subitem }}"
-              >
-                {{ subitem }}
-              </a>
-            {% endfor %}
-          </div>
-        {% endif %}
       </li>
     {% endfor %}
   </ul>
+
+  <!-- Running submenu section -->
+  <div class="submenu active">
+    {% assign submenu_items = 'SHOES,TOPS,BOTTOMS,SOCKS' | split: ',' %}
+    {% assign submenu_links = '/collections/running-shoes,/collections/running-tops,/collections/running-bottoms,/collections/running-socks'
+      | split: ','
+    %}
+
+    {% for subitem in submenu_items %}
+      <a
+        href="{{ submenu_links[forloop.index0] }}"
+        class="submenu-item {% unless subitem == 'SHOES' %}coming-soon{% endunless %}"
+        data-sport="{{ subitem }}"
+      >
+        {{ subitem }}
+      </a>
+    {% endfor %}
+  </div>
 
   {% if section.settings.featured_collection %}
     <div class="featured-collection">
@@ -142,7 +160,12 @@
           {% for product in collection.products %}
             <div class="product-item">
               <a href="{{ product.url }}">
-                <img src="{{ product.featured_image | img_url: '300x300' }}" alt="{{ product.title }}">
+                <img
+                  src="{{ product.featured_image | img_url: '300x300' }}"
+                  alt="{{ product.title }}"
+                  width="300"
+                  height="300"
+                >
                 <p>{{ product.title }}</p>
               </a>
             </div>
@@ -178,14 +201,6 @@
           popup.classList.add('active');
           popupOverlay.classList.add('active');
           return;
-        }
-
-        // Handle submenu toggle for RUNNING
-        if (this.classList.contains('menu-link') && this.textContent.trim() === 'RUNNING') {
-          const submenu = this.nextElementSibling;
-          if (submenu && submenu.classList.contains('submenu')) {
-            submenu.classList.toggle('active');
-          }
         }
 
         // Handle regular links
