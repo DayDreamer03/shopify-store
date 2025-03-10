@@ -384,12 +384,20 @@
 
           _learnq.push([
             'identify',
-            {
-              $hvco_type: url_visit,
+            function (profile) {
+              var currentHistory = profile && profile.$hvco_history;
+              var newHistory = Array.isArray(currentHistory)
+                ? [...new Set([...currentHistory, url_visit])]
+                : [url_visit];
+
+              return {
+                $hvco_type: url_visit, // Overwrite with latest signup URL
+                $hvco_history: newHistory, // Store all previous signups in an array
+              };
             },
           ]);
-        } // if
-      }); // addEventListener
+        }
+      });
     </script>
   </body>
 </html>
