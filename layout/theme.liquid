@@ -369,68 +369,18 @@
       };
     </script>
     <script>
-      {%- if settings.predictive_search_enabled -%}
-        <script src="{{ 'predictive-search.js' | asset_url }}" defer="defer"></script>
-      {%- endif -%}
-
-      {%- if settings.cart_type == 'drawer' -%}
-        <script src="{{ 'cart-drawer.js' | asset_url }}" defer="defer"></script>
-      {%- endif -%}
       window.addEventListener('klaviyoForms', function (e) {
         if (e.detail.type === 'submit') {
           var _learnq = window._learnq || [];
-          if (!_learnq.push) return;
           var url_visit = window.location.pathname;
-          var freebieListId = null;
 
-          // Fix: Get email from the correct location in the event data
-          var email = e.detail.formSubmission && e.detail.formSubmission.email;
-
-          // If email is still undefined, try alternative locations
-          if (!email && e.detail.profile) {
-            email = e.detail.profile.email || e.detail.profile.$email;
-          }
-
-          // Check for forms data as another fallback
-          if (!email && e.detail.forms && e.detail.forms.length > 0) {
-            var formData = e.detail.forms[0];
-            email = formData.email || formData.$email;
-          }
-
-          console.log('Form submission data:', e.detail); // Additional debugging
-
-          // Updated URL matching to handle the /pages/ path
-          if (url_visit.includes('/pages/6-months-to-sub-4-marathon-training-plan') {
-            freebieListId = 'Wt2aMv';
-          } else if (
-            url_visit.includes('/pages//don-t-buy-another-pair-of-running-shoes-before-you-know-these-5-game-changing-secrets-to-shatter-your-strava-prs-and-avoid-months-of-injury')
-          ) {
-            freebieListId = 'TnxbTf';
-          }
-
-          console.log('Submitting to Klaviyo:', { url_visit, email, freebieListId });
-
-          // Only proceed if we have an email
-          if (email) {
-            // Store the URL they signed up from
-            _learnq.push(['identify', {
-              $email: email,
-              $hvco_type: url_visit
-            }]);
-
-            // Add user to the specific list
-            if (freebieListId) {
-              _learnq.push(['lists', freebieListId, 'subscribe', {
-                profiles: {
-                  $email: email
-                }
-              }]);
-
-              console.log('Subscribing to list:', freebieListId, 'with email:', email);
-            }
-          } else {
-            console.error('No email found in form submission data');
-          }
+          // Force update of the hvco_type value and keep track of past submissions
+          _learnq.push([
+            'identify',
+            {
+              $hvco_type: url_visit, // Always overwrite with latest URL
+            },
+          ]);
         }
       });
     </script>
