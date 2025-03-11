@@ -15,7 +15,7 @@
         "video {opacity: 90%;}"
       ],
       "settings": {
-        "video_url": "https://cdn.shopify.com/videos/c/o/v/23d891b0dd51443ebe5fc7dd2671ce76.mov",
+        "video_url": "https://cdn.shopify.com/videos/c/o/v/4605c6e2209c41aeb19f992c526dabeb.mov",
         "padding_top": 0,
         "padding_bottom": 0,
         "mobile_height": 72
@@ -25,6 +25,69 @@
       "type": "homepage-menu",
       "settings": {
         "featured_collection": ""
+      }
+    },
+    "custom_shoes_grid_cCjxcW": {
+      "type": "custom-shoes-grid",
+      "settings": {
+        "section_title": "SHOES"
+      }
+    },
+    "multicolumn_89rGF3": {
+      "type": "multicolumn",
+      "blocks": {
+        "column_kCXY7a": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/Free_Design_1080x1080_1.png",
+            "title": "<strong>Find your next running shoes with this ultimate guide that will SHATTER your Strava PRs and avoid months of injury</strong>",
+            "text": "<p><em>(avoid running stores’ ugliest pairs and find the perfect fit for YOUR mileage and pace)</em></p>",
+            "link_label": "GET YOUR FREE PDF",
+            "link": "shopify://pages/don-t-buy-another-pair-of-running-shoes-before-you-know-these-5-game-changing-secrets-to-shatter-your-strava-prs-and-avoid-months-of-injury"
+          }
+        },
+        "column_7B7wNd": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/2_7115a7c4-ae76-4f6e-a31e-f3e1aa4e34d8.png",
+            "title": "Finish a marathon in <span style=\"text-decoration:underline\">only 6 months</span>, even If you’ve <em>never</em> run a mile before: grab your FREE training plan now",
+            "text": "<p>(ditch the plan in your head for this notion blueprint that will make people think you got it from Eliud Kipchoge himself)</p>",
+            "link_label": "GET YOUR FREE NOTION TRAINING PLAN",
+            "link": "shopify://pages/6-months-to-sub-4-marathon-training-plan"
+          }
+        },
+        "column_Pfgdtz": {
+          "type": "column",
+          "disabled": true,
+          "settings": {
+            "image": "shopify://shop_images/Free_Design_1080x1080_1.png",
+            "title": "7 nutrition mistakes to avoid if you don’t want to <span style=\"text-decoration:underline\">sabotage</span> your next race: get your FREE race day meal and gels plan now",
+            "text": "<p>Discover the fueling and hydration strategy you need for a powerful performance. RISK cramping, fatigue, or hitting the “wall” if you don't read this.</p>",
+            "link_label": "GET YOUR FREE RACE DAY NUTRITION PLAN",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "column_kCXY7a",
+        "column_7B7wNd",
+        "column_Pfgdtz"
+      ],
+      "settings": {
+        "title": "FREE STUFF",
+        "heading_size": "h2",
+        "image_width": "full",
+        "image_ratio": "square",
+        "columns_desktop": 2,
+        "column_alignment": "left",
+        "background_style": "none",
+        "button_label": "",
+        "button_link": "",
+        "color_scheme": "scheme-2",
+        "columns_mobile": "1",
+        "swipe_on_mobile": true,
+        "padding_top": 36,
+        "padding_bottom": 36
       }
     },
     "rich_text_ycy9PV": {
@@ -88,63 +151,6 @@
         "padding_bottom": 24
       }
     },
-    "multicolumn_89rGF3": {
-      "type": "multicolumn",
-      "blocks": {
-        "column_kCXY7a": {
-          "type": "column",
-          "settings": {
-            "image": "shopify://shop_images/Free_Design_1080x1080_1.png",
-            "title": "<strong>Find your next running shoes with this ultimate guide that will SHATTER your Strava PRs and avoid months of injury</strong>",
-            "text": "<p><em>(avoid running stores’ ugliest pairs and find the perfect fit for YOUR mileage and pace)</em></p>",
-            "link_label": "GET YOUR FREE PDF",
-            "link": "shopify://pages/don-t-buy-another-pair-of-running-shoes-before-you-know-these-5-game-changing-secrets-to-shatter-your-strava-prs-and-avoid-months-of-injury"
-          }
-        },
-        "column_7B7wNd": {
-          "type": "column",
-          "settings": {
-            "image": "shopify://shop_images/2_7115a7c4-ae76-4f6e-a31e-f3e1aa4e34d8.png",
-            "title": "Finish a marathon in <span style=\"text-decoration:underline\">only 6 months</span>, even If you’ve <em>never</em> run a mile before: grab your FREE training plan now",
-            "text": "<p>(ditch the plan in your head for this notion blueprint that will make people think you got it from Eliud Kipchoge himself)</p>",
-            "link_label": "GET YOUR FREE NOTION TRAINING PLAN",
-            "link": "shopify://pages/6-months-to-sub-4-marathon-training-plan"
-          }
-        },
-        "column_Pfgdtz": {
-          "type": "column",
-          "disabled": true,
-          "settings": {
-            "image": "shopify://shop_images/Free_Design_1080x1080_1.png",
-            "title": "7 nutrition mistakes to avoid if you don’t want to <span style=\"text-decoration:underline\">sabotage</span> your next race: get your FREE race day meal and gels plan now",
-            "text": "<p>Discover the fueling and hydration strategy you need for a powerful performance. RISK cramping, fatigue, or hitting the “wall” if you don't read this.</p>",
-            "link_label": "GET YOUR FREE RACE DAY NUTRITION PLAN",
-            "link": ""
-          }
-        }
-      },
-      "block_order": [
-        "column_kCXY7a",
-        "column_7B7wNd",
-        "column_Pfgdtz"
-      ],
-      "settings": {
-        "title": "FREE STUFF",
-        "heading_size": "h2",
-        "image_width": "full",
-        "image_ratio": "square",
-        "columns_desktop": 2,
-        "column_alignment": "left",
-        "background_style": "none",
-        "button_label": "",
-        "button_link": "",
-        "color_scheme": "scheme-2",
-        "columns_mobile": "1",
-        "swipe_on_mobile": true,
-        "padding_top": 36,
-        "padding_bottom": 36
-      }
-    },
     "rich_text_QTk4VP": {
       "type": "rich-text",
       "blocks": {
@@ -167,12 +173,6 @@
         "full_width": true,
         "padding_top": 40,
         "padding_bottom": 32
-      }
-    },
-    "custom_shoes_grid_cCjxcW": {
-      "type": "custom-shoes-grid",
-      "settings": {
-        "section_title": "SHOES"
       }
     },
     "signup_form": {
