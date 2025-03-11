@@ -4,7 +4,7 @@
 <div class="running-shoes-grid">
   <style>
     .running-shoes-grid {
-      padding: 0;
+      padding: 0 0 60px 0;
       overflow-x: auto;
       -webkit-overflow-scrolling: touch;
       position: relative;
@@ -18,11 +18,12 @@
 
     .table {
       display: grid;
-      grid-template-columns: 80px repeat(3, 1fr);
-      gap: 20px;
+      grid-template-columns: 80px repeat(3, minmax(250px, 1fr));
+      gap: 15px;
       min-width: 800px;
       background: #fff;
       position: relative;
+      padding: 0 20px;
     }
 
     .table-header {
@@ -34,6 +35,9 @@
       grid-column: span 1;
       position: relative;
       z-index: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
 
     .brand-header {
@@ -86,17 +90,26 @@
       text-transform: uppercase;
       position: relative;
       z-index: 1;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
     }
 
     .distance-cell .card-wrapper {
-      max-width: 180px;
+      max-width: 220px;
+      margin: 0 auto;
+      width: 100%;
+    }
+
+    .distance-cell .card {
       margin: 0 auto;
     }
 
     @media (max-width: 768px) {
       .table {
-        grid-template-columns: 100px repeat(3, 1fr);
-        column-gap: 25px;
+        grid-template-columns: 100px repeat(3, minmax(160px, 1fr));
+        gap: 12px;
+        padding: 0 15px;
       }
 
       .brand-cell {
@@ -121,16 +134,18 @@
       }
 
       .running-shoes-grid {
-        padding: 0;
+        padding: 0 0 40px 0;
       }
 
       .distance-cell {
         padding: 0;
-        max-width: 120px;
+        max-width: none;
+        width: 100%;
       }
 
       .distance-cell .card-wrapper {
-        margin: 0;
+        max-width: 160px;
+        width: 100%;
       }
 
       .card-information
@@ -142,11 +157,12 @@
 
     @media (min-width: 769px) {
       .running-shoes-grid {
-        padding: 0;
+        padding: 0 0 60px 0;
       }
 
       .distance-cell .card-wrapper {
-        max-width: 250px;
+        max-width: 280px;
+        width: 100%;
       }
     }
   </style>
