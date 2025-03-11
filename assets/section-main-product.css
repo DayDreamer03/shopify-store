@@ -1040,7 +1040,7 @@ a.product__text {
   cursor: zoom-out;
   z-index: 1;
   margin: 0;
-  border-radius: calc(var(--media-radius) - var(--media-border-width));
+  border-width: 0;
 }
 
 .image-magnify-hover {
@@ -1209,7 +1209,7 @@ a.product__text {
 }
 
 .product__inventory .icon-inventory-status circle:first-of-type {
-  opacity: .3;
+  opacity: 0.3;
 }
 
 /* Icon with text */
