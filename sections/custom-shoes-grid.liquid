@@ -222,7 +222,25 @@
               {% endif %}
             {% endfor %}
             {% unless filtered_products %}
-              <p>No products available</p>
+              <p
+                class="klaviyo-popup-trigger"
+                data-product-name="{{ brand | capitalize }} {{ distance | upcase }}"
+                style="cursor: pointer; color: blue; text-decoration: underline;"
+              >
+                Coming very soon. Get notified!
+              </p>
+              <script>
+                document.addEventListener('DOMContentLoaded', function () {
+                  document.querySelectorAll('.klaviyo-popup-trigger').forEach(function (el) {
+                    el.addEventListener('click', function () {
+                      var productName = el.getAttribute('data-product-name');
+                      if (window.Klaviyo) {
+                        window.Klaviyo.showForm('{Whvmr4}');
+                      }
+                    });
+                  });
+                });
+              </script>
             {% endunless %}
           </div>
         {% endfor %}
