@@ -14,6 +14,7 @@
     -webkit-overflow-scrolling: touch;
     scrollbar-width: none; /* Firefox */
     -ms-overflow-style: none; /* IE and Edge */
+    padding-left: 20px;
   }
 
   .menu-list::-webkit-scrollbar {
@@ -28,8 +29,7 @@
   .menu-link {
     text-decoration: none;
     color: #000;
-    font-weight: 500; /* Reduced from bold */
-    font-size: 1.6rem; /* Increased font size */
+    font-size: 30px;
     cursor: pointer;
     white-space: nowrap; /* Prevent text wrapping */
     padding: 10px 0;
@@ -133,7 +133,7 @@
     }
 
     .menu-link {
-      font-size: 1.8rem;
+      font-size: 30px; /* Increased font size */
       padding: 12px 0;
     }
   }
@@ -141,6 +141,10 @@
   @media screen and (max-width: 767px) {
     .popup {
       padding: 40px 25px;
+    }
+
+    .menu-link {
+      font-size: 1.5rem;
     }
   }
 {% endstyle %}
