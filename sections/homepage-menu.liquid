@@ -134,6 +134,7 @@
     .menu-link {
       font-size: 24px;
       padding: 12px 0;
+      font-weight: 300;
     }
   }
 
@@ -143,15 +144,16 @@
     }
 
     .menu-link {
-      font-size: 1.5rem;
+      font-size: 1.7rem;
+      font-weight: 300;
     }
   }
 {% endstyle %}
 
 <div class="homepage-menu">
   <ul class="menu-list">
-    {% assign menu_items = 'RUNNING,CYCLING,SWIMMING,PADEL,TENNIS' | split: ',' %}
-    {% assign menu_links = '/collections/running,/collections/cycling,/collections/swimming,/collections/padel,/collections/tennis'
+    {% assign menu_items = 'RUNNING,CYCLING,SWIMMING,PADEL' | split: ',' %}
+    {% assign menu_links = '/collections/running,/collections/cycling,/collections/swimming,/collections/padel'
       | split: ','
     %}
 
