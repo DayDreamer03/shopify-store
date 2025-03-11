@@ -131,7 +131,11 @@
     .menu-list {
       justify-content: flex-start;
       overflow-x: visible;
-      padding-left: 0;
+    }
+
+    .menu-link {
+      font-size: 1.8rem;
+      padding: 12px 0;
     }
   }
 
@@ -223,7 +227,7 @@
         e.preventDefault();
 
         if (this.classList.contains('coming-soon')) {
-          const message = 'coming to the store very soon.<br>stay tuned.';
+          const message = 'COMING SOON. STAY TUNED.';
           // Use custom popup for all devices
           popupMessage.textContent = message;
           popup.classList.add('active');
