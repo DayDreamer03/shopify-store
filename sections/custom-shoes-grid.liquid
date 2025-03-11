@@ -9,6 +9,12 @@
       -webkit-overflow-scrolling: touch;
       position: relative;
       background: #fff;
+      scrollbar-width: none; /* Firefox */
+      -ms-overflow-style: none; /* IE and Edge */
+    }
+
+    .running-shoes-grid::-webkit-scrollbar {
+      display: none; /* Chrome, Safari and Opera */
     }
 
     .table-wrapper {
@@ -18,7 +24,7 @@
 
     .table {
       display: grid;
-      grid-template-columns: 80px repeat(3, minmax(250px, 1fr));
+      grid-template-columns: 80px repeat(3, minmax(230px, 1fr));
       gap: 15px;
       min-width: 800px;
       background: #fff;
@@ -107,7 +113,7 @@
 
     @media (max-width: 768px) {
       .table {
-        grid-template-columns: 100px repeat(3, minmax(160px, 1fr));
+        grid-template-columns: 100px repeat(3, minmax(150px, 1fr));
         gap: 12px;
         padding: 0 15px;
       }
@@ -168,8 +174,8 @@
   </style>
 
   {% assign brands = 'nike,newbalance' | split: ',' %}
-  {% assign distance_names = 'half / marathon,speed,training' | split: ',' %}
-  {% assign distances = '42k,10K,training' | split: ',' %}
+  {% assign distance_names = 'training,speed,half / marathon' | split: ',' %}
+  {% assign distances = 'training,10K,42k' | split: ',' %}
 
   <div class="table-wrapper">
     <div class="table">
