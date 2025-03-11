@@ -209,19 +209,7 @@
         e.preventDefault();
 
         if (this.classList.contains('coming-soon')) {
-          const sport = this.dataset.sport;
-          const message = 'Coming very soon.';
-
-          if (isMobile) {
-            // Use native alert on mobile
-            alert(message);
-          } else {
-            // Use custom popup on desktop
-            popupMessage.textContent = message;
-            popup.classList.add('active');
-            popupOverlay.classList.add('active');
-          }
-          return;
+          _klaviyo.showForm('Whvmr4');
         }
 
         // Handle regular links
