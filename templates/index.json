@@ -11,9 +11,7 @@
   "sections": {
     "custom_video2_NnEyxf": {
       "type": "custom-video2",
-      "custom_css": [
-        "video {opacity: 90%;}"
-      ],
+      "custom_css": [],
       "settings": {
         "video_url": "https://cdn.shopify.com/videos/c/o/v/4605c6e2209c41aeb19f992c526dabeb.mov",
         "padding_top": 0,
