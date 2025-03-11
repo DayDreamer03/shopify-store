@@ -209,7 +209,17 @@
         e.preventDefault();
 
         if (this.classList.contains('coming-soon')) {
-          _klaviyo.showForm('Whvmr4');
+          const message = 'Coming to the storevery soon. Stay tuned.';
+          if (isMobile) {
+            // Use native alert on mobile
+            alert(message);
+          } else {
+            // Use custom popup on desktop
+            popupMessage.textContent = message;
+            popup.classList.add('active');
+            popupOverlay.classList.add('active');
+          }
+          return;
         }
 
         // Handle regular links
