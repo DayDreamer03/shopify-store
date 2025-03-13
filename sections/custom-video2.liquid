@@ -59,48 +59,47 @@
   ]
 }
 {% endschema %}
-
 {% style %}
   /* Mobile Styles */
   @media (max-width: 768px) {
     .custom-video-section {
-      position: fixed; /* Fix video position */
-      top: 0;
-      left: 0;
-      width: 100vw;
-      height: 100vh;
-      z-index: -1; /* Push behind other elements */
-      background-color: #000; /* Adjust background */
-      overflow: hidden; /* Hide any excess */
-    }
-
-    .custom-video {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-  }
-
-  /* Desktop Styles */
-  @media (min-width: 769px) {
-    .custom-video-section {
-      position: fixed; /* Fix video position */
-      top: 0;
-      left: 0;
-      width: 100vw;
-      height: 100vh;
-      z-index: -1; /* Push behind other elements */
+      position: relative; /* Keep section scrollable */
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+      background-color: #000;
       overflow: hidden;
     }
 
-    .custom-video-section video {
-      position: absolute;
+    .custom-video {
+      position: fixed; /* Fix video in place */
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
       width: 100vw;
       height: 100vh;
       object-fit: cover;
+      z-index: -1; /* Push behind section content */
+    }
+  }
+
+  /* Desktop Styles */
+  @media (min-width: 769px) {
+    .custom-video-section {
+      position: relative; /* Keep the section structure */
+      width: 100vw;
+      height: 80vh;
+      overflow: hidden;
+    }
+
+    .custom-video-section video {
+      position: fixed; /* Make video stay in place */
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 100vw;
+      height: 100vh;
+      object-fit: cover;
+      z-index: -1; /* Keep video behind the section */
     }
   }
 {% endstyle %}
