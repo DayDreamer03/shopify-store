@@ -464,13 +464,28 @@
               {%- when 'variant_picker' -%}
                 {% render 'product-variant-picker', product: product, block: block, product_form_id: product_form_id %}
               {%- when 'buy_buttons' -%}
-                {%- render 'buy-buttons',
-                  block: block,
-                  product: product,
-                  product_form_id: product_form_id,
-                  section_id: section.id,
-                  show_pickup_availability: true
-                -%}
+                {% assign shoes_collection = collections.shoes %}
+                {% assign external_url = product.metafields.custom.external_url %}
+                {% if shoes_collection and shoes_collection.products contains product and external_url != blank %}
+                  <!-- Custom button for SHOES collection -->
+                  <a
+                    href="{{ external_url }}"
+                    target="_blank"
+                    class="button product__buy-button"
+                  >
+                    VIEW ON {{ product.vendor | upcase }}.COM
+                  </a>
+                {% else %}
+                  <!-- Default Add to Cart button -->
+                  {%- render 'buy-buttons',
+                    block: block,
+                    product: product,
+                    product_form_id: product_form_id,
+                    section_id: section.id,
+                    show_pickup_availability: true
+                  -%}
+                {% endif %}
+
               {%- when 'rating' -%}
                 {%- if product.metafields.reviews.rating.value != blank -%}
                   <div class="rating-wrapper">
