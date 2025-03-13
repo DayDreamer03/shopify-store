@@ -464,10 +464,10 @@
               {%- when 'variant_picker' -%}
                 {% render 'product-variant-picker', product: product, block: block, product_form_id: product_form_id %}
               {%- when 'buy_buttons' -%}
-                {% assign shoes_collection = collections.SHOES %}
                 {% assign external_url = product.metafields.custom.external_url.value %}
-                {% if shoes_collection and shoes_collection.products contains product and external_url != blank %}
-                  <!-- Custom button for SHOES collection -->
+                
+                {% if product.category == 'Shoes' and external_url != blank %}
+                  <!-- Custom button for Athletic Shoes -->
                   <a
                     href="{{ external_url }}"
                     target="_blank"
@@ -484,8 +484,7 @@
                     section_id: section.id,
                     show_pickup_availability: true
                   -%}
-                {% endif %}
-
+                {% endif %}              
               {%- when 'rating' -%}
                 {%- if product.metafields.reviews.rating.value != blank -%}
                   <div class="rating-wrapper">
