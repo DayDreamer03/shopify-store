@@ -65,7 +65,7 @@
   @media (max-width: 768px) {
     .custom-video-section {
       position: relative; /* Keep section scrollable */
-      min-height: 40vh; /* Keep current section height */
+      min-height: 40vh; /* Keep the section's height as expected */
       padding-top: {{ section.settings.padding_top }}px;
       padding-bottom: {{ section.settings.padding_bottom }}px;
       background-color: transparent;
@@ -73,12 +73,12 @@
     }
 
     .custom-video {
-      position: fixed; /* Fix video in background */
+      position: absolute; /* Video is positioned inside section */
       top: 0;
       left: 0;
-      width: 100vw;
-      height: 100vh; /* Ensure video is fully visible */
-      object-fit: cover;
+      width: 100%;
+      height: 100%; /* Match video height to section */
+      object-fit: cover; /* Ensure full coverage */
       z-index: -1; /* Keep behind section content */
     }
   }
@@ -93,11 +93,11 @@
     }
 
     .custom-video {
-      position: fixed; /* Ensure video stays fixed */
+      position: absolute; /* Ensure video stays within section */
       top: 0;
       left: 0;
-      width: 100vw;
-      height: 100vh; /* Full viewport height */
+      width: 100%;
+      height: 100%; /* Match section height */
       object-fit: cover;
       z-index: -1;
     }
