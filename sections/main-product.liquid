@@ -464,13 +464,15 @@
               {%- when 'variant_picker' -%}
                 {% render 'product-variant-picker', product: product, block: block, product_form_id: product_form_id %}
               {%- when 'buy_buttons' -%}
+                {% assign external_url = '' %}
+
                 {% for tag in product.tags %}
                   {% if tag contains 'external_url:' %}
                     {% assign external_url = tag | remove: 'external_url:' %}
                   {% endif %}
                 {% endfor %}
-                <p>Tag URL: {{ external_url }}</p>
-                {% if external_url != blank %}
+
+                {% if external_url != blank and product.type == 'Shoes' %}
                   <!-- Custom button for Athletic Shoes -->
                   <a
                     href="{{ external_url }}"
