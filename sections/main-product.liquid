@@ -465,6 +465,7 @@
                 {% render 'product-variant-picker', product: product, block: block, product_form_id: product_form_id %}
               {%- when 'buy_buttons' -%}
                 {% assign external_url = '' %}
+                
 
                 {% for tag in product.tags %}
                   {% if tag contains 'external_url:' %}
@@ -472,8 +473,9 @@
                   {% endif %}
                 {% endfor %}
 
-                {% if external_url != blank and product.category == 'Shoes' %}
-                  <!-- Custom button for Athletic Shoes -->
+                {% assign shoes_collection = collections['shoes'] %}
+                {% if shoes_collection and shoes_collection.products contains product %}
+                <!-- Custom button for Shoes -->
                   <a
                     href="{{ external_url }}"
                     target="_blank"
