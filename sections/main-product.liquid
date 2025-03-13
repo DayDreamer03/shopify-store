@@ -465,8 +465,7 @@
                 {% render 'product-variant-picker', product: product, block: block, product_form_id: product_form_id %}
               {%- when 'buy_buttons' -%}
                 {% assign external_url = product.metafields.custom.external_url %}
-
-                {% if product.type == 'Shoes' and external_url != blank %}
+                {% if external_url != blank %}
                   <!-- Custom button for Athletic Shoes -->
                   <a
                     href="{{ external_url }}"
