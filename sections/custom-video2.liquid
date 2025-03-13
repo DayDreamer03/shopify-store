@@ -59,11 +59,13 @@
   ]
 }
 {% endschema %}
+
 {% style %}
   /* Mobile Styles */
   @media (max-width: 768px) {
     .custom-video-section {
       position: relative; /* Keep section scrollable */
+      min-height: 50vh; /* Ensure section is visible */
       padding-top: {{ section.settings.padding_top }}px;
       padding-bottom: {{ section.settings.padding_bottom }}px;
       background-color: #000;
@@ -87,19 +89,19 @@
     .custom-video-section {
       position: relative; /* Keep the section structure */
       width: 100vw;
-      height: 80vh;
+      min-height: 100vh; /* Increased height for better fullscreen effect */
       overflow: hidden;
     }
 
     .custom-video-section video {
-      position: fixed; /* Make video stay in place */
+      position: fixed; /* Keep video fixed in background */
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
       width: 100vw;
-      height: 100vh;
+      height: 100vh; /* Ensure full screen height */
       object-fit: cover;
-      z-index: -1; /* Keep video behind the section */
+      z-index: -1; /* Keep video behind content */
     }
   }
 {% endstyle %}
