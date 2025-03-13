@@ -465,7 +465,7 @@
                 {% render 'product-variant-picker', product: product, block: block, product_form_id: product_form_id %}
               {%- when 'buy_buttons' -%}
                 {% assign shoes_collection = collections['athletic-shoes'] %}
-                {% assign external_url = product.metafields.custom.external_url %}
+                {% assign external_url = product.metafields.custom.external_url.value %}
                 {% if shoes_collection and shoes_collection.products contains product and external_url != blank %}
                   <!-- Custom button for SHOES collection -->
                   <a
