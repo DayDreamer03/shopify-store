@@ -65,7 +65,7 @@
   @media (max-width: 768px) {
     .custom-video-section {
       position: relative; /* Keep section scrollable */
-      min-height: 40vh; /* Adjusted for better mobile visibility */
+      min-height: 40vh; /* Keep current section height */
       padding-top: {{ section.settings.padding_top }}px;
       padding-bottom: {{ section.settings.padding_bottom }}px;
       background-color: transparent;
@@ -73,12 +73,11 @@
     }
 
     .custom-video {
-      position: fixed; /* Fix video in place */
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
+      position: fixed; /* Fix video in background */
+      top: 0;
+      left: 0;
       width: 100vw;
-      height: 100vh;
+      height: 100vh; /* Ensure video is fully visible */
       object-fit: cover;
       z-index: -1; /* Keep behind section content */
     }
@@ -87,28 +86,27 @@
   /* Desktop Styles */
   @media (min-width: 769px) {
     .custom-video-section {
-      position: relative; /* Keep the section structure */
+      position: relative; /* Keep section structure */
       width: 100vw;
       min-height: 85vh; /* Adjusted height */
       overflow: hidden;
     }
 
     .custom-video {
-      position: fixed; /* Ensure video stays fixed in background */
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
+      position: fixed; /* Ensure video stays fixed */
+      top: 0;
+      left: 0;
       width: 100vw;
-      height: 100vh;
+      height: 100vh; /* Full viewport height */
       object-fit: cover;
       z-index: -1;
     }
   }
 
-  /* Ensure video is only visible inside section and not past footer */
+  /* Ensure video is not visible past the footer */
   footer, .page-wrapper {
     position: relative;
-    z-index: 1; /* Ensure footer is above the video */
+    z-index: 1; /* Ensure footer is above video */
     background-color: white; /* Adjust to match site theme */
   }
 {% endstyle %}
