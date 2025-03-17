@@ -71,6 +71,7 @@
         "column_7B7wNd",
         "column_Pfgdtz"
       ],
+      "disabled": true,
       "settings": {
         "title": "FREE STUFF",
         "heading_size": "h2",
@@ -103,7 +104,7 @@
         "show_view_all": false,
         "view_all_style": "solid",
         "enable_desktop_slider": true,
-        "color_scheme": "",
+        "color_scheme": "scheme-2",
         "image_ratio": "square",
         "image_shape": "default",
         "show_secondary_image": false,
