@@ -337,10 +337,6 @@
               return;
             }
 
-            var submissionUrl = window.location.href; // Capture full URL
-
-            console.log('Processing submission:', { email, submissionUrl });
-
             var _learnq = window._learnq || [];
 
             // Identify user with the URL of form submission
@@ -348,7 +344,7 @@
               'identify',
               {
                 $email: email,
-                $hvco_type: submissionUrl,
+                $hvco_type: window.location.href,
               },
             ]);
 
@@ -357,7 +353,7 @@
               'track',
               'Form Submitted',
               {
-                source_url: submissionUrl,
+                source_url: window.location.href,
                 $email: email,
               },
             ]);
