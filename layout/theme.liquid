@@ -337,67 +337,32 @@
               return;
             }
 
-            var url_visit = window.location.pathname;
-            var freebieType = '';
-            var freebieListId = '';
+            var submissionUrl = window.location.href; // Capture full URL
 
-            // Adjusted conditions to match product URLs
-            if (url_visit.includes('sub-4') || url_visit.includes('notion-training-plan')) {
-              freebieType = 'marathon-guide';
-              freebieListId = 'YxwiYs';
-            } else if (url_visit.includes('running-shoes') || url_visit.includes('ultimate-guide')) {
-              freebieType = 'shoes-guide';
-              freebieListId = 'SDRSkh';
-            }
-
-            if (!freebieListId) {
-              console.log('No matching freebie for URL:', url_visit);
-              return;
-            }
-
-            console.log('Processing submission:', { email, freebieType, listId: freebieListId, url: url_visit });
+            console.log('Processing submission:', { email, submissionUrl });
 
             var _learnq = window._learnq || [];
 
+            // Identify user with the URL of form submission
             _learnq.push([
               'identify',
               {
                 $email: email,
-                $hvco_type: freebieType, // Correctly assigning type
-                last_freebie_requested: freebieType,
-                last_freebie_requested_at: new Date().toISOString(),
+                $hvco_type: submissionUrl,
               },
             ]);
 
-            _learnq.push([
-              'lists',
-              freebieListId,
-              'subscribe',
-              { profiles: { $email: email, $hvco_type: freebieType } },
-            ]);
-
-            _learnq.push(['track', 'Subscribed to List', { $email: email, List: freebieListId }]);
-
-            _learnq.push([
-              'identify',
-              {
-                $email: email,
-                [`list_${freebieListId}`]: true,
-              },
-            ]);
-
+            // Track form submission event
             _learnq.push([
               'track',
-              'requested-HVCO',
+              'Form Submitted',
               {
-                freebie_type: freebieType,
-                source_url: url_visit,
-                list_id: freebieListId,
+                source_url: submissionUrl,
                 $email: email,
               },
             ]);
 
-            console.log('All Klaviyo tracking and list subscription attempts completed');
+            console.log('Klaviyo tracking completed');
           }
         });
       });
