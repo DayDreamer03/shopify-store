@@ -323,7 +323,6 @@
       <li id="a11y-refresh-page-message">{{ 'accessibility.refresh_page' | t }}</li>
       <li id="a11y-new-window-message">{{ 'accessibility.link_messages.new_window' | t }}</li>
     </ul>
-
     <script>
       document.addEventListener('DOMContentLoaded', function () {
         window.addEventListener('klaviyoForms', function (e) {
@@ -351,9 +350,8 @@
             // Track form submission event
             _learnq.push([
               'track',
-              'Form Submitted',
+              'requested-HVCO',
               {
-                source_url: window.location.href,
                 $email: email,
               },
             ]);
