@@ -326,28 +326,12 @@
 
     <script>
       document.addEventListener('DOMContentLoaded', function () {
-        // Listen for Klaviyo form submissions
         window.addEventListener('klaviyoForms', function (e) {
           if (e.detail.type === 'submit') {
             console.log('Klaviyo form submitted:', e.detail);
 
-            // Extract email from metaData (most reliable based on your logs)
-            var email = '';
-            if (e.detail.metaData && e.detail.metaData.$email) {
-              email = e.detail.metaData.$email;
-            }
-
-            // Fallbacks for email extraction
-            if (!email) {
-              if (e.detail.$email) {
-                email = e.detail.$email;
-              } else if (e.detail.formSubmission && e.detail.formSubmission.email) {
-                email = e.detail.formSubmission.email;
-              } else if (e.detail.email) {
-                email = e.detail.email;
-              }
-            }
-
+            var email =
+              e.detail.metaData?.$email || e.detail.$email || e.detail.formSubmission?.email || e.detail.email || '';
             if (!email) {
               console.error('No email found in Klaviyo form submission');
               return;
@@ -357,11 +341,11 @@
             var freebieType = '';
             var freebieListId = '';
 
-            // Determine which freebie based on URL
-            if (url_visit.includes('marathon') || url_visit.includes('sub-4')) {
+            // Adjusted conditions to match product URLs
+            if (url_visit.includes('sub-4') || url_visit.includes('notion-training-plan')) {
               freebieType = 'marathon-guide';
               freebieListId = 'YxwiYs';
-            } else if (url_visit.includes('shoes') || url_visit.includes('running-shoes')) {
+            } else if (url_visit.includes('running-shoes') || url_visit.includes('ultimate-guide')) {
               freebieType = 'shoes-guide';
               freebieListId = 'SDRSkh';
             }
@@ -371,63 +355,37 @@
               return;
             }
 
-            console.log('Processing submission:', {
-              email: email,
-              freebieType: freebieType,
-              listId: freebieListId,
-              url: url_visit,
-            });
+            console.log('Processing submission:', { email, freebieType, listId: freebieListId, url: url_visit });
 
             var _learnq = window._learnq || [];
 
-            // STEP 1: Reset/update the profile with fresh data
-            // Use identify to update/set the $hvco_type property
             _learnq.push([
               'identify',
               {
                 $email: email,
-                $hvco_type: url_visit,
+                $hvco_type: freebieType, // Correctly assigning type
                 last_freebie_requested: freebieType,
                 last_freebie_requested_at: new Date().toISOString(),
               },
             ]);
 
-            // STEP 2: Try all available methods to add to list
-
-            // Method 1: Standard list subscribe API
             _learnq.push([
               'lists',
               freebieListId,
               'subscribe',
-              {
-                profiles: {
-                  $email: email,
-                  $hvco_type: url_visit,
-                },
-              },
+              { profiles: { $email: email, $hvco_type: freebieType } },
             ]);
 
-            // Method 2: Use the backup "Subscribed to List" event
-            _learnq.push([
-              'track',
-              'Subscribed to List',
-              {
-                $email: email,
-                List: freebieListId,
-              },
-            ]);
+            _learnq.push(['track', 'Subscribed to List', { $email: email, List: freebieListId }]);
 
-            // Method 3: Use a direct property to indicate list membership
             _learnq.push([
               'identify',
               {
                 $email: email,
-                $hvco_type: url_visit,
                 [`list_${freebieListId}`]: true,
               },
             ]);
 
-            // STEP 3: Track the specific freebie request event for flows
             _learnq.push([
               'track',
               'requested-HVCO',
