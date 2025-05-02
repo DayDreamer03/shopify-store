@@ -31,6 +31,7 @@
         "heading_UdByMX",
         "text_zDyWNm"
       ],
+      "disabled": true,
       "settings": {
         "image": "shopify://shop_images/shoes-image_2.jpg",
         "image_overlay_opacity": 40,
@@ -47,14 +48,23 @@
     },
     "main": {
       "type": "main-page",
+      "disabled": true,
       "settings": {
         "padding_top": 28,
         "padding_bottom": 28
+      }
+    },
+    "custom_shoes_grid_PyXxiN": {
+      "type": "custom-shoes-grid",
+      "name": "Running Shoes Grid",
+      "settings": {
+        "section_title": "SHOES"
       }
     }
   },
   "order": [
     "image_banner_mahW7c",
-    "main"
+    "main",
+    "custom_shoes_grid_PyXxiN"
   ]
 }
